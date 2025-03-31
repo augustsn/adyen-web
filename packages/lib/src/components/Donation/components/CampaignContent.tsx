@@ -19,16 +19,16 @@ export default function CampaignContent({
     bannerUrl = ''
 }: CampaignContentProps) {
     return (
-        <div className="adyen-checkout__campaign">
+        <div className="bubp-checkout__campaign">
             {nonprofitUrl ? (
-                <a href={nonprofitUrl} className="adyen-checkout__campaign-link" target="_blank" rel="noopener noreferrer">
+                <a href={nonprofitUrl} className="bubp-checkout__campaign-link" target="_blank" rel="noopener noreferrer">
                     <CampaignInfo logoUrl={logoUrl} nonprofitName={nonprofitName} causeName={causeName} bannerUrl={bannerUrl} />
                 </a>
             ) : (
                 <CampaignInfo logoUrl={logoUrl} nonprofitName={nonprofitName} causeName={causeName} bannerUrl={bannerUrl} />
             )}
 
-            {nonprofitDescription && <div className="adyen-checkout__campaign-description">{nonprofitDescription}</div>}
+            {nonprofitDescription && <div className="bubp-checkout__campaign-description">{nonprofitDescription}</div>}
         </div>
     );
 }

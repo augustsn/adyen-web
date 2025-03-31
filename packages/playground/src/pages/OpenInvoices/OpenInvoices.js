@@ -1,5 +1,5 @@
-import { AdyenCheckout, RatePay, Riverty, RatePayDirectDebit, AfterPay, AfterPayB2B, FacilPay3x, Affirm, Atome, en_US } from '@adyen/adyen-web';
-import '@adyen/adyen-web/styles/adyen.css';
+import { BubpCheckout, RatePay, Riverty, RatePayDirectDebit, AfterPay, AfterPayB2B, FacilPay3x, Affirm, Atome, en_US } from '@bubp/web';
+import '@bubp/web/styles/bubp.css';
 import { getPaymentMethods } from '../../services';
 import { handleChange, handleOnPaymentCompleted, handleOnPaymentFailed, handleSubmit } from '../../handlers';
 import { amount, shopperLocale, countryCode } from '../../config/commonConfig';
@@ -20,7 +20,7 @@ const showComps = {
 };
 
 getPaymentMethods({ amount, shopperLocale }).then(async paymentMethodsData => {
-    window.core = await AdyenCheckout({
+    window.core = await BubpCheckout({
         clientKey: process.env.__CLIENT_KEY__,
         countryCode,
         locale: shopperLocale,

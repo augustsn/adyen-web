@@ -36,12 +36,12 @@ describe('IbanInput', () => {
             const wrapper = createWrapper();
             wrapper.find('IbanInput').instance().setError('iban', ibanErrorObj);
             wrapper.update();
-            expect(wrapper.find('.adyen-checkout__field--error')).toHaveLength(1);
+            expect(wrapper.find('.bubp-checkout__field--error')).toHaveLength(1);
             expect(wrapper.find('input[name="ibanNumber"]').prop('aria-invalid')).toBe(true);
 
             wrapper.find('IbanInput').instance().setError('iban', false);
             wrapper.update();
-            expect(wrapper.find('.adyen-checkout__field--error')).toHaveLength(0);
+            expect(wrapper.find('.bubp-checkout__field--error')).toHaveLength(0);
             expect(wrapper.find('input[name="ibanNumber"]').prop('aria-invalid')).toBe(false);
         });
 
@@ -49,11 +49,11 @@ describe('IbanInput', () => {
             const wrapper = createWrapper();
             wrapper.find('IbanInput').instance().setError('holder', ibanHolderNameErrorObj);
             wrapper.update();
-            expect(wrapper.find('.adyen-checkout__field--error')).toHaveLength(1);
+            expect(wrapper.find('.bubp-checkout__field--error')).toHaveLength(1);
 
             wrapper.find('IbanInput').instance().setError('holder', false);
             wrapper.update();
-            expect(wrapper.find('.adyen-checkout__field--error')).toHaveLength(0);
+            expect(wrapper.find('.bubp-checkout__field--error')).toHaveLength(0);
         });
     });
 
@@ -62,11 +62,11 @@ describe('IbanInput', () => {
             const wrapper = createWrapper();
             wrapper.find('IbanInput').instance().setValid('iban', true);
             wrapper.update();
-            expect(wrapper.find('.adyen-checkout__input--valid')).toHaveLength(1);
+            expect(wrapper.find('.bubp-checkout__input--valid')).toHaveLength(1);
 
             wrapper.find('IbanInput').instance().setValid('iban', false);
             wrapper.update();
-            expect(wrapper.find('.adyen-checkout__field--valid')).toHaveLength(0);
+            expect(wrapper.find('.bubp-checkout__field--valid')).toHaveLength(0);
         });
     });
 

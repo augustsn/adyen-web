@@ -4,7 +4,7 @@ export * from './core/types';
 export * from './types/global-types';
 export { CustomTranslations } from './language/types';
 
-export { default as AdyenCheckoutError } from './core/Errors/AdyenCheckoutError';
+export { default as BubpCheckoutError } from './core/Errors/BubpCheckoutError';
 export { default as UIElement } from './components/internal/UIElement';
 export {
     CardAllValidData,

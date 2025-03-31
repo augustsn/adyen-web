@@ -54,7 +54,7 @@ export default function DragonpayInput(props: DragonpayInputProps) {
     this.showValidation = triggerValidation;
 
     return (
-        <div className="adyen-checkout__dragonpay-input__field">
+        <div className="bubp-checkout__dragonpay-input__field">
             <Field
                 label={i18n.get('shopperEmail')}
                 errorMessage={getErrorMessage(i18n, errors.shopperEmail, i18n.get('shopperEmail'))}
@@ -64,7 +64,7 @@ export default function DragonpayInput(props: DragonpayInputProps) {
                     name={'dragonpay-shopperEmail'}
                     autoCorrect={'off'}
                     value={data.shopperEmail}
-                    className={'adyen-checkout__input--large'}
+                    className={'bubp-checkout__input--large'}
                     spellCheck={false}
                     onInput={handleChangeFor('shopperEmail', 'input')}
                     onBlur={handleChangeFor('shopperEmail', 'blur')}
@@ -77,7 +77,7 @@ export default function DragonpayInput(props: DragonpayInputProps) {
                         items={items}
                         selectedValue={data.issuer}
                         name={'issuer'}
-                        className={'adyen-checkout__dropdown--large adyen-checkout__issuer-list__dropdown'}
+                        className={'bubp-checkout__dropdown--large bubp-checkout__issuer-list__dropdown'}
                         onChange={handleChangeFor('issuer')}
                     />
                 </Field>

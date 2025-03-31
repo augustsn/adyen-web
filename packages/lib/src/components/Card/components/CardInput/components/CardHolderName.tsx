@@ -22,7 +22,7 @@ export default function CardHolderName({
     return (
         <Field
             label={i18n.get('creditCard.holderName')}
-            className={'adyen-checkout__card__holderName'}
+            className={'bubp-checkout__card__holderName'}
             errorMessage={error && i18n.get(CREDITCARD_HOLDER_NAME_INVALID)}
             isValid={!!isValid}
             name={'holderName'}
@@ -32,7 +32,7 @@ export default function CardHolderName({
         >
             <InputText
                 name={'holderName'}
-                className="adyen-checkout__card__holderName__input adyen-checkout__input"
+                className="bubp-checkout__card__holderName__input bubp-checkout__input"
                 placeholder={placeholder}
                 autocomplete={'cc-name'}
                 {...{ value, required, onBlur, onInput, disabled }}

@@ -21,7 +21,7 @@ export default function Roundup(props: RoundupProps) {
                 label={`${i18n.get('donateButton')} ${donationAmount}`}
                 status={status}
             />
-            <span className="adyen-checkout-roundup-description">
+            <span className="bubp-checkout-roundup-description">
                 {i18n.get('donationRoundUpDescription', { values: { donationAmount, originalPaymentAmount } })}
             </span>
         </Fragment>

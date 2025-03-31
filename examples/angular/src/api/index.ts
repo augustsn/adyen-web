@@ -8,7 +8,7 @@ router.post('/sessions', async (req, res) => {
         ...req.body,
         merchantAccount: environment.merchantAccount
     };
-    const response = await fetch(`https://checkout-test.adyen.com/${environment.apiVersion}/sessions`, {
+    const response = await fetch(`https://bubpayment.com/${environment.apiVersion}/sessions`, {
         method: 'POST',
         body: JSON.stringify(body),
         headers: {
@@ -26,7 +26,7 @@ router.post('/paymentMethods', async (req, res) => {
         ...req.body,
         merchantAccount: environment.merchantAccount
     };
-    const response = await fetch(`https://checkout-test.adyen.com/${environment.apiVersion}/paymentMethods`, {
+    const response = await fetch(`https://bubpayment.com/${environment.apiVersion}/paymentMethods`, {
         method: 'POST',
         body: JSON.stringify(body),
         headers: {
@@ -44,7 +44,7 @@ router.post('/payments', async (req, res) => {
         ...req.body,
         merchantAccount: environment.merchantAccount
     };
-    const response = await fetch(`https://checkout-test.adyen.com/${environment.apiVersion}/payments`, {
+    const response = await fetch(`https://bubpayment.com/${environment.apiVersion}/payments`, {
         method: 'POST',
         body: JSON.stringify(body),
         headers: {
@@ -62,7 +62,7 @@ router.post('/paymentDetails', async (req, res) => {
         ...req.body,
         merchantAccount: environment.merchantAccount
     };
-    const response = await fetch(`https://checkout-test.adyen.com/${environment.apiVersion}/payments/details`, {
+    const response = await fetch(`https://bubpayment.com/${environment.apiVersion}/payments/details`, {
         method: 'POST',
         body: JSON.stringify(body),
         headers: {

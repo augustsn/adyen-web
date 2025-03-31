@@ -1,5 +1,5 @@
 import { mount } from 'enzyme';
-import AdyenCheckout from './core';
+import BubpCheckout from './core';
 import { PaymentMethodsResponse } from '../types';
 import { PayPal, Card, Dropin, Redirect } from '../components';
 import { CoreConfiguration } from './types';
@@ -60,7 +60,7 @@ const brandsArray = paymentMethodsResponse.paymentMethods[0].brands;
 describe('Core - tests ensuring props reach components', () => {
     describe('Standalone components', () => {
         test('Test that expected props are propagated to a standalone storedCard ', async () => {
-            const checkout = new AdyenCheckout(coreOptions);
+            const checkout = new BubpCheckout(coreOptions);
             await checkout.initialize();
 
             const component = new Card(checkout, {
@@ -72,7 +72,7 @@ describe('Core - tests ensuring props reach components', () => {
             expect(component.core).toEqual(checkout);
 
             // Props from core.getCorePropsForComponent()
-            expect(component.props.loadingContext).toEqual('https://checkoutshopper-test.adyen.com/checkoutshopper/');
+            expect(component.props.loadingContext).toEqual('https://bubpayment.com/checkout/shopper/');
             expect(component.props.clientKey).toEqual('test_F7_FEKJHF');
             expect(component.props.amount.value).toEqual(19000);
 
@@ -83,7 +83,7 @@ describe('Core - tests ensuring props reach components', () => {
         });
 
         test('Test that expected props are propagated to a standalone Card ', async () => {
-            const checkout = new AdyenCheckout(coreOptions);
+            const checkout = new BubpCheckout(coreOptions);
             await checkout.initialize();
             const component = new Card(checkout, { showInstallmentAmounts: true });
 
@@ -91,7 +91,7 @@ describe('Core - tests ensuring props reach components', () => {
             expect(component.core).toEqual(checkout);
 
             // Props from core.getCorePropsForComponent()
-            expect(component.props.loadingContext).toEqual('https://checkoutshopper-test.adyen.com/checkoutshopper/');
+            expect(component.props.loadingContext).toEqual('https://bubpayment.com/checkout/shopper/');
             expect(component.props.clientKey).toEqual('test_F7_FEKJHF');
             expect(component.props.amount.value).toEqual(19000);
 
@@ -105,7 +105,7 @@ describe('Core - tests ensuring props reach components', () => {
         test('Test that expected props are propagated to a standalone redirect comp created as "redirect" ', async () => {
             const pmObj = paymentMethodsResponse.paymentMethods.find(el => el.type === 'unionpay');
 
-            const checkout = new AdyenCheckout(coreOptions);
+            const checkout = new BubpCheckout(coreOptions);
             await checkout.initialize();
             const component = new Redirect(checkout, { type: 'unionpay', ...pmObj });
 
@@ -121,7 +121,7 @@ describe('Core - tests ensuring props reach components', () => {
         });
 
         test('Test that expected props are propagated to a standalone PayPal', async () => {
-            const checkout = new AdyenCheckout(coreOptions);
+            const checkout = new BubpCheckout(coreOptions);
             await checkout.initialize();
             const component = new PayPal(checkout, { enableMessages: true });
 
@@ -143,7 +143,7 @@ describe('Core - tests ensuring props reach components', () => {
 
     describe('Dropin', () => {
         test('Dropin component receives correct props ', async () => {
-            const checkout = new AdyenCheckout(coreOptions);
+            const checkout = new BubpCheckout(coreOptions);
             await checkout.initialize();
             const dropin = new Dropin(checkout, {
                 showStoredPaymentMethods: false,
@@ -170,7 +170,7 @@ describe('Core - tests ensuring props reach components', () => {
         let checkout;
 
         beforeEach(async () => {
-            checkout = new AdyenCheckout(coreOptions);
+            checkout = new BubpCheckout(coreOptions);
             await checkout.initialize();
             dropin = new Dropin(checkout, {
                 paymentMethodsConfiguration: {

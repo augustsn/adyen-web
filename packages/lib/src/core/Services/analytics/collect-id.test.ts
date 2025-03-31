@@ -121,9 +121,9 @@ test('Should save the checkout-attempt-id in the session storage', async () => {
         containerWidth: 600,
         component: 'scheme'
     };
-    expect(window.sessionStorage.getItem('adyen-checkout__checkout-attempt-id')).toBeNull();
+    expect(window.sessionStorage.getItem('bubp-checkout__checkout-attempt-id')).toBeNull();
     await collectId(configuration)(customEvent);
-    expect(JSON.parse(window.sessionStorage.getItem('adyen-checkout__checkout-attempt-id'))).toMatchObject({ id: 'mockCheckoutAttemptId' });
+    expect(JSON.parse(window.sessionStorage.getItem('bubp-checkout__checkout-attempt-id'))).toMatchObject({ id: 'mockCheckoutAttemptId' });
 });
 
 test('Should reuse the same the checkout-attempt-id in the session storage', async () => {
@@ -138,7 +138,7 @@ test('Should reuse the same the checkout-attempt-id in the session storage', asy
     };
     const log = collectId(configuration);
     await log(customEvent);
-    expect(JSON.parse(window.sessionStorage.getItem('adyen-checkout__checkout-attempt-id'))).toMatchObject({ id: 'mockCheckoutAttemptId' });
+    expect(JSON.parse(window.sessionStorage.getItem('bubp-checkout__checkout-attempt-id'))).toMatchObject({ id: 'mockCheckoutAttemptId' });
     await log(customEvent);
-    expect(JSON.parse(window.sessionStorage.getItem('adyen-checkout__checkout-attempt-id'))).toMatchObject({ id: 'mockCheckoutAttemptId' });
+    expect(JSON.parse(window.sessionStorage.getItem('bubp-checkout__checkout-attempt-id'))).toMatchObject({ id: 'mockCheckoutAttemptId' });
 });

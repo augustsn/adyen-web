@@ -1,6 +1,6 @@
-import { formatGooglePayContactToAdyenAddressFormat } from './utils';
+import { formatGooglePayContactToBubpAddressFormat } from './utils';
 
-describe('formatGooglePayContactToAdyenAddressFormat()', () => {
+describe('formatGooglePayContactToBubpAddressFormat()', () => {
     test('should build the street by merging the addresses and set houseNumberOrName to ZZ', () => {
         const billingContact: google.payments.api.Address = {
             phoneNumber: '+1 650-555-5555',
@@ -15,7 +15,7 @@ describe('formatGooglePayContactToAdyenAddressFormat()', () => {
             administrativeArea: 'CA'
         };
 
-        const billingAddress = formatGooglePayContactToAdyenAddressFormat(billingContact);
+        const billingAddress = formatGooglePayContactToBubpAddressFormat(billingContact);
 
         expect(billingAddress).toStrictEqual({
             postalCode: '94043',
@@ -34,7 +34,7 @@ describe('formatGooglePayContactToAdyenAddressFormat()', () => {
             name: 'Card Holder Name'
         };
 
-        const billingAddress = formatGooglePayContactToAdyenAddressFormat(billingContact);
+        const billingAddress = formatGooglePayContactToBubpAddressFormat(billingContact);
 
         expect(billingAddress).toStrictEqual({
             postalCode: '94043',
@@ -59,7 +59,7 @@ describe('formatGooglePayContactToAdyenAddressFormat()', () => {
             administrativeArea: 'NSW'
         };
 
-        const deliveryAddress = formatGooglePayContactToAdyenAddressFormat(deliveryContact, true);
+        const deliveryAddress = formatGooglePayContactToBubpAddressFormat(deliveryContact, true);
 
         expect(deliveryAddress).toStrictEqual({
             postalCode: '2009',

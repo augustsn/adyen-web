@@ -11,7 +11,7 @@ describe('Bacs Direct Debit', () => {
             modules: { analytics: global.analytics, resources: global.resources },
             i18n: global.i18n,
             onSubmit: onSubmitMock,
-            loadingContext: 'https://checkoutshopper-live.adyen.com/checkoutshopper/'
+            loadingContext: 'https://bubpayment.com/checkout/shopper/'
         });
 
         render(bacs.render());
@@ -24,7 +24,7 @@ describe('Bacs Direct Debit', () => {
         await user.type(accountNameInput, 'David Archer');
         await user.type(accountNumberInput, '40308669');
         await user.type(sortCodeInput, '560036');
-        await user.type(emailInput, 'jon@adyen.com');
+        await user.type(emailInput, 'jon@bubpayment.com');
 
         const consentCheckbox = await screen.findByRole('checkbox', { name: /I agree that the above amount/i, exact: false });
         const accountConsentCheckbox = await screen.findByRole('checkbox', { name: /I confirm the account is in my name/i, exact: false });
@@ -49,7 +49,7 @@ describe('Bacs Direct Debit', () => {
                         holderName: 'David Archer',
                         type: 'directdebit_GB'
                     },
-                    shopperEmail: 'jon@adyen.com',
+                    shopperEmail: 'jon@bubpayment.com',
                     clientStateDataIndicator: true
                 }
             }),
@@ -67,7 +67,7 @@ describe('Bacs Direct Debit', () => {
             modules: { analytics: global.analytics, resources: global.resources },
             i18n: global.i18n,
             onSubmit: onSubmitMock,
-            loadingContext: 'https://checkoutshopper-live.adyen.com/checkoutshopper/'
+            loadingContext: 'https://bubpayment.com/checkout/shopper/'
         });
 
         const { container } = render(bacs.render());
@@ -80,13 +80,13 @@ describe('Bacs Direct Debit', () => {
         await user.type(accountNameInput, 'David Archer');
         await user.type(accountNumberInput, '40308669');
         await user.type(sortCodeInput, '560036');
-        await user.type(emailInput, 'jon@adyen');
+        await user.type(emailInput, 'jon@bubp');
 
         const continueButton = await screen.findByRole('button', { name: 'Continue' });
         await user.click(continueButton);
 
         // eslint-disable-next-line testing-library/no-container,testing-library/no-node-access
-        const [consentCheckboxContainer, accountConsentCheckboxContainer] = container.querySelectorAll('.adyen-checkout__field--consentCheckbox');
+        const [consentCheckboxContainer, accountConsentCheckboxContainer] = container.querySelectorAll('.bubp-checkout__field--consentCheckbox');
         expect(screen.getByText('Enter a valid email address')).toBeInTheDocument();
         expect(within(<HTMLElement>consentCheckboxContainer).getByAltText('Error')).toBeInTheDocument();
         expect(within(<HTMLElement>accountConsentCheckboxContainer).getByAltText('Error')).toBeInTheDocument();
@@ -102,7 +102,7 @@ describe('Bacs Direct Debit', () => {
             modules: { analytics: global.analytics, resources: global.resources },
             i18n: global.i18n,
             onSubmit: onSubmitMock,
-            loadingContext: 'https://checkoutshopper-live.adyen.com/checkoutshopper/'
+            loadingContext: 'https://bubpayment.com/checkout/shopper/'
         });
 
         render(bacs.render());
@@ -115,7 +115,7 @@ describe('Bacs Direct Debit', () => {
         await user.type(accountNameInput, 'David Archer');
         await user.type(accountNumberInput, '40308669');
         await user.type(sortCodeInput, '560036');
-        await user.type(emailInput, 'jon@adyen.com');
+        await user.type(emailInput, 'jon@bubpayment.com');
 
         const consentCheckbox = await screen.findByRole('checkbox', { name: /I agree that the above amount/i, exact: false });
         const accountConsentCheckbox = await screen.findByRole('checkbox', { name: /I confirm the account is in my name/i, exact: false });
@@ -147,7 +147,7 @@ describe('Bacs Direct Debit', () => {
         await user.type(accountNameInput, 'Jonny R.');
         await user.type(accountNumberInput, '89345768');
         await user.type(sortCodeInput, '895302');
-        await user.type(emailInput, 'jonnyr@adyen.com');
+        await user.type(emailInput, 'jonnyr@bubpayment.com');
 
         await user.click(continueButton);
 
@@ -165,7 +165,7 @@ describe('Bacs Direct Debit', () => {
                         holderName: 'Jonny R.',
                         type: 'directdebit_GB'
                     },
-                    shopperEmail: 'jonnyr@adyen.com',
+                    shopperEmail: 'jonnyr@bubpayment.com',
                     clientStateDataIndicator: true
                 }
             }),
@@ -178,7 +178,7 @@ describe('Bacs Direct Debit', () => {
         const bacs = new BacsDD(global.core, {
             modules: { analytics: global.analytics, resources: global.resources },
             i18n: global.i18n,
-            loadingContext: 'https://checkoutshopper-live.adyen.com/checkoutshopper/',
+            loadingContext: 'https://bubpayment.com/checkout/shopper/',
             url: 'https://test.adyen.com/hpp/generateDdi.shtml?pdfFields=%2BjXS7Uo2RhBavkz'
         });
 

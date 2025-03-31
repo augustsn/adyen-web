@@ -2,7 +2,7 @@ import { ISrcInitiator } from './AbstractSrcInitiator';
 import VisaSdk from './VisaSdk';
 import MastercardSdk from './MastercardSdk';
 import { CustomSdkConfiguration } from './types';
-import AdyenCheckoutError from '../../../../../core/Errors/AdyenCheckoutError';
+import BubpCheckoutError from '../../../../../core/Errors/BubpCheckoutError';
 import { isFulfilled, isRejected } from '../../../../../utils/promise-util';
 
 const sdkMap: Record<string, typeof VisaSdk | typeof MastercardSdk | null> = {
@@ -32,7 +32,7 @@ class SrcSdkLoader implements ISrcSdkLoader {
 
     public async load(environment: string): Promise<ISrcInitiator[]> {
         if (!this.schemes || this.schemes.length === 0) {
-            throw new AdyenCheckoutError('ERROR', 'ClickToPay -> SrcSdkLoader: There are no schemes set to be loaded');
+            throw new BubpCheckoutError('ERROR', 'ClickToPay -> SrcSdkLoader: There are no schemes set to be loaded');
         }
 
         return new Promise((resolve, reject) => {
@@ -42,7 +42,7 @@ class SrcSdkLoader implements ISrcSdkLoader {
             void Promise.allSettled(loadScriptPromises).then(loadScriptResponses => {
                 if (loadScriptResponses.every(isRejected)) {
                     reject(
-                        new AdyenCheckoutError('ERROR', `ClickToPay -> SrcSdkLoader # Unable to load network schemes: ${this.schemes.toString()}`)
+                        new BubpCheckoutError('ERROR', `ClickToPay -> SrcSdkLoader # Unable to load network schemes: ${this.schemes.toString()}`)
                     );
                 }
 

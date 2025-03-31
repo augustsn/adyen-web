@@ -2,7 +2,7 @@ import usePhonePrefixes from './usePhonePrefixes';
 import getDataset from '../../../core/Services/get-dataset';
 import { renderHook } from '@testing-library/preact-hooks';
 import { waitFor } from '@testing-library/preact';
-import AdyenCheckoutError from '../../../core/Errors/AdyenCheckoutError';
+import BubpCheckoutError from '../../../core/Errors/BubpCheckoutError';
 
 jest.mock('../../../core/Services/get-dataset');
 
@@ -49,6 +49,6 @@ describe('usePhonePrefixes', () => {
 
         const { result } = renderHook(() => usePhonePrefixes(props));
         await waitFor(() => expect(result.current).toEqual({ loadingStatus: 'ready', phonePrefixes: [] }));
-        expect(props.handleError).toHaveBeenCalledWith(new AdyenCheckoutError('ERROR'));
+        expect(props.handleError).toHaveBeenCalledWith(new BubpCheckoutError('ERROR'));
     });
 });

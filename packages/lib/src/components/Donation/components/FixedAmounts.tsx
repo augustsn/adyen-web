@@ -19,7 +19,7 @@ export default function FixedAmounts(props: FixedAmountsProps) {
 
     return (
         <Fragment>
-            <div className="adyen-checkout__amounts">
+            <div className="bubp-checkout__amounts">
                 <ButtonGroup
                     options={values.map(value => ({
                         value,

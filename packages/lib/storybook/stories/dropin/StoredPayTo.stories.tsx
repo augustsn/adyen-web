@@ -1,6 +1,6 @@
 import { MetaConfiguration, PaymentMethodStoryProps } from '../types';
 import { DropinConfiguration } from '../../../src/components/Dropin/types';
-import { AdyenCheckout, components, Dropin as DropinComponent } from '../../../src';
+import { BubpCheckout, components, Dropin as DropinComponent } from '../../../src';
 import { Checkout } from '../Checkout';
 import { ComponentContainer } from '../ComponentContainer';
 
@@ -47,7 +47,7 @@ export const PayToWithMandate = {
     render: ({ componentConfiguration, ...checkoutConfig }: PaymentMethodStoryProps<DropinConfiguration>) => {
         const { Dropin, ...Components } = components;
         const Classes = Object.keys(Components).map(key => Components[key]);
-        AdyenCheckout.register(...Classes);
+        BubpCheckout.register(...Classes);
 
         return (
             <Checkout checkoutConfig={checkoutConfig}>
@@ -74,7 +74,7 @@ export const StoredPayToMandate = {
     render: ({ componentConfiguration, ...checkoutConfig }: PaymentMethodStoryProps<DropinConfiguration>) => {
         const { Dropin, ...Components } = components;
         const Classes = Object.keys(Components).map(key => Components[key]);
-        AdyenCheckout.register(...Classes);
+        BubpCheckout.register(...Classes);
 
         return (
             <Checkout checkoutConfig={checkoutConfig}>

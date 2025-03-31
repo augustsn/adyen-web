@@ -1,6 +1,6 @@
 import { h, RefObject } from 'preact';
 import { useCallback, useEffect, useRef, useState } from 'preact/hooks';
-import AdyenCheckoutError from '../../../core/Errors/AdyenCheckoutError';
+import BubpCheckoutError from '../../../core/Errors/BubpCheckoutError';
 import Spinner from '../../internal/Spinner';
 import { CashAppPayEvents, ICashAppService } from '../services/types';
 import { CashAppPayEventData } from '../types';
@@ -14,7 +14,7 @@ interface CashAppComponentProps {
     onClick(): void;
     onChangeStoreDetails(data: any): void;
     onAuthorize(payEventData: CashAppPayEventData): void;
-    onError(error: AdyenCheckoutError): void;
+    onError(error: BubpCheckoutError): void;
     ref(ref: RefObject<typeof CashAppComponent>): void;
 }
 
@@ -39,10 +39,10 @@ export function CashAppComponent({
 
             subscriptions.current = [
                 cashAppService.subscribeToEvent(CashAppPayEvents.CustomerDismissed, () => {
-                    onError(new AdyenCheckoutError('CANCEL', 'Customer dismissed the modal'));
+                    onError(new BubpCheckoutError('CANCEL', 'Customer dismissed the modal'));
                 }),
                 cashAppService.subscribeToEvent(CashAppPayEvents.CustomerRequestDeclined, async () => {
-                    onError(new AdyenCheckoutError('ERROR', 'Payment declined by CashAppPay'));
+                    onError(new BubpCheckoutError('ERROR', 'Payment declined by CashAppPay'));
                     await cashAppService.restart();
                     await cashAppService.renderButton(cashAppRef.current);
                 }),
@@ -58,7 +58,7 @@ export function CashAppComponent({
                     onAuthorize(cashAppPaymentData);
                 }),
                 cashAppService.subscribeToEvent(CashAppPayEvents.CustomerRequestFailed, () => {
-                    onError(new AdyenCheckoutError('ERROR', 'Customer request failed'));
+                    onError(new BubpCheckoutError('ERROR', 'Customer request failed'));
                 })
             ];
 
@@ -66,8 +66,8 @@ export function CashAppComponent({
 
             setStatus('ready');
         } catch (error) {
-            if (error instanceof AdyenCheckoutError) onError(error);
-            else onError(new AdyenCheckoutError('ERROR', 'Error when initializing CashAppPay', { cause: error }));
+            if (error instanceof BubpCheckoutError) onError(error);
+            else onError(new BubpCheckoutError('ERROR', 'Error when initializing CashAppPay', { cause: error }));
         }
     }, [cashAppService, onError, onAuthorize]);
 
@@ -87,12 +87,12 @@ export function CashAppComponent({
     }, [cashAppService, initializeCashAppSdk]);
 
     return (
-        <div className="adyen-checkout__cashapp" aria-live="polite" aria-busy={status === 'loading'}>
+        <div className="bubp-checkout__cashapp" aria-live="polite" aria-busy={status === 'loading'}>
             {status === 'loading' && <Spinner />}
             {status !== 'loading' && enableStoreDetails && <StoreDetails storeDetails={storePaymentMethod} onChange={setStorePaymentMethod} />}
 
             {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions,jsx-a11y/click-events-have-key-events */}
-            <div onClick={onClick} className={'adyen-checkout__cashapp-button'} ref={cashAppRef}></div>
+            <div onClick={onClick} className={'bubp-checkout__cashapp-button'} ref={cashAppRef}></div>
         </div>
     );
 }

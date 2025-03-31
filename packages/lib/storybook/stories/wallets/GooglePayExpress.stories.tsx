@@ -112,7 +112,7 @@ function getTransactionInfo(): google.payments.api.TransactionInfo {
     };
 }
 
-function convertFloatAmountToAdyenAmount(totalPrice: string): number {
+function convertFloatAmountToBubpAmount(totalPrice: string): number {
     if (totalPrice.includes('.')) {
         return Number(totalPrice.replace('.', ''));
     }
@@ -134,7 +134,7 @@ function calculateNewTransactionInfo(countryCode: string, selectedShippingOption
     newTransactionInfo.displayItems.forEach(displayItem => (totalPrice += parseFloat(displayItem.price)));
     newTransactionInfo.totalPrice = totalPrice.toString();
 
-    finalAmount = convertFloatAmountToAdyenAmount(totalPrice.toString());
+    finalAmount = convertFloatAmountToBubpAmount(totalPrice.toString());
 
     return newTransactionInfo;
 }

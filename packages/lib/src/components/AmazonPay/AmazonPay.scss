@@ -1,10 +1,10 @@
 @import 'styles/variable-generator';
 
-.adyen-checkout__amazonpay__button {
+.bubp-checkout__amazonpay__button {
     margin: auto;
 }
 
-.adyen-checkout__amazonpay .adyen-checkout__button--ghost {
+.bubp-checkout__amazonpay .bubp-checkout__button--ghost {
     display: block;
     margin: token(spacer-040) auto 0;
     width: auto;

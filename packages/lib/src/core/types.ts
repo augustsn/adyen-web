@@ -1,6 +1,6 @@
 import Session from './CheckoutSession';
 import PaymentMethods from './ProcessResponse/PaymentMethods';
-import AdyenCheckoutError from './Errors/AdyenCheckoutError';
+import BubpCheckoutError from './Errors/BubpCheckoutError';
 import UIElement from '../components/internal/UIElement';
 import type { CustomTranslations } from '../language/types';
 import type {
@@ -174,7 +174,7 @@ export interface CoreConfiguration {
     order?: Order;
 
     /**
-     * Add @adyen/web metadata to the window object.
+     * Add @bubp/web metadata to the window object.
      * It helps to identify version number and bundle type in the merchant environment
      *
      * @default true
@@ -202,7 +202,7 @@ export interface CoreConfiguration {
     /**
      * Called when the shopper selects the Pay button (it only works on Sessions flow)
      *
-     * Allows you to add details which will be sent in the payment request to Adyen's servers.
+     * Allows you to add details which will be sent in the payment request to BUB Payment's servers.
      * For example, you can add shopper details like 'billingAddress', 'deliveryAddress', 'shopperEmail' or 'shopperName'
      *
      * @param state
@@ -273,7 +273,7 @@ export interface CoreConfiguration {
      * @param error
      * @param component
      */
-    onError?(error: AdyenCheckoutError, component?: UIElement): void;
+    onError?(error: BubpCheckoutError, component?: UIElement): void;
 
     onBalanceCheck?: onBalanceCheckCallbackType;
 

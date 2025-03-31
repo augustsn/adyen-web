@@ -1,5 +1,5 @@
-import { AdyenCheckout, Giftcard, MealVoucherFR, Card, fr_FR } from '@adyen/adyen-web';
-import '@adyen/adyen-web/styles/adyen.css';
+import { BubpCheckout, Giftcard, MealVoucherFR, Card, fr_FR } from '@bubp/web';
+import '@bubp/web/styles/bubp.css';
 import { handleChange, handleOnPaymentCompleted, handleOnPaymentFailed, handleSubmit } from '../../handlers';
 import { amount, shopperLocale, countryCode, returnUrl, shopperReference } from '../../config/commonConfig';
 import { checkBalance, createOrder, createSession } from '../../services';
@@ -8,7 +8,7 @@ import '../../utils';
 import '../../style.scss';
 
 (async () => {
-    window.checkout = await AdyenCheckout({
+    window.checkout = await BubpCheckout({
         clientKey: process.env.__CLIENT_KEY__,
         locale: shopperLocale,
         countryCode,
@@ -56,7 +56,7 @@ import '../../style.scss';
         countryCode
     });
 
-    const sessionCheckout = await AdyenCheckout({
+    const sessionCheckout = await BubpCheckout({
         environment: process.env.__CLIENT_ENV__,
         clientKey: process.env.__CLIENT_KEY__,
         session,

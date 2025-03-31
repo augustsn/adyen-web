@@ -15,12 +15,12 @@ describe('Fieldset', () => {
     test('shows a label', () => {
         const label = 'Test ABC';
         const wrapper = getWrapper({ label });
-        expect(wrapper.find('.adyen-checkout__fieldset__title')).toHaveLength(1);
-        expect(wrapper.find('.adyen-checkout__fieldset__title').text()).toEqual(label);
+        expect(wrapper.find('.bubp-checkout__fieldset__title')).toHaveLength(1);
+        expect(wrapper.find('.bubp-checkout__fieldset__title').text()).toEqual(label);
     });
 
     test('shows no label', () => {
         const wrapper = getWrapper({});
-        expect(wrapper.find('.adyen-checkout__fieldset__title')).toHaveLength(0);
+        expect(wrapper.find('.bubp-checkout__fieldset__title')).toHaveLength(0);
     });
 });

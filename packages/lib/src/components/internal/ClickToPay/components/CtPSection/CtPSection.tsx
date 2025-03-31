@@ -16,10 +16,10 @@ const CtPSection = ({ children, onEnterKeyPress }: CtPSectionProps): h.JSX.Eleme
     return (
         // eslint-disable-next-line jsx-a11y/no-static-element-interactions
         <div
-            className={classnames('adyen-checkout-ctp__section', { 'adyen-checkout-ctp__section--standalone': isStandaloneComponent })}
+            className={classnames('bubp-checkout-ctp__section', { 'bubp-checkout-ctp__section--standalone': isStandaloneComponent })}
             onKeyPress={onEnterKeyPress}
         >
-            <div className="adyen-checkout-ctp__section-brand">
+            <div className="bubp-checkout-ctp__section-brand">
                 <CtPBrand />
                 <CtPLogoutLink />
             </div>
@@ -30,12 +30,12 @@ const CtPSection = ({ children, onEnterKeyPress }: CtPSectionProps): h.JSX.Eleme
 };
 
 const Title = ({ endAdornment, children }: { endAdornment?; children }) => (
-    <div className="adyen-checkout-ctp__section-header">
-        <h1 className="adyen-checkout-ctp__section-header-title">{children}</h1>
-        {endAdornment && <span className="adyen-checkout-ctp__section-header-adornment">{endAdornment}</span>}
+    <div className="bubp-checkout-ctp__section-header">
+        <h1 className="bubp-checkout-ctp__section-header-title">{children}</h1>
+        {endAdornment && <span className="bubp-checkout-ctp__section-header-adornment">{endAdornment}</span>}
     </div>
 );
-const Text = ({ children }: { children }) => <p className="adyen-checkout-ctp__section-text">{children}</p>;
+const Text = ({ children }: { children }) => <p className="bubp-checkout-ctp__section-text">{children}</p>;
 
 CtPSection.Title = Title;
 CtPSection.Text = Text;

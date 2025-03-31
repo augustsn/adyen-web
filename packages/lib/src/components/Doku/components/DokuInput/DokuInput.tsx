@@ -29,7 +29,7 @@ export default function DokuInput(props) {
     dokuRef.current.setStatus = setStatus;
 
     return (
-        <div className="adyen-checkout__doku-input__field">
+        <div className="bubp-checkout__doku-input__field">
             <FormInstruction />
 
             <PersonalDetails

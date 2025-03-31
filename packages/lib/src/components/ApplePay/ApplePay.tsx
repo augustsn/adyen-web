@@ -6,14 +6,14 @@ import base64 from '../../utils/base64';
 import defaultProps from './defaultProps';
 import { httpPost } from '../../core/Services/http';
 import { preparePaymentRequest } from './utils/payment-request';
-import AdyenCheckoutError from '../../core/Errors/AdyenCheckoutError';
+import BubpCheckoutError from '../../core/Errors/BubpCheckoutError';
 import { DecodeObject } from '../../types/global-types';
 import { TxVariants } from '../tx-variants';
 import { sanitizeResponse, verifyPaymentDidNotFail } from '../internal/UIElement/utils';
 import { ANALYTICS_INSTANT_PAYMENT_BUTTON, ANALYTICS_SELECTED_STR } from '../../core/Analytics/constants';
 import { resolveSupportedVersion } from './utils/resolve-supported-version';
-import { formatApplePayContactToAdyenAddressFormat } from './utils/format-applepay-contact-to-adyen-format';
-import { mapBrands } from './utils/map-adyen-brands-to-applepay-brands';
+import { formatApplePayContactToBubpAddressFormat } from './utils/format-applepay-contact-to-bubp-format';
+import { mapBrands } from './utils/map-bubp-brands-to-applepay-brands';
 import ApplePaySdkLoader from './services/ApplePaySdkLoader';
 import { detectInIframe } from '../../utils/detectInIframe';
 
@@ -38,7 +38,7 @@ class ApplePayElement extends UIElement<ApplePayConfiguration> {
         const { isExpress, onShippingContactSelected, onShippingMethodSelected } = this.props;
 
         if (isExpress === false && (onShippingContactSelected || onShippingMethodSelected)) {
-            throw new AdyenCheckoutError(
+            throw new BubpCheckoutError(
                 'IMPLEMENTATION_ERROR',
                 'ApplePay - You must set "isExpress" flag to "true" in order to use "onShippingContactSelected" and/or "onShippingMethodSelected" callbacks'
             );
@@ -132,7 +132,7 @@ class ApplePayElement extends UIElement<ApplePayConfiguration> {
             await this.sdkLoader.isSdkLoaded();
             return await ApplePaySession?.applePayCapabilities(identifier);
         } catch (error) {
-            throw new AdyenCheckoutError('ERROR', 'Apple Pay: Error when requesting applePayCapabilities()', { cause: error });
+            throw new BubpCheckoutError('ERROR', 'Apple Pay: Error when requesting applePayCapabilities()', { cause: error });
         }
     }
 
@@ -141,7 +141,7 @@ class ApplePayElement extends UIElement<ApplePayConfiguration> {
      */
     public override async isAvailable(): Promise<void> {
         if (window.location.protocol !== 'https:') {
-            return Promise.reject(new AdyenCheckoutError('IMPLEMENTATION_ERROR', 'Trying to start an Apple Pay session from an insecure document'));
+            return Promise.reject(new BubpCheckoutError('IMPLEMENTATION_ERROR', 'Trying to start an Apple Pay session from an insecure document'));
         }
 
         try {
@@ -151,9 +151,9 @@ class ApplePayElement extends UIElement<ApplePayConfiguration> {
                 return Promise.resolve();
             }
 
-            return Promise.reject(new AdyenCheckoutError('ERROR', 'Apple Pay is not available on this device'));
+            return Promise.reject(new BubpCheckoutError('ERROR', 'Apple Pay is not available on this device'));
         } catch (error) {
-            return Promise.reject(new AdyenCheckoutError('ERROR', 'Apple Pay SDK failed to load', { cause: error }));
+            return Promise.reject(new BubpCheckoutError('ERROR', 'Apple Pay SDK failed to load', { cause: error }));
         }
     }
 
@@ -195,21 +195,21 @@ class ApplePayElement extends UIElement<ApplePayConfiguration> {
             version: this.applePayVersionNumber,
             onError: (error: unknown) => {
                 this.handleError(
-                    new AdyenCheckoutError('ERROR', 'ApplePay - Something went wrong on ApplePayService', {
+                    new BubpCheckoutError('ERROR', 'ApplePay - Something went wrong on ApplePayService', {
                         cause: error
                     })
                 );
             },
             onCancel: event => {
-                this.handleError(new AdyenCheckoutError('CANCEL', 'ApplePay UI dismissed', { cause: event }));
+                this.handleError(new BubpCheckoutError('CANCEL', 'ApplePay UI dismissed', { cause: event }));
             },
             onPaymentMethodSelected,
             onShippingMethodSelected,
             onShippingContactSelected,
             onValidateMerchant: onValidateMerchant || this.validateMerchant,
             onPaymentAuthorized: (resolve, reject, event) => {
-                const billingAddress = formatApplePayContactToAdyenAddressFormat(event.payment.billingContact);
-                const deliveryAddress = formatApplePayContactToAdyenAddressFormat(event.payment.shippingContact, true);
+                const billingAddress = formatApplePayContactToBubpAddressFormat(event.payment.billingContact);
+                const deliveryAddress = formatApplePayContactToBubpAddressFormat(event.payment.shippingContact, true);
 
                 this.setState({
                     applePayToken: btoa(JSON.stringify(event.payment.token.paymentData)),

@@ -148,8 +148,8 @@ export const WithClickToPay: CardStory = {
     args: {
         componentConfiguration: {
             clickToPayConfiguration: {
-                shopperEmail: 'gui.ctp@adyen.com',
-                merchantDisplayName: 'Adyen Merchant Name'
+                shopperEmail: 'gui.ctp@bubpayment.com',
+                merchantDisplayName: 'BUB Payment Merchant Name'
             }
         }
     }

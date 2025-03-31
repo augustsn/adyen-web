@@ -18,11 +18,11 @@ export const OrderPaymentMethods = ({ order, orderStatus, onOrderCancel, brandLo
 
     return (
         <div>
-            <ul className={'adyen-checkout__order-payment-methods-list'}>
+            <ul className={'bubp-checkout__order-payment-methods-list'}>
                 {orderStatus?.paymentMethods?.map((orderPaymentMethod, index) => (
-                    <li key={`${orderPaymentMethod.type}-${index}`} className="adyen-checkout__order-payment-method">
-                        <div className="adyen-checkout__order-payment-method__header">
-                            <div className="adyen-checkout__payment-method__header__title">
+                    <li key={`${orderPaymentMethod.type}-${index}`} className="bubp-checkout__order-payment-method">
+                        <div className="bubp-checkout__order-payment-method__header">
+                            <div className="bubp-checkout__payment-method__header__title">
                                 <PaymentMethodIcon
                                     altDescription={orderPaymentMethod.name}
                                     type={orderPaymentMethod.type}
@@ -34,7 +34,7 @@ export const OrderPaymentMethods = ({ order, orderStatus, onOrderCancel, brandLo
                             {onOrderCancel && (
                                 <button
                                     type="button"
-                                    className="adyen-checkout__button adyen-checkout__button--inline adyen-checkout__button--link"
+                                    className="bubp-checkout__button bubp-checkout__button--inline bubp-checkout__button--link"
                                     onClick={() => {
                                         onOrderCancel({ order });
                                     }}
@@ -43,10 +43,10 @@ export const OrderPaymentMethods = ({ order, orderStatus, onOrderCancel, brandLo
                                 </button>
                             )}
                         </div>
-                        <div className="adyen-checkout__order-payment-method__details">
-                            <div className="adyen-checkout__order-payment-method__deducted-amount">
-                                <div className="adyen-checkout__order-payment-method__deducted-amount__label">{i18n.get('deductedBalance')}</div>
-                                <div className="adyen-checkout__order-payment-method__deducted-amount__value">
+                        <div className="bubp-checkout__order-payment-method__details">
+                            <div className="bubp-checkout__order-payment-method__deducted-amount">
+                                <div className="bubp-checkout__order-payment-method__deducted-amount__label">{i18n.get('deductedBalance')}</div>
+                                <div className="bubp-checkout__order-payment-method__deducted-amount__value">
                                     {i18n.amount(orderPaymentMethod.amount.value, orderPaymentMethod.amount.currency)}
                                 </div>
                             </div>
@@ -56,7 +56,7 @@ export const OrderPaymentMethods = ({ order, orderStatus, onOrderCancel, brandLo
             </ul>
 
             {orderStatus.remainingAmount && (
-                <div className="adyen-checkout__order-remaining-amount">
+                <div className="bubp-checkout__order-remaining-amount">
                     {i18n.get('partialPayment.warning')}{' '}
                     <strong>{i18n.amount(orderStatus.remainingAmount.value, orderStatus.remainingAmount.currency)}</strong>
                 </div>

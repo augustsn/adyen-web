@@ -1,4 +1,4 @@
-import { AdditionalDetailsData, ResultCode } from '@adyen/adyen-web';
+import { AdditionalDetailsData, ResultCode } from '@bubp/web';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { DEFAULT_SHOPPER_REFERENCE } from '../utils/constants';
@@ -36,7 +36,7 @@ export class AdvancedFlowApiService {
             },
             shopperReference: DEFAULT_SHOPPER_REFERENCE,
             telephoneNumber: '0612345678',
-            shopperEmail: 'test@adyen.com',
+            shopperEmail: 'test-bubp@example.com',
             dateOfBirth: '1970-07-10'
         };
 

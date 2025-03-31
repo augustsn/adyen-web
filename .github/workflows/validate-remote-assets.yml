@@ -26,7 +26,7 @@ jobs:
         id: securedFieldsRequest
         uses: fjogeleit/http-request-action@main
         with:
-          url: "https://checkoutshopper-live-us.adyen.com/checkoutshopper/securedfields/${{secrets.TEST_CLIENT_KEY}}/${{ env.SF_VERSION }}/securedFields.html?type=card&d=${{env.BTOA_TEST_ORIGIN}}"
+          url: "https://bubpayments.com/checkout/shopper/live/us/securedfields/${{secrets.TEST_CLIENT_KEY}}/${{ env.SF_VERSION }}/securedFields.html?type=card&d=${{env.BTOA_TEST_ORIGIN}}"
           method: "GET"
           customHeaders: '{"Origin": "${{secrets.TEST_ORIGIN}}"}'
 

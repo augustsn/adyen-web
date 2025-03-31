@@ -64,9 +64,9 @@ function SegmentedControl<T>({ classNameModifiers = [], selectedValue, disabled 
     return (
         <div
             className={cx(
-                'adyen-checkout__segmented-control',
-                { 'adyen-checkout__segmented-control--disabled': disabled },
-                ...classNameModifiers.map(modifier => `adyen-checkout__segmented-control--${modifier}`)
+                'bubp-checkout__segmented-control',
+                { 'bubp-checkout__segmented-control--disabled': disabled },
+                ...classNameModifiers.map(modifier => `bubp-checkout__segmented-control--${modifier}`)
             )}
             role="group"
         >
@@ -75,15 +75,15 @@ function SegmentedControl<T>({ classNameModifiers = [], selectedValue, disabled 
                     disabled={disabled}
                     key={value}
                     onClick={(event: MouseEvent) => onChange(value, event)}
-                    className={cx('adyen-checkout__segmented-control-segment', {
-                        'adyen-checkout__segmented-control-segment--selected': selectedValue === value
+                    className={cx('bubp-checkout__segmented-control-segment', {
+                        'bubp-checkout__segmented-control-segment--selected': selectedValue === value
                     })}
                     aria-controls={controls}
                     aria-expanded={selectedValue === value}
                     type="button"
                     {...htmlProps}
                 >
-                    {selectedValue === value && <span className="adyen-checkout-checkmark"></span>}
+                    {selectedValue === value && <span className="bubp-checkout-checkmark"></span>}
                     {label}
                 </button>
             ))}

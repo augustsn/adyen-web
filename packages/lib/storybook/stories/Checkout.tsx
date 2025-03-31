@@ -11,13 +11,13 @@ interface ICheckout {
 }
 
 export const Checkout = ({ children, checkoutConfig }: ICheckout) => {
-    const [adyenCheckout, setAdyenCheckout] = useState<ICore>();
+    const [bubpCheckout, setBubpCheckout] = useState<ICore>();
     const [errorMessage, setErrorMessage] = useState<string>();
 
     useEffect(() => {
         createCheckout(checkoutConfig)
             .then(checkout => {
-                setAdyenCheckout(checkout);
+                setBubpCheckout(checkout);
             })
             .catch(e => {
                 console.error(e);
@@ -28,7 +28,7 @@ export const Checkout = ({ children, checkoutConfig }: ICheckout) => {
     return (
         <>
             {errorMessage && <div>{errorMessage}</div>}
-            {adyenCheckout ? children(adyenCheckout) : <Spinner />}
+            {bubpCheckout ? children(bubpCheckout) : <Spinner />}
         </>
     );
 };

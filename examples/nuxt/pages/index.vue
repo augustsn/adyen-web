@@ -1,7 +1,7 @@
 <template>
 
     <Head>
-        <Title>@adyen/adyen-web + Nuxt3</Title>
+        <Title>@bubp/web + Nuxt3</Title>
     </Head>
     <div>
         <ModeSwitcher :selectedValue="selectedMode" @click="handleClick" />

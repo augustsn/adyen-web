@@ -15,7 +15,7 @@ class IssuerList extends Base {
 
     constructor(
         public readonly page: Page,
-        rootElementSelector: string = '.adyen-checkout__issuer-list'
+        rootElementSelector: string = '.bubp-checkout__issuer-list'
     ) {
         super(page);
         this.rootElement = this.page.locator(rootElementSelector);

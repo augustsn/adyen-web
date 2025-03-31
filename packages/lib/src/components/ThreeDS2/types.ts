@@ -1,7 +1,7 @@
 import UIElement from '../internal/UIElement';
 import { ActionHandledReturnObject, AnalyticsModule } from '../../types/global-types';
 import Language from '../../language';
-import AdyenCheckoutError from '../../core/Errors/AdyenCheckoutError';
+import BubpCheckoutError from '../../core/Errors/BubpCheckoutError';
 import { Analytics3DS2Errors } from '../../core/Analytics/constants';
 import { UIElementProps } from '../internal/UIElement/types';
 
@@ -13,7 +13,7 @@ interface ThreeDS2Configuration extends UIElementProps {
     modules?: { analytics: AnalyticsModule };
     notificationURL?: string;
     onActionHandled?: (rtnObj: ActionHandledReturnObject) => void;
-    onError?: (error: AdyenCheckoutError, element?: UIElement) => void;
+    onError?: (error: BubpCheckoutError, element?: UIElement) => void;
     paymentData?: string;
     token?: string;
     type?: string;

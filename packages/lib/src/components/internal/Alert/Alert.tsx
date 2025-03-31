@@ -14,8 +14,8 @@ interface AlertProps {
 
 export default function Alert({ children, classNames = [], type = 'error', icon }: AlertProps) {
     return (
-        <div className={cx('adyen-checkout__alert-message', `adyen-checkout__alert-message--${type}`, classNames)}>
-            {icon && <Icon className={'adyen-checkout__alert-message__icon'} type={icon} />}
+        <div className={cx('bubp-checkout__alert-message', `bubp-checkout__alert-message--${type}`, classNames)}>
+            {icon && <Icon className={'bubp-checkout__alert-message__icon'} type={icon} />}
             {children}
         </div>
     );

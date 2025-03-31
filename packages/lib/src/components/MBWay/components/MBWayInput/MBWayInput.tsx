@@ -26,7 +26,7 @@ function MBWayInput(props: MBWayInputProps) {
 
     return (
         <LoadingWrapper status={prefixLoadingStatus}>
-            <div className="adyen-checkout__mb-way">
+            <div className="bubp-checkout__mb-way">
                 <PhoneInputForm
                     setComponentRef={props.setComponentRef}
                     {...props}

@@ -100,7 +100,7 @@ const CtPOneTimePasswordInput = (props: CtPOneTimePasswordInputProps): h.JSX.Ele
     }, [data, valid, errors]);
 
     return (
-        <div className={'adyen-checkout-ctp__otp-field-wrapper'}>
+        <div className={'bubp-checkout-ctp__otp-field-wrapper'}>
             <Field
                 name="oneTimePassword"
                 label={i18n.get('ctp.otp.fieldLabel')}
@@ -121,7 +121,7 @@ const CtPOneTimePasswordInput = (props: CtPOneTimePasswordInputProps): h.JSX.Ele
                     }}
                 />
             </Field>
-            <div className={'adyen-checkout-ctp__otp-resend-code-wrapper'}>
+            <div className={'bubp-checkout-ctp__otp-resend-code-wrapper'}>
                 <CtPResendOtpLink disabled={props.isValidatingOtp} onError={handleOnResendOtpError} onResendCode={handleOnResendOtp} />
             </div>
         </div>

@@ -1,4 +1,4 @@
-import { Dropin as DropinComponent, AdyenCheckout, components } from '../../../src';
+import { Dropin as DropinComponent, BubpCheckout, components } from '../../../src';
 import { MetaConfiguration, PaymentMethodStoryProps, StoryConfiguration } from '../types';
 import { ComponentContainer } from '../ComponentContainer';
 import { DropinConfiguration } from '../../../src/components/Dropin/types';
@@ -43,7 +43,7 @@ export const Auto: DropinStory = {
         // Register all Components
         const { Dropin, ...Components } = components;
         const Classes = Object.keys(Components).map(key => Components[key]);
-        AdyenCheckout.register(...Classes);
+        BubpCheckout.register(...Classes);
 
         return (
             <Checkout checkoutConfig={checkoutConfig}>
@@ -58,7 +58,7 @@ export const StyleCustomization: DropinStory = {
         // Register all Components
         const { Dropin, ...Components } = components;
         const Classes = Object.keys(Components).map(key => Components[key]);
-        AdyenCheckout.register(...Classes);
+        BubpCheckout.register(...Classes);
 
         return (
             <div className={'dropin-customization'}>

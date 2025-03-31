@@ -1,5 +1,5 @@
-import { AdyenCheckout, Dropin } from '@adyen/adyen-web/auto';
-import '@adyen/adyen-web/styles/adyen.css';
+import { BubpCheckout, Dropin } from '@bubp/web/auto';
+import '@bubp/web/styles/bubp.css';
 import { createSession } from '../../services';
 import { amount, shopperLocale, shopperReference, countryCode, returnUrl } from '../../config/commonConfig';
 import { handleOnPaymentCompleted, handleOnPaymentFailed } from '../../handlers';
@@ -12,11 +12,11 @@ export async function initSession() {
         shopperLocale,
         shopperReference,
         telephoneNumber: '+611223344',
-        shopperEmail: 'shopper.ctp1@adyen.com',
+        shopperEmail: 'shopper.ctp1@bubpayment.com',
         countryCode
     });
 
-    const checkout = await AdyenCheckout({
+    const checkout = await BubpCheckout({
         environment: process.env.__CLIENT_ENV__,
         clientKey: process.env.__CLIENT_KEY__,
         session,

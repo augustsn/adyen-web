@@ -29,7 +29,7 @@ test('should set CTP to primary payment method if shopper interacts with the log
     const { rerender } = customRender(<CtPLogin />, contextProps);
 
     let button = await screen.findByRole('button', { name: 'Continue' });
-    expect(button).toHaveClass('adyen-checkout__button--secondary');
+    expect(button).toHaveClass('bubp-checkout__button--secondary');
 
     const input = await screen.findByLabelText('Email');
 
@@ -41,7 +41,7 @@ test('should set CTP to primary payment method if shopper interacts with the log
     expect(contextProps.setIsCtpPrimaryPaymentMethod).toHaveBeenCalledWith(true);
 
     button = await screen.findByRole('button', { name: 'Continue' });
-    expect(button).not.toHaveClass('adyen-checkout__button--secondary');
+    expect(button).not.toHaveClass('bubp-checkout__button--secondary');
 });
 
 test('should not start the user login if the email is invalid', async () => {
@@ -67,7 +67,7 @@ test('should not start the user login if the email is invalid', async () => {
     expect(contextProps.startIdentityValidation).toHaveBeenCalledTimes(0);
     expect(input).toBeInvalid();
     expect(await screen.findByText('Format not supported')).toBeInTheDocument();
-    expect(button).not.toHaveClass('adyen-checkout__button--loading');
+    expect(button).not.toHaveClass('bubp-checkout__button--loading');
 });
 
 test('should display not found if the email is not registered', async () => {
@@ -92,7 +92,7 @@ test('should display not found if the email is not registered', async () => {
     expect(contextProps.startIdentityValidation).toHaveBeenCalledTimes(0);
     expect(input).toBeInvalid();
     expect(await screen.findByText('No account found, enter a valid email or continue using manual card entry')).toBeInTheDocument();
-    expect(button).not.toHaveClass('adyen-checkout__button--loading');
+    expect(button).not.toHaveClass('bubp-checkout__button--loading');
 });
 
 test('should start the identity validation if the user is enrolled', async () => {
@@ -115,5 +115,5 @@ test('should start the identity validation if the user is enrolled', async () =>
     await user.click(button);
 
     expect(contextProps.startIdentityValidation).toHaveBeenCalledTimes(1);
-    expect(button).toHaveClass('adyen-checkout__button--loading');
+    expect(button).toHaveClass('bubp-checkout__button--loading');
 });

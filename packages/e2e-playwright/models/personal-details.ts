@@ -14,7 +14,7 @@ class PersonalDetails {
             socialSecurityLabel?: string;
         }
     ) {
-        this.rootElementSelector = options.rootElementSelector || '.adyen-checkout__fieldset--personalDetails';
+        this.rootElementSelector = options.rootElementSelector || '.bubp-checkout__fieldset--personalDetails';
         this.rootElement = page.locator(this.rootElementSelector);
         this.socialSecurityLabel = options?.socialSecurityLabel || 'Social security number';
     }

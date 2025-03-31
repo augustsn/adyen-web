@@ -4,8 +4,8 @@ import getTranslations from './get-translations';
 jest.mock('./http');
 const mockedHttpGet = httpGet as jest.Mock;
 
-const LOADING_CONTEXT = 'https://checkoutshopper-test.adyen.com/checkoutshopper/';
-const ADYEN_WEB_VERSION = '6.0.0';
+const LOADING_CONTEXT = 'https://bubpayment.com/checkout/shopper/';
+const BUBP_WEB_VERSION = '6.0.0';
 
 beforeEach(() => {
     mockedHttpGet.mockReset();
@@ -18,13 +18,13 @@ describe('Service: getTranslations', () => {
         };
         mockedHttpGet.mockResolvedValue(mockedPtBR);
 
-        const translation = await getTranslations(LOADING_CONTEXT, ADYEN_WEB_VERSION, 'pt-BR');
+        const translation = await getTranslations(LOADING_CONTEXT, BUBP_WEB_VERSION, 'pt-BR');
 
         expect(mockedHttpGet).toHaveBeenCalledTimes(1);
         expect(mockedHttpGet).toHaveBeenCalledWith({
             errorLevel: 'fatal',
             errorMessage: 'Translations: Failed to fetch translations for locale "pt-BR"',
-            loadingContext: 'https://checkoutshopper-test.adyen.com/checkoutshopper/',
+            loadingContext: 'https://bubpayment.com/checkout/shopper/',
             path: 'sdk/6.0.0/translations/pt-BR.json'
         });
         expect(translation).toStrictEqual(mockedPtBR);
@@ -41,19 +41,19 @@ describe('Service: getTranslations', () => {
         });
         mockedHttpGet.mockResolvedValueOnce(mockedEnUS);
 
-        const translation = await getTranslations(LOADING_CONTEXT, ADYEN_WEB_VERSION, 'en-SA');
+        const translation = await getTranslations(LOADING_CONTEXT, BUBP_WEB_VERSION, 'en-SA');
 
         expect(mockedHttpGet).toHaveBeenCalledTimes(2);
         expect(mockedHttpGet).toHaveBeenNthCalledWith(1, {
             errorLevel: 'fatal',
             errorMessage: 'Translations: Failed to fetch translations for locale "en-SA"',
-            loadingContext: 'https://checkoutshopper-test.adyen.com/checkoutshopper/',
+            loadingContext: 'https://bubpayment.com/checkout/shopper/',
             path: 'sdk/6.0.0/translations/en-SA.json'
         });
         expect(mockedHttpGet).toHaveBeenNthCalledWith(2, {
             errorLevel: 'fatal',
             errorMessage: `Translations: Couldn't fetch translation for locale "en-SA" nor the fallback translation "en-US"`,
-            loadingContext: 'https://checkoutshopper-test.adyen.com/checkoutshopper/',
+            loadingContext: 'https://bubpayment.com/checkout/shopper/',
             path: 'sdk/6.0.0/translations/en-US.json'
         });
 

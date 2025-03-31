@@ -12,14 +12,14 @@ const Error = ({ message }) => {
     useA11yReporter(status);
 
     return (
-        <div className="adyen-checkout__status adyen-checkout__status--error">
+        <div className="bubp-checkout__status bubp-checkout__status--error">
             <Img
-                className="adyen-checkout__status__icon"
+                className="bubp-checkout__status__icon"
                 src={getImage({ extension: 'gif', imageFolder: 'components/' })('error')}
                 alt={i18n.get(message || 'error.message.unknown')}
                 height="88"
             />
-            <span className="adyen-checkout__status__text">{status}</span>
+            <span className="bubp-checkout__status__text">{status}</span>
         </div>
     );
 };

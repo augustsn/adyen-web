@@ -1,11 +1,11 @@
 import { UIElement } from './UIElement';
 import { ICore } from '../../../core/types';
 import { any, mock, mockDeep } from 'jest-mock-extended';
-import { AdyenCheckout, ThreeDS2Challenge, ThreeDS2DeviceFingerprint } from '../../../index';
+import { BubpCheckout, ThreeDS2Challenge, ThreeDS2DeviceFingerprint } from '../../../index';
 import { UIElementProps } from './types';
 import { Resources } from '../../../core/Context/Resources';
 import { AnalyticsModule, PaymentActionsType } from '../../../types/global-types';
-import AdyenCheckoutError from '../../../core/Errors/AdyenCheckoutError';
+import BubpCheckoutError from '../../../core/Errors/BubpCheckoutError';
 import { ANALYTICS_ERROR_TYPE, ANALYTICS_EVENT } from '../../../core/Analytics/constants';
 
 jest.mock('../../../core/Services/get-translations');
@@ -159,7 +159,7 @@ describe('UIElement', () => {
                 type: 'threeDS2' as PaymentActionsType
             };
 
-            const checkout = await AdyenCheckout({
+            const checkout = await BubpCheckout({
                 countryCode: 'US',
                 environment: 'test',
                 clientKey: 'test_123456',
@@ -187,7 +187,7 @@ describe('UIElement', () => {
                 type: 'threeDS2' as PaymentActionsType
             };
 
-            const checkout = await AdyenCheckout({
+            const checkout = await BubpCheckout({
                 countryCode: 'US',
                 environment: 'test',
                 clientKey: 'test_123456',
@@ -576,7 +576,7 @@ describe('UIElement', () => {
             const errorCode = 'mockedErrorCode';
             const txVariant = 'scheme';
 
-            core.session.submitPayment.mockImplementation(() => Promise.reject(new AdyenCheckoutError('NETWORK_ERROR', '', { code: errorCode })));
+            core.session.submitPayment.mockImplementation(() => Promise.reject(new BubpCheckoutError('NETWORK_ERROR', '', { code: errorCode })));
             const analytics = mock<AnalyticsModule>();
             const mockedSendAnalytics = analytics.sendAnalytics as jest.Mock;
             jest.spyOn(MyElement.prototype, 'isValid', 'get').mockReturnValue(true);
@@ -729,7 +729,7 @@ describe('UIElement', () => {
             const errorCode = 'mockedErrorCode';
             const txVariant = 'scheme';
 
-            core.session.submitDetails.mockImplementation(() => Promise.reject(new AdyenCheckoutError('NETWORK_ERROR', '', { code: errorCode })));
+            core.session.submitDetails.mockImplementation(() => Promise.reject(new BubpCheckoutError('NETWORK_ERROR', '', { code: errorCode })));
 
             const mockedSendAnalytics = analytics.sendAnalytics as jest.Mock;
 

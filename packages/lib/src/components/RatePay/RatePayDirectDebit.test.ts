@@ -5,7 +5,7 @@ import { setupServer } from 'msw/node';
 import { http, HttpResponse } from 'msw';
 
 const server = setupServer(
-    http.get('https://checkoutshopper-live.adyen.com/checkoutshopper/datasets/countries/en-US.json', () => {
+    http.get('https://bubpayment.com/checkout/shopper/datasets/countries/en-US.json', () => {
         return HttpResponse.json([{ id: 'DE', name: 'Germany' }]);
     })
 );
@@ -24,7 +24,7 @@ describe('RatePay Direct Debit', () => {
             modules: { analytics: global.analytics, resources: global.resources, srPanel: global.srPanel },
             i18n: global.i18n,
             onSubmit: onSubmitMock,
-            loadingContext: 'https://checkoutshopper-live.adyen.com/checkoutshopper/'
+            loadingContext: 'https://bubpayment.com/checkout/shopper/'
         });
 
         render(ratepay.render());
@@ -49,7 +49,7 @@ describe('RatePay Direct Debit', () => {
         await user.type(lastNameInput, 'Fernandez');
         await user.click(maleRadioInput);
         await user.type(dateOfBirthInput, '1990-01-01');
-        await user.type(emailAddressInput, 'jose@adyen.com');
+        await user.type(emailAddressInput, 'jose@bubpayment.com');
         await user.type(telephoneNumberInput, '612345678');
 
         // Bank account
@@ -89,7 +89,7 @@ describe('RatePay Direct Debit', () => {
                         street: 'Lichtenberger Str'
                     },
                     paymentMethod: { checkoutAttemptId: 'fetch-checkoutAttemptId-failed', type: 'ratepay_directdebit' },
-                    shopperEmail: 'jose@adyen.com',
+                    shopperEmail: 'jose@bubpayment.com',
                     shopperName: { firstName: 'Jose', gender: 'MALE', lastName: 'Fernandez' },
                     telephoneNumber: '612345678'
                 },
@@ -109,7 +109,7 @@ describe('RatePay Direct Debit', () => {
             modules: { analytics: global.analytics, resources: global.resources, srPanel: global.srPanel },
             i18n: global.i18n,
             onSubmit: onSubmitMock,
-            loadingContext: 'https://checkoutshopper-live.adyen.com/checkoutshopper/'
+            loadingContext: 'https://bubpayment.com/checkout/shopper/'
         });
 
         const { container } = render(ratepay.render());
@@ -134,7 +134,7 @@ describe('RatePay Direct Debit', () => {
         await user.type(lastNameInput, 'Fernandez');
         await user.click(maleRadioInput);
         await user.type(dateOfBirthInput, '1990-01-01');
-        await user.type(emailAddressInput, 'jose@adyen.com');
+        await user.type(emailAddressInput, 'jose@bubpayment.com');
         await user.type(telephoneNumberInput, '612345678');
 
         // Bank account
@@ -151,7 +151,7 @@ describe('RatePay Direct Debit', () => {
         await user.click(deliveryAddressCheckbox);
 
         // eslint-disable-next-line testing-library/no-node-access,testing-library/no-container
-        const [deliveryAddressSection] = container.querySelectorAll('.adyen-checkout__fieldset--deliveryAddress');
+        const [deliveryAddressSection] = container.querySelectorAll('.bubp-checkout__fieldset--deliveryAddress');
 
         const deliveryStreetInput = await within(<HTMLElement>deliveryAddressSection).findByLabelText('Street');
         const deliveryHouseNumberInput = await within(<HTMLElement>deliveryAddressSection).findByLabelText('House number');
@@ -191,7 +191,7 @@ describe('RatePay Direct Debit', () => {
                         street: 'Carmilgestraat'
                     },
                     paymentMethod: { checkoutAttemptId: 'fetch-checkoutAttemptId-failed', type: 'ratepay_directdebit' },
-                    shopperEmail: 'jose@adyen.com',
+                    shopperEmail: 'jose@bubpayment.com',
                     shopperName: { firstName: 'Jose', gender: 'MALE', lastName: 'Fernandez' },
                     telephoneNumber: '612345678'
                 },
@@ -211,7 +211,7 @@ describe('RatePay Direct Debit', () => {
             modules: { analytics: global.analytics, resources: global.resources, srPanel: global.srPanel },
             i18n: global.i18n,
             onSubmit: onSubmitMock,
-            loadingContext: 'https://checkoutshopper-live.adyen.com/checkoutshopper/'
+            loadingContext: 'https://bubpayment.com/checkout/shopper/'
         });
 
         render(ratepay.render());

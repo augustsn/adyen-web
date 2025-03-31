@@ -7,10 +7,10 @@ export function BrazilPersonalDetail(props) {
     const { i18n, data, handleChangeFor, errors, valid } = props;
     const getErrorMessage = error => (error && error.errorMessage ? i18n.get(error.errorMessage) : !!error);
     return (
-        <div className={'adyen-checkout__fieldset adyen-checkout__fieldset--address adyen-checkout__fieldset--personalDetails'}>
-            <div className="adyen-checkout__fieldset__title">{i18n.get('personalDetails')}</div>
+        <div className={'bubp-checkout__fieldset bubp-checkout__fieldset--address bubp-checkout__fieldset--personalDetails'}>
+            <div className="bubp-checkout__fieldset__title">{i18n.get('personalDetails')}</div>
 
-            <div className="adyen-checkout__fieldset__fields">
+            <div className="bubp-checkout__fieldset__fields">
                 <Field
                     label={i18n.get('firstName')}
                     classNameModifiers={['firstName', 'col-50']}

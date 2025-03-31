@@ -1,4 +1,4 @@
-import AdyenCheckoutError from '../Errors/AdyenCheckoutError';
+import BubpCheckoutError from '../Errors/BubpCheckoutError';
 
 export interface ImageOptions {
     extension?: string;
@@ -19,7 +19,7 @@ export class Resources {
 
     constructor(cdnContext: string) {
         if (!cdnContext) {
-            throw new AdyenCheckoutError('IMPLEMENTATION_ERROR', 'Resources module: "environmentsUrls.cdn" is not a valid URL');
+            throw new BubpCheckoutError('IMPLEMENTATION_ERROR', 'Resources module: "environmentsUrls.cdn" is not a valid URL');
         }
         this.resourceContext = cdnContext;
     }

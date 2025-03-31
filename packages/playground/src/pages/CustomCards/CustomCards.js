@@ -1,5 +1,5 @@
-import { AdyenCheckout, CustomCard } from '@adyen/adyen-web';
-import '@adyen/adyen-web/styles/adyen.css';
+import { BubpCheckout, CustomCard } from '@bubp/web';
+import '@bubp/web/styles/bubp.css';
 
 import { makePayment, makeDetailsCall } from '../../services';
 import { styles, setFocus, onBrand, onConfigSuccess, onBinLookup, onChange, setCCErrors } from './customCards.config';
@@ -76,7 +76,7 @@ const configObj = {
 };
 
 const initCheckout = async () => {
-    window.checkout = await AdyenCheckout(configObj);
+    window.checkout = await BubpCheckout(configObj);
 
     // SECURED FIELDS
     window.customCard = new CustomCard(window.checkout, {
@@ -157,7 +157,7 @@ configObj.translations = {
 };
 
 const initCheckout2 = async () => {
-    window.checkout = await AdyenCheckout(configObj);
+    window.checkout = await BubpCheckout(configObj);
 
     window.materialDesignCustomCard =
         showOtherExamples &&
@@ -252,7 +252,7 @@ function createPayButton(parent, component, attribute) {
 
     payBtn.textContent = 'Pay';
     payBtn.name = 'pay';
-    payBtn.classList.add('adyen-checkout__button', 'js-components-button--one-click', `js-${attribute}`);
+    payBtn.classList.add('bubp-checkout__button', 'js-components-button--one-click', `js-${attribute}`);
 
     payBtn.addEventListener('click', e => {
         e.preventDefault();

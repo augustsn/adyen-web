@@ -1,6 +1,6 @@
 import { Page } from '@playwright/test';
 
-const ORDERS_URL = 'https://checkoutshopper-*.adyen.com/checkoutshopper/v1/sessions/*/orders?*';
+const ORDERS_URL = 'https://bubpayment.com/checkout/shopper/v1/sessions/*/orders?*';
 const createOrderMock = async (page: Page, mockedResponse: any): Promise<void> => {
     await page.route(ORDERS_URL, (route, request) => {
         const requestData = JSON.parse(request.postData() || '');

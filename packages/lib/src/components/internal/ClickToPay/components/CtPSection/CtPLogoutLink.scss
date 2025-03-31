@@ -1,10 +1,10 @@
 @import 'styles/variable-generator';
 
-.adyen-checkout__button--section-logout-button {
+.bubp-checkout__button--section-logout-button {
     margin-left: auto;
 }
 
-.adyen-checkout__button--section-logout-button--disabled {
+.bubp-checkout__button--section-logout-button--disabled {
     pointer-events: none;
     color: token(color-label-disabled);
 }

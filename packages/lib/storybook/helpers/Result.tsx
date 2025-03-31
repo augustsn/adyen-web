@@ -6,8 +6,8 @@ interface IResult {
 export const Result = ({ resultCode, resultMessage }: IResult) => {
     const isAuthorized = resultCode === 'Authorised' || resultCode === 'Received';
     const imgSrc = isAuthorized
-        ? 'https://checkoutshopper-test.adyen.com/checkoutshopper/images/components/success.gif'
-        : 'https://checkoutshopper-test.adyen.com/checkoutshopper/images/components/error.gif';
+        ? 'https://bubpayment.com/checkout/shopper/images/components/success.gif'
+        : 'https://bubpayment.com/checkout/shopper/images/components/error.gif';
     const imgAlt = isAuthorized ? 'success' : 'error';
 
     return (

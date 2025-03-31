@@ -124,7 +124,7 @@
     }
 }
 
-.adyen-checkout-ctp__card-animation {
+.bubp-checkout-ctp__card-animation {
     position: relative;
     max-width: 100%;
     aspect-ratio: 1/0.438;
@@ -133,7 +133,7 @@
     margin: 40px auto 50px;
 }
 
-.adyen-checkout-ctp__card-animation > .adyen-checkout-ctp__card-animation-layer {
+.bubp-checkout-ctp__card-animation > .bubp-checkout-ctp__card-animation-layer {
     opacity: 0;
     width: 100%;
     height: 100%;
@@ -141,7 +141,7 @@
     background-size: contain !important;
 }
 
-.adyen-checkout-ctp__card-animation > .adyen-checkout-ctp__card-animation-layer:nth-of-type(1) {
+.bubp-checkout-ctp__card-animation > .bubp-checkout-ctp__card-animation-layer:nth-of-type(1) {
     z-index: 3;
     opacity: 1;
     background:
@@ -155,7 +155,7 @@
     animation-delay: 100ms;
 }
 
-.adyen-checkout-ctp__card-animation > .adyen-checkout-ctp__card-animation-layer:nth-of-type(2) {
+.bubp-checkout-ctp__card-animation > .bubp-checkout-ctp__card-animation-layer:nth-of-type(2) {
     z-index: 2;
     opacity: 0.6;
     transform: translateY(25%);
@@ -167,7 +167,7 @@
     animation-delay: 50ms;
 }
 
-.adyen-checkout-ctp__card-animation > .adyen-checkout-ctp__card-animation-layer:nth-of-type(3) {
+.bubp-checkout-ctp__card-animation > .bubp-checkout-ctp__card-animation-layer:nth-of-type(3) {
     z-index: 1;
     opacity: 0.2;
     transform: translateY(50%);
@@ -178,7 +178,7 @@
         card-fade-20 2060ms linear infinite both;
 }
 
-.adyen-checkout-ctp__loading-subtitle {
+.bubp-checkout-ctp__loading-subtitle {
     font-size: token(text-subtitle-font-size);
     line-height: token(text-caption-line-height);
     max-width: 280px;

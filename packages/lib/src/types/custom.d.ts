@@ -31,7 +31,7 @@ declare global {
             closeApplePayCodeWindow(): void;
         };
 
-        AdyenWeb: any;
+        BubpWeb: any;
         VISA_SDK?: {
             buildClientProfile?(srciDpaId?: string): any;
             correlationId?: string;

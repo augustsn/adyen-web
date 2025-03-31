@@ -6,7 +6,7 @@ describe('Storage implementation - normal, window-based, storage', () => {
 
         storage.set({ id: 'mockId' });
 
-        expect(storage.keyByIndex(0)).toEqual('adyen-checkout__checkout-attempt-id');
+        expect(storage.keyByIndex(0)).toEqual('bubp-checkout__checkout-attempt-id');
         expect(storage.length).toEqual(1);
 
         let idObj: any = storage.get();
@@ -47,7 +47,7 @@ describe('Storage implementation - storage fallback', () => {
 
         storage.set({ id: 'mockId' });
 
-        expect(storage.keyByIndex(0)).toEqual('adyen-checkout__checkout-attempt-id');
+        expect(storage.keyByIndex(0)).toEqual('bubp-checkout__checkout-attempt-id');
         expect(storage.length).toEqual(1);
 
         let idObj: any = storage.get();

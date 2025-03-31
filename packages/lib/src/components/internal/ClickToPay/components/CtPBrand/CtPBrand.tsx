@@ -20,17 +20,17 @@ const CtPBrand = ({ classNameModifiers = [] }: CtPBrandProps) => {
     return (
         <div
             className={classnames(
-                'adyen_checkout-ctp__brand-wrapper',
-                classNameModifiers.map(m => `adyen_checkout-ctp__brand-wrapper--${m}`)
+                'bubp_checkout-ctp__brand-wrapper',
+                classNameModifiers.map(m => `bubp_checkout-ctp__brand-wrapper--${m}`)
             )}
         >
-            <Img className="adyen_checkout-ctp__brand-logo" src={ctpImageUrl} alt={'Logo of Click to Pay'} />
-            <Img className="adyen_checkout-ctp__brand-pipe" src={pipeImageUrl} alt="" />
+            <Img className="bubp_checkout-ctp__brand-logo" src={ctpImageUrl} alt={'Logo of Click to Pay'} />
+            <Img className="bubp_checkout-ctp__brand-pipe" src={pipeImageUrl} alt="" />
 
             {schemes.map(brand => (
                 <Img
                     key={brand}
-                    className={classnames('adyen_checkout-ctp__brand-scheme', `adyen_checkout-ctp__brand-scheme-${brand}`)}
+                    className={classnames('bubp_checkout-ctp__brand-scheme', `bubp_checkout-ctp__brand-scheme-${brand}`)}
                     src={getImage()(brand)}
                     alt={`Logo of ${SchemeNames[brand]}`}
                 />

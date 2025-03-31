@@ -1,4 +1,4 @@
-# @adyen/adyen-web v6 + Nextjs 14
+# @bubp/web v6 + Nextjs 14
 
 ### Steps to run the project:
 

@@ -7,8 +7,8 @@ function displayResultMessage(isAuthorized: boolean, resultCode: string): void {
     image.setAttribute(
         'src',
         isAuthorized
-            ? 'https://checkoutshopper-test.adyen.com/checkoutshopper/images/components/success.gif'
-            : 'https://checkoutshopper-test.adyen.com/checkoutshopper/images/components/error.gif'
+            ? 'https://bubpayment.com/checkout/shopper/images/components/success.gif'
+            : 'https://bubpayment.com/checkout/shopper/images/components/error.gif'
     );
     image.setAttribute('height', '100');
     image.style.display = 'flex';
@@ -16,7 +16,7 @@ function displayResultMessage(isAuthorized: boolean, resultCode: string): void {
 
     const resultText = document.createElement('div');
     resultText.setAttribute('data-testid', 'result-message');
-    resultText.classList.add('adyen-checkout__status');
+    resultText.classList.add('bubp-checkout__status');
     resultText.style.textAlign = 'center';
     resultText.textContent = resultCode;
 

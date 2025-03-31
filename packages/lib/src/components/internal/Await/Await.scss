@@ -1,6 +1,6 @@
 @import 'styles/variable-generator';
 
-.adyen-checkout__await {
+.bubp-checkout__await {
     background: token(color-background-primary);
     padding: token(spacer-110);
     border: token(border-width-s) solid token(color-outline-secondary);
@@ -8,51 +8,51 @@
     text-align: center;
 }
 
-.adyen-checkout__await--result {
+.bubp-checkout__await--result {
     padding: 100px;
 }
 
-.adyen-checkout__qr-loader--app {
+.bubp-checkout__qr-loader--app {
     border: 0;
     border-radius: 0;
     padding: 0;
 }
 
-.adyen-checkout__await__brand-logo {
+.bubp-checkout__await__brand-logo {
     width: 74px;
     border-radius: 3px;
 }
 
-.adyen-checkout__await__subtitle,
-.adyen-checkout__await__indicator-text {
+.bubp-checkout__await__subtitle,
+.bubp-checkout__await__indicator-text {
     color: token(color-label-primary);
     font-size: token(text-subtitle-font-size);
     line-height: token(text-caption-line-height);
     margin-top: token(spacer-100);
 }
 
-.adyen-checkout__await__indicator-holder .adyen-checkout__await__indicator-text {
+.bubp-checkout__await__indicator-holder .bubp-checkout__await__indicator-text {
     margin-top: token(spacer-030);
     margin-left: token(spacer-050);
 }
 
-.adyen-checkout__await__indicator-holder {
+.bubp-checkout__await__indicator-holder {
     display: flex;
     justify-content: center;
     margin-top: token(spacer-100);
     margin-bottom: token(spacer-080);
 }
 
-.adyen-checkout__await__subtitle--result {
+.bubp-checkout__await__subtitle--result {
     margin-bottom: token(spacer-100);
 }
 
-.adyen-checkout__await__icon {
+.bubp-checkout__await__icon {
     width: 88px;
     height: 88px;
 }
 
-.adyen-checkout__await__progress {
+.bubp-checkout__await__progress {
     height: token(spacer-020);
     background: token(color-outline-secondary);
     border-radius: token(border-radius-l);
@@ -60,28 +60,28 @@
     width: 152px;
 }
 
-.adyen-checkout__await__percentage {
+.bubp-checkout__await__percentage {
     display: block;
     height: 100%;
     border-radius: token(border-radius-l);
     background: token(color-label-primary);
 }
 
-.adyen-checkout__await__countdown {
+.bubp-checkout__await__countdown {
     color: token(color-label-secondary);
     font-size: token(text-body-font-size);
 }
 
-.adyen-checkout__await > .adyen-checkout__spinner__wrapper {
+.bubp-checkout__await > .bubp-checkout__spinner__wrapper {
     margin: 60px 0;
 }
 
-.adyen-checkout__await__app-link {
+.bubp-checkout__await__app-link {
     margin-top: token(spacer-070);
     display: none;
 }
 
-.adyen-checkout__await__amount {
+.bubp-checkout__await__amount {
     margin-top: token(spacer-070);
     font-size: token(text-title-l-font-size);
     font-weight: token(text-title-font-weight);
@@ -89,7 +89,7 @@
 }
 
 @media only screen and (max-device-width: 1200px) {
-    .adyen-checkout__await__app-link {
+    .bubp-checkout__await__app-link {
         display: block;
     }
 }

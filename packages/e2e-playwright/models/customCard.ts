@@ -49,7 +49,7 @@ class CustomCard extends Base {
         this.cardNumberLabelElement = this.cardNumberField.locator('.pm-form-label__text');
         this.cardNumberErrorElement = this.cardNumberField.locator('.pm-form-label__error-text');
 
-        this.brandingIcon = this.rootElement.locator('.adyen-checkout__card__cardNumber__brandIcon');
+        this.brandingIcon = this.rootElement.locator('.bubp-checkout__card__cardNumber__brandIcon');
 
         /**
          * Card Number elements, in iframe

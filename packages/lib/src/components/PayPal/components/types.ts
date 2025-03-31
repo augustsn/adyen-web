@@ -1,5 +1,5 @@
 import type { PayPalConfiguration } from '../types';
-import AdyenCheckoutError from '../../../core/Errors/AdyenCheckoutError';
+import BubpCheckoutError from '../../../core/Errors/BubpCheckoutError';
 
 export interface PayPalComponentProps extends PayPalConfiguration {
     onApprove: (data: any, actions: any) => void;
@@ -8,7 +8,7 @@ export interface PayPalComponentProps extends PayPalConfiguration {
     onError: (data: any) => void;
     onSubmit: () => Promise<any>;
     ref?: any;
-    onScriptLoadFailure(error: AdyenCheckoutError): void;
+    onScriptLoadFailure(error: BubpCheckoutError): void;
 
     /**
      * While the buyer is on the PayPal site, you can update their shopping cart to reflect the shipping address they chose on PayPal

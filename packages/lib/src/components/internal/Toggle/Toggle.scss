@@ -1,7 +1,7 @@
 @use 'styles/mixins';
 @import 'styles/variable-generator';
 
-.adyen-checkout-toggle {
+.bubp-checkout-toggle {
   $component-root: &;
   $label-padding: token(toggle-label-padding);
 
@@ -135,7 +135,7 @@
     flex-direction: column;
     padding-left: $label-padding;
 
-    @include mixins.adyen-checkout-text-body;
+    @include mixins.bubp-checkout-text-body;
 
     #{$component-root}--label-first > & {
       padding-left: 0;
@@ -146,13 +146,13 @@
   &__label {
     vertical-align: baseline;
 
-    @include mixins.adyen-checkout-text-body;
+    @include mixins.bubp-checkout-text-body;
   }
 
   &__description {
     color: token(toggle-description-color);
     padding-top: token(toggle-description-padding);
 
-    @include mixins.adyen-checkout-text-body;
+    @include mixins.bubp-checkout-text-body;
   }
 }

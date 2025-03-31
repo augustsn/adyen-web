@@ -20,19 +20,19 @@ export default function Fieldset({ children, classNameModifiers = [], label, rea
     return (
         <fieldset
             className={cx([
-                'adyen-checkout__fieldset',
-                ...classNameModifiers.map(m => `adyen-checkout__fieldset--${m}`),
-                { 'adyen-checkout__fieldset--readonly': readonly }
+                'bubp-checkout__fieldset',
+                ...classNameModifiers.map(m => `bubp-checkout__fieldset--${m}`),
+                { 'bubp-checkout__fieldset--readonly': readonly }
             ])}
             aria-describedby={description ? describedById : null}
         >
-            {label && <legend className="adyen-checkout__fieldset__title">{i18n.get(label)}</legend>}
+            {label && <legend className="bubp-checkout__fieldset__title">{i18n.get(label)}</legend>}
             {description && (
-                <p id={describedById} className="adyen-checkout__fieldset__description">
+                <p id={describedById} className="bubp-checkout__fieldset__description">
                     {i18n.get(description)}
                 </p>
             )}
-            <div className="adyen-checkout__fieldset__fields">{children}</div>
+            <div className="bubp-checkout__fieldset__fields">{children}</div>
         </fieldset>
     );
 }

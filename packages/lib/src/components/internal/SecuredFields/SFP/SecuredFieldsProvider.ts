@@ -19,7 +19,7 @@ import {
 import { CSFReturnObject, CSFSetupObject } from '../lib/CSF/types';
 import { CVC_POLICY_REQUIRED, DATE_POLICY_REQUIRED, DEDICATED_CARD_COMPONENTS, ENCRYPTED_CARD_NUMBER, ENCRYPTED_PWD_FIELD } from '../lib/constants';
 import { BinLookupResponse } from '../../../Card/types';
-import AdyenCheckoutError from '../../../../core/Errors/AdyenCheckoutError';
+import BubpCheckoutError from '../../../../core/Errors/BubpCheckoutError';
 import { SFStateErrorObj } from '../../../Card/components/CardInput/types';
 import { getErrorMessageFromCode } from '../../../../core/Errors/utils';
 import { SF_ErrorCodes } from '../../../../core/Errors/constants';
@@ -206,7 +206,7 @@ class SecuredFieldsProvider extends Component<SFPProps, SFPState> {
                 // Hide the spinner
                 this.setState({ status: 'csfLoadFailure' });
                 // Report the error
-                this.props.onError(new AdyenCheckoutError('ERROR', 'secured field iframes have failed to load'));
+                this.props.onError(new BubpCheckoutError('ERROR', 'secured field iframes have failed to load'));
             }
         }, this.csfLoadFailTimeoutMS);
     }

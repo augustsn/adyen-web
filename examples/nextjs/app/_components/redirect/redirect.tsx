@@ -2,14 +2,14 @@
 
 import { useCallback, useEffect, useRef } from "react";
 import { useSearchParams } from "next/navigation";
-import { AdyenCheckout, AdyenCheckoutError, UIElement } from "@adyen/adyen-web";
+import { BubpCheckout, BubpCheckoutError, UIElement } from "@bubp/web";
 import makeDetailsCall from "@/app/_utils/makeDetailsCall";
 import type {
     AdditionalDetailsActions,
     AdditionalDetailsData,
     PaymentCompletedData,
     PaymentFailedData,
-} from "@adyen/adyen-web";
+} from "@bubp/web";
 
 export default function Redirect() {
     const isRedirectHandled = useRef<boolean>(false);
@@ -19,7 +19,7 @@ export default function Redirect() {
         async (redirectResult: string, sessionId: string) => {
             const isSessionsFlow = !!sessionId;
 
-            const checkout = await AdyenCheckout({
+            const checkout = await BubpCheckout({
                 analytics: {
                     enabled: false,
                 },
@@ -69,7 +69,7 @@ export default function Redirect() {
                         "#result-container > pre",
                     ).innerHTML = "Payment failed";
                 },
-                onError: (error: AdyenCheckoutError) => {
+                onError: (error: BubpCheckoutError) => {
                     console.error("Something went wrong", error);
                 },
             });

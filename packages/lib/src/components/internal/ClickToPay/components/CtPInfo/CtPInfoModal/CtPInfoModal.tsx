@@ -12,7 +12,7 @@ let idGenerator = Date.now();
 
 function getUniqueId() {
     idGenerator += 1;
-    return `adyen-${idGenerator}`;
+    return `bubp-${idGenerator}`;
 }
 
 type CtPInfoModalProps = {
@@ -41,17 +41,17 @@ const CtPInfoModal = ({ isOpen, onClose, focusAfterClose }: CtPInfoModalProps) =
         >
             {({ onCloseModal }) => (
                 <Fragment>
-                    <Img className="adyen-checkout__ctp-modal-header-image" src={getImage({ imageFolder: 'components/' })('ctp_landscape')} alt="" />
-                    <h1 id={labelledBy} className="adyen-checkout__ctp-modal-title">
+                    <Img className="bubp-checkout__ctp-modal-header-image" src={getImage({ imageFolder: 'components/' })('ctp_landscape')} alt="" />
+                    <h1 id={labelledBy} className="bubp-checkout__ctp-modal-title">
                         {i18n.get('ctp.infoPopup.title')}
                     </h1>
 
                     <div id={describedBy}>
-                        <p tabIndex={-1} ref={focusFirstElement} className="adyen-checkout__ctp-modal-text">
+                        <p tabIndex={-1} ref={focusFirstElement} className="bubp-checkout__ctp-modal-text">
                             {i18n.get('ctp.infoPopup.subtitle')}
                         </p>
 
-                        <ul className="adyen-checkout__ctp-modal-text adyen-checkout__ctp-modal-benefits" type="disc">
+                        <ul className="bubp-checkout__ctp-modal-text bubp-checkout__ctp-modal-benefits" type="disc">
                             <li>{i18n.get('ctp.infoPopup.benefit1')}</li>
                             <li>{i18n.get('ctp.infoPopup.benefit2')}</li>
                             <li>{i18n.get('ctp.infoPopup.benefit3')}</li>

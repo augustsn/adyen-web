@@ -1,5 +1,5 @@
 {
-    "name": "adyen-web-nextjs",
+    "name": "bubp-web-nextjs",
     "version": "0.1.0",
     "private": true,
     "scripts": {
@@ -10,7 +10,7 @@
         "analyze": "cross-env ANALYZE=true next build"
     },
     "dependencies": {
-        "@adyen/adyen-web": "^6.0.0",
+        "@bubp/web": "^6.0.0",
         "classname": "^0.0.0",
         "next": "^14.2.25",
         "react": "^18",

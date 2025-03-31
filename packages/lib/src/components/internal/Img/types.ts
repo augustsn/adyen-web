@@ -5,7 +5,7 @@ export interface ImgProps {
     className?: string;
 
     /**
-     * Class name modifiers will be used as: `adyen-checkout__image--${modifier}`
+     * Class name modifiers will be used as: `bubp-checkout__image--${modifier}`
      */
     classNameModifiers?: string[];
 

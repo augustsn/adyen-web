@@ -5,7 +5,7 @@ import { CoreProvider } from '../../core/Context/CoreProvider';
 import config from './components/ANCVAwait/config';
 import Await from '../../components/internal/Await';
 import SRPanelProvider from '../../core/Errors/SRPanelProvider';
-import AdyenCheckoutError from '../../core/Errors/AdyenCheckoutError';
+import BubpCheckoutError from '../../core/Errors/BubpCheckoutError';
 import PayButton from '../internal/PayButton';
 import { ANCVConfiguration } from './types';
 import { sanitizeResponse, verifyPaymentDidNotFail } from '../internal/UIElement/utils';
@@ -57,10 +57,10 @@ export class ANCVElement extends UIElement<ANCVConfiguration> {
             .catch(error => {
                 this.setStatus(error?.message || 'error');
                 if (this.props.onError) {
-                    if (error instanceof AdyenCheckoutError) {
+                    if (error instanceof BubpCheckoutError) {
                         this.handleError(error);
                     } else {
-                        this.handleError(new AdyenCheckoutError('ERROR', error));
+                        this.handleError(new BubpCheckoutError('ERROR', error));
                     }
                 }
             });

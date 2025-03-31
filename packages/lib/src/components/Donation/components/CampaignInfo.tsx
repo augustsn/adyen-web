@@ -13,13 +13,13 @@ export default function CampaignInfo({ logoUrl = '', nonprofitName = '', causeNa
 
     return (
         <Fragment>
-            <Img className="adyen-checkout__campaign-background-image" style={{ backgroundImage }} backgroundUrl={bannerUrl} />
+            <Img className="bubp-checkout__campaign-background-image" style={{ backgroundImage }} backgroundUrl={bannerUrl} />
 
-            <div className="adyen-checkout__campaign-content">
-                {logoUrl && <img src={logoUrl} className="adyen-checkout__campaign-logo" alt={nonprofitName} />}
+            <div className="bubp-checkout__campaign-content">
+                {logoUrl && <img src={logoUrl} className="bubp-checkout__campaign-logo" alt={nonprofitName} />}
                 <div>
-                    {nonprofitName && <div className="adyen-checkout__campaign-title">{nonprofitName}</div>}
-                    {causeName && <div className="adyen-checkout__campaign-cause">{causeName}</div>}
+                    {nonprofitName && <div className="bubp-checkout__campaign-title">{nonprofitName}</div>}
+                    {causeName && <div className="bubp-checkout__campaign-cause">{causeName}</div>}
                 </div>
             </div>
         </Fragment>

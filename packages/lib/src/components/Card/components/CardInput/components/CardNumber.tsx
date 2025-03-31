@@ -37,13 +37,13 @@ export default function CardNumber(props: CardNumberProps) {
             <DataSfSpan
                 encryptedFieldType={ENCRYPTED_CARD_NUMBER}
                 className={classNames({
-                    'adyen-checkout__input': true,
-                    'adyen-checkout__input--large': true,
-                    'adyen-checkout__card__cardNumber__input': true,
-                    'adyen-checkout__input--error': error,
-                    'adyen-checkout__input--focus': props.focused,
-                    'adyen-checkout__input--valid': isValid,
-                    'adyen-checkout__card__cardNumber__input--noBrand': !props.showBrandIcon
+                    'bubp-checkout__input': true,
+                    'bubp-checkout__input--large': true,
+                    'bubp-checkout__card__cardNumber__input': true,
+                    'bubp-checkout__input--error': error,
+                    'bubp-checkout__input--focus': props.focused,
+                    'bubp-checkout__input--valid': isValid,
+                    'bubp-checkout__card__cardNumber__input--noBrand': !props.showBrandIcon
                 })}
             ></DataSfSpan>
 
@@ -54,8 +54,8 @@ export default function CardNumber(props: CardNumberProps) {
             {dualBrandingElements && !error && (
                 <div
                     className={classNames([
-                        'adyen-checkout__card__dual-branding__buttons',
-                        { 'adyen-checkout__card__dual-branding__buttons--active': isValid }
+                        'bubp-checkout__card__dual-branding__buttons',
+                        { 'bubp-checkout__card__dual-branding__buttons--active': isValid }
                     ])}
                 >
                     {dualBrandingElements.map(element => (

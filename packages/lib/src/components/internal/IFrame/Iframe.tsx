@@ -68,9 +68,9 @@ class Iframe extends Component<IframeProps> {
                 }}
                 allow={allow}
                 className={classNames(
-                    'adyen-checkout__iframe',
-                    `adyen-checkout__iframe--${name}`,
-                    validClassNameModifiers.length && classNameModifiers.map(m => `adyen-checkout__iframe--${name}-${m}`)
+                    'bubp-checkout__iframe',
+                    `bubp-checkout__iframe--${name}`,
+                    validClassNameModifiers.length && classNameModifiers.map(m => `bubp-checkout__iframe--${name}-${m}`)
                 )}
                 name={name}
                 src={src}

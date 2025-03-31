@@ -51,7 +51,7 @@ const Field: FunctionalComponent<FieldProps> = props => {
     const showError = showErrorElement && typeof errorMessage === 'string' && errorMessage.length > 0;
     const showContext = showContextualElement && !showError && contextualText?.length > 0;
 
-    const uniqueId = useRef(getUniqueId(`adyen-checkout-${name}`));
+    const uniqueId = useRef(getUniqueId(`bubp-checkout-${name}`));
     const [focused, setFocused] = useState(false);
     const [filled, setFilled] = useState(false);
 
@@ -84,8 +84,8 @@ const Field: FunctionalComponent<FieldProps> = props => {
                 {typeof label === 'string' && (
                     <span
                         className={classNames({
-                            'adyen-checkout__label__text': true,
-                            'adyen-checkout__label__text--error': errorMessage
+                            'bubp-checkout__label__text': true,
+                            'bubp-checkout__label__text--error': errorMessage
                         })}
                         data-id={name}
                     >
@@ -97,9 +97,9 @@ const Field: FunctionalComponent<FieldProps> = props => {
                 {/*@ts-ignore - function is callable*/}
                 {typeof label === 'function' && label()}
 
-                {labelEndAdornment && <span className="adyen-checkout__label-adornment--end">{labelEndAdornment}</span>}
+                {labelEndAdornment && <span className="bubp-checkout__label-adornment--end">{labelEndAdornment}</span>}
 
-                {helper && <span className={'adyen-checkout__helper-text'}>{helper}</span>}
+                {helper && <span className={'bubp-checkout__helper-text'}>{helper}</span>}
             </Fragment>
         );
     }, [label, errorMessage, labelEndAdornment, helper]);
@@ -107,7 +107,7 @@ const Field: FunctionalComponent<FieldProps> = props => {
     const renderInputRelatedElements = useCallback(() => {
         const errorElem = (
             <span
-                className={classNames({ 'adyen-checkout-contextual-text--error': true, 'adyen-checkout-contextual-text--hidden': !showError })}
+                className={classNames({ 'bubp-checkout-contextual-text--error': true, 'bubp-checkout-contextual-text--hidden': !showError })}
                 {...(contextVisibleToSR && { id: `${uniqueId.current}${ARIA_ERROR_SUFFIX}` })}
                 aria-hidden={contextVisibleToSR ? null : 'true'}
             >
@@ -116,7 +116,7 @@ const Field: FunctionalComponent<FieldProps> = props => {
         );
         const contextualElem = (
             <span
-                className={classNames({ 'adyen-checkout-contextual-text': true, 'adyen-checkout-contextual-text--hidden': !showContext })}
+                className={classNames({ 'bubp-checkout-contextual-text': true, 'bubp-checkout-contextual-text--hidden': !showContext })}
                 {...(contextVisibleToSR && { id: `${uniqueId.current}${ARIA_CONTEXT_SUFFIX}` })}
                 aria-hidden={contextVisibleToSR ? null : 'true'}
             >
@@ -128,8 +128,8 @@ const Field: FunctionalComponent<FieldProps> = props => {
             <Fragment>
                 <div
                     className={classNames([
-                        'adyen-checkout__input-wrapper',
-                        ...inputWrapperModifiers.map(m => `adyen-checkout__input-wrapper--${m}`)
+                        'bubp-checkout__input-wrapper',
+                        ...inputWrapperModifiers.map(m => `bubp-checkout__input-wrapper--${m}`)
                     ])}
                     dir={dir}
                 >
@@ -146,19 +146,19 @@ const Field: FunctionalComponent<FieldProps> = props => {
                     })}
 
                     {isLoading && (
-                        <span className="adyen-checkout-input__inline-validation adyen-checkout-input__inline-validation--loading">
+                        <span className="bubp-checkout-input__inline-validation bubp-checkout-input__inline-validation--loading">
                             <Spinner size="small" />
                         </span>
                     )}
 
                     {isValid && showValidIcon !== false && (
-                        <span className="adyen-checkout-input__inline-validation adyen-checkout-input__inline-validation--valid">
+                        <span className="bubp-checkout-input__inline-validation bubp-checkout-input__inline-validation--valid">
                             <Icon type={`${PREFIX}checkmark`} alt={i18n?.get('field.valid')} />
                         </span>
                     )}
 
                     {errorMessage && (
-                        <span className="adyen-checkout-input__inline-validation adyen-checkout-input__inline-validation--invalid">
+                        <span className="bubp-checkout-input__inline-validation bubp-checkout-input__inline-validation--invalid">
                             <Icon type={`${PREFIX}field_error`} alt={i18n?.get('error.title')} />
                         </span>
                     )}
@@ -179,10 +179,10 @@ const Field: FunctionalComponent<FieldProps> = props => {
             const defaultWrapperProps = {
                 onClick: onFocusField,
                 className: classNames({
-                    'adyen-checkout__label': true,
-                    'adyen-checkout__label--focused': focused,
-                    'adyen-checkout__label--filled': filled,
-                    'adyen-checkout__label--disabled': disabled
+                    'bubp-checkout__label': true,
+                    'bubp-checkout__label--focused': focused,
+                    'bubp-checkout__label--filled': filled,
+                    'bubp-checkout__label--disabled': disabled
                 })
             };
 
@@ -214,13 +214,13 @@ const Field: FunctionalComponent<FieldProps> = props => {
     return (
         <div
             className={classNames(
-                'adyen-checkout__field',
+                'bubp-checkout__field',
                 className,
-                classNameModifiers.map(m => `adyen-checkout__field--${m}`),
+                classNameModifiers.map(m => `bubp-checkout__field--${m}`),
                 {
-                    'adyen-checkout__field--error': errorMessage,
-                    'adyen-checkout__field--valid': isValid,
-                    'adyen-checkout__field--inactive': readOnly || disabled
+                    'bubp-checkout__field--error': errorMessage,
+                    'bubp-checkout__field--valid': isValid,
+                    'bubp-checkout__field--inactive': readOnly || disabled
                 }
             )}
         >

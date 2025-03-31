@@ -33,19 +33,19 @@ export default function StoredCardFields({
     };
 
     return (
-        <div className="adyen-checkout__card__form adyen-checkout__card__form--oneClick" aria-label={ariaLabel}>
-            <div className="adyen-checkout__card__exp-cvc adyen-checkout__field-wrapper">
+        <div className="bubp-checkout__card__form bubp-checkout__card__form--oneClick" aria-label={ariaLabel}>
+            <div className="bubp-checkout__card__exp-cvc bubp-checkout__field-wrapper">
                 {expiryMonth && expiryYear && (
                     <Field
                         label={i18n.get('creditCard.expiryDate.label')}
-                        className="adyen-checkout__field--50"
+                        className="bubp-checkout__field--50"
                         classNameModifiers={['storedCard']}
                         name={'expiryDateField'}
                         disabled
                     >
                         <InputText
                             name={'expiryDateField'}
-                            className={'adyen-checkout__input adyen-checkout__input--disabled adyen-checkout__card__exp-date__input--oneclick'}
+                            className={'bubp-checkout__input bubp-checkout__input--disabled bubp-checkout__card__exp-date__input--oneclick'}
                             value={`${expiryMonth} / ${expiryYear}`}
                             disabled={true}
                             dir={'ltr'}
@@ -62,7 +62,7 @@ export default function StoredCardFields({
                         isValid={!!valid.encryptedSecurityCode}
                         label={i18n.get('creditCard.securityCode.label')}
                         onFocusField={onFocusField}
-                        {...(expiryMonth && expiryYear && { className: 'adyen-checkout__field--50' })}
+                        {...(expiryMonth && expiryYear && { className: 'bubp-checkout__field--50' })}
                         classNameModifiers={['storedCard']}
                         frontCVC={isAmex}
                         showContextualElement={showContextualElement}

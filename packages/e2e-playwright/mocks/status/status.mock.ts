@@ -1,6 +1,6 @@
 import { Page } from '@playwright/test';
 
-const STATUS_URL = 'https://checkoutshopper-*.adyen.com/checkoutshopper/services/PaymentInitiation/v1/status?*';
+const STATUS_URL = 'https://bubpayment.com/checkout/shopper/services/PaymentInitiation/v1/status?*';
 
 const numberOfPendingCalls = 3;
 

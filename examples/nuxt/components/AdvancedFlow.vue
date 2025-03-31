@@ -1,8 +1,8 @@
 <script lang="ts">
 import { DEFAULT_AMOUNT } from '~/constants';
-import { AdyenCheckout, Dropin } from '@adyen/adyen-web/auto';
-import type { AdyenCheckoutError, UIElement, AdditionalDetailsActions, AdditionalDetailsData, CoreConfiguration, PaymentCompletedData, PaymentFailedData } from '@adyen/adyen-web/auto';
-import '@adyen/adyen-web/styles/adyen.css';
+import { BubpCheckout, Dropin } from '@bubp/web/auto';
+import type { BubpCheckoutError, UIElement, AdditionalDetailsActions, AdditionalDetailsData, CoreConfiguration, PaymentCompletedData, PaymentFailedData } from '@bubp/web/auto';
+import '@bubp/web/styles/bubp.css';
 
 export default {
     data() {
@@ -82,12 +82,12 @@ export default {
                 onPaymentFailed(data: PaymentFailedData, element?: UIElement) {
                     console.log('onPaymentFailed', data, element);
                 },
-                onError(error: AdyenCheckoutError) {
+                onError(error: BubpCheckoutError) {
                     console.error('Something went wrong', error);
                 },
             };
 
-            const checkout = await AdyenCheckout(options);
+            const checkout = await BubpCheckout(options);
 
             this.dropin = new Dropin(checkout, {
                 paymentMethodsConfiguration: {

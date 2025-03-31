@@ -1,25 +1,25 @@
 @use 'styles/index';
 @import 'styles/variable-generator';
 
-.adyen-checkout__dropin {
+.bubp-checkout__dropin {
     display: flex;
     flex-direction: column;
     gap: token(spacer-100);
 }
 
-.adyen-checkout-payment-methods-container {
+.bubp-checkout-payment-methods-container {
     display: flex;
     flex-direction: column;
     gap: token(spacer-070);
 }
 
-.adyen-checkout-payment-methods-list-label {
-    @include index.adyen-checkout-text-subtitle;
+.bubp-checkout-payment-methods-list-label {
+    @include index.bubp-checkout-text-subtitle;
 
     color: token(color-label-primary);
 }
 
-.adyen-checkout__payment-methods-list {
+.bubp-checkout__payment-methods-list {
     list-style: none;
     margin: 0;
     padding: 0;
@@ -33,7 +33,7 @@
     }
 }
 
-.adyen-checkout__instant-payment-methods-list {
+.bubp-checkout__instant-payment-methods-list {
     $instant-pm-gap: token(spacer-070);
 
     list-style: none;
@@ -48,7 +48,7 @@
     }
 }
 
-.adyen-checkout__payment-method {
+.bubp-checkout__payment-method {
     display: block;
 
     &__details {
@@ -68,18 +68,18 @@
     }
 }
 
-.adyen-checkout-pm-details-wrapper {
+.bubp-checkout-pm-details-wrapper {
     display: grid;
     grid-template-rows: 0fr;
     transition: grid-template-rows 250ms ease;
     visibility: hidden;
 }
 
-.adyen-checkout-pm-details-wrapper[aria-hidden='false'] {
+.bubp-checkout-pm-details-wrapper[aria-hidden='false'] {
     grid-template-rows: 1fr;
     visibility: visible;
 
-    .adyen-checkout__payment-method__details{
+    .bubp-checkout__payment-method__details{
         overflow: visible;
     }
 }

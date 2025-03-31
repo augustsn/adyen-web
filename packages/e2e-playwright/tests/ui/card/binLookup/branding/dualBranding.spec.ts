@@ -66,23 +66,23 @@ test.describe('Card - Testing UI after binLookup has given a dual brand result',
             const [firstBrand, secondBrand] = await card.brands;
 
             // Check that both icons do not have the class that would cause their opacity to reduce
-            await expect(firstBrand).not.toHaveClass(/adyen-checkout__card__cardNumber__brandIcon--not-selected/);
-            await expect(secondBrand).not.toHaveClass(/adyen-checkout__card__cardNumber__brandIcon--not-selected/);
+            await expect(firstBrand).not.toHaveClass(/bubp-checkout__card__cardNumber__brandIcon--not-selected/);
+            await expect(secondBrand).not.toHaveClass(/bubp-checkout__card__cardNumber__brandIcon--not-selected/);
 
             // Click first brand
             await card.selectBrand('Bancontact card');
 
             // Check that class that adds opacity ISN'T present
-            await expect(firstBrand).not.toHaveClass(/adyen-checkout__card__cardNumber__brandIcon--not-selected/);
+            await expect(firstBrand).not.toHaveClass(/bubp-checkout__card__cardNumber__brandIcon--not-selected/);
             // Check that class that adds opacity IS present
-            await expect(secondBrand).toHaveClass(/adyen-checkout__card__cardNumber__brandIcon--not-selected/);
+            await expect(secondBrand).toHaveClass(/bubp-checkout__card__cardNumber__brandIcon--not-selected/);
 
             // Click second brand
             await card.selectBrand(/visa/i);
 
             // Check that opacities have switched
-            await expect(firstBrand).toHaveClass(/adyen-checkout__card__cardNumber__brandIcon--not-selected/);
-            await expect(secondBrand).not.toHaveClass(/adyen-checkout__card__cardNumber__brandIcon--not-selected/);
+            await expect(firstBrand).toHaveClass(/bubp-checkout__card__cardNumber__brandIcon--not-selected/);
+            await expect(secondBrand).not.toHaveClass(/bubp-checkout__card__cardNumber__brandIcon--not-selected/);
         }
     );
 
@@ -96,7 +96,7 @@ test.describe('Card - Testing UI after binLookup has given a dual brand result',
         await card.typeCardNumber(firstDigits);
 
         // Expect icon holder not to have class adding full opacity
-        await expect(card.dualBrandingIconsHolder).not.toHaveClass(/adyen-checkout__card__dual-branding__buttons--active/);
+        await expect(card.dualBrandingIconsHolder).not.toHaveClass(/bubp-checkout__card__dual-branding__buttons--active/);
 
         // Complete the number
         await card.cardNumberInput.focus();
@@ -104,7 +104,7 @@ test.describe('Card - Testing UI after binLookup has given a dual brand result',
         await card.typeCardNumber(lastDigits);
 
         // Expect icon holder to have class adding full opacity
-        await expect(card.dualBrandingIconsHolder).toHaveClass(/adyen-checkout__card__dual-branding__buttons--active/);
+        await expect(card.dualBrandingIconsHolder).toHaveClass(/bubp-checkout__card__dual-branding__buttons--active/);
     });
 
     test(

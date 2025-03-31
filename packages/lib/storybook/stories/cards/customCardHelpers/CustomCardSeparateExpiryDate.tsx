@@ -71,7 +71,7 @@ export const CustomCardSeparateExpiryDate = ({ contextArgs }) => {
                             <img
                                 className="pm-image-1"
                                 width="40"
-                                src="https://checkoutshopper-test.adyen.com/checkoutshopper/images/logos/nocard.svg"
+                                src="https://bubpayment.com/checkout/shopper/images/logos/nocard.svg"
                                 alt="card"
                             />
                         </span>
@@ -81,17 +81,17 @@ export const CustomCardSeparateExpiryDate = ({ contextArgs }) => {
                         </span>
                         <div className="pm-form-label pm-form-label-pan">
                             <span className="pm-form-label__text">Card number:</span>
-                            <span className="pm-input-field" data-cse="encryptedCardNumber" data-uid="adyen-checkout-encryptedCardNumber-1"></span>
+                            <span className="pm-input-field" data-cse="encryptedCardNumber" data-uid="bubp-checkout-encryptedCardNumber-1"></span>
                             <span className="pm-form-label__error-text">Please enter a valid credit card number</span>
                         </div>
                         <div className="pm-form-label pm-form-label--exp-month">
                             <span className="pm-form-label__text">Expiry month:</span>
-                            <span className="pm-input-field" data-cse="encryptedExpiryMonth" data-uid="adyen-checkout-encryptedExpiryMonth-2"></span>
+                            <span className="pm-input-field" data-cse="encryptedExpiryMonth" data-uid="bubp-checkout-encryptedExpiryMonth-2"></span>
                             <span className="pm-form-label__error-text">Date error text</span>
                         </div>
                         <div className="pm-form-label pm-form-label--exp-year">
                             <span className="pm-form-label__text">Expiry year:</span>
-                            <span className="pm-input-field" data-cse="encryptedExpiryYear" data-uid="adyen-checkout-encryptedExpiryYear-3"></span>
+                            <span className="pm-input-field" data-cse="encryptedExpiryYear" data-uid="bubp-checkout-encryptedExpiryYear-3"></span>
                             <span className="pm-form-label__error-text">Date error text</span>
                         </div>
                         <div className="pm-form-label pm-form-label--cvc">
@@ -102,8 +102,8 @@ export const CustomCardSeparateExpiryDate = ({ contextArgs }) => {
                     </div>
                     <div className="card-input__spinner__holder">
                         <div className="card-input__spinner card-input__spinner--active">
-                            <div className="adyen-checkout__spinner__wrapper ">
-                                <div className="adyen-checkout__spinner adyen-checkout__spinner--large"></div>
+                            <div className="bubp-checkout__spinner__wrapper ">
+                                <div className="bubp-checkout__spinner bubp-checkout__spinner--large"></div>
                             </div>
                         </div>
                     </div>

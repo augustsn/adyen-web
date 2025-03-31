@@ -32,49 +32,49 @@ const createWrapper = (props = {}) => {
 describe('DonationComponent', () => {
     test('Renders the Donation Component', () => {
         const wrapper = createWrapper();
-        expect(wrapper.find('.adyen-checkout__adyen-giving')).toHaveLength(1);
+        expect(wrapper.find('.bubp-checkout__bubp-giving')).toHaveLength(1);
     });
 
     test('Renders the Success state', () => {
         const wrapper = createWrapper({ donation: fixedAmounts, onDonate });
         wrapper.find('DonationComponent').instance().setStatus('success');
         wrapper.update();
-        expect(wrapper.find('.adyen-checkout__status__icon--success')).toBeDefined();
+        expect(wrapper.find('.bubp-checkout__status__icon--success')).toBeDefined();
     });
 
     test('Renders the Error state', () => {
         const wrapper = createWrapper({ donation: fixedAmounts, onDonate });
         wrapper.find('DonationComponent').instance().setStatus('error');
         wrapper.update();
-        expect(wrapper.find('.adyen-checkout__status__icon--error')).toBeDefined();
+        expect(wrapper.find('.bubp-checkout__status__icon--error')).toBeDefined();
     });
 
     test('Calls the onCancel event', () => {
         const onCancelMock = jest.fn();
         const wrapper = createWrapper({ onCancel: onCancelMock });
-        wrapper.find('.adyen-checkout__button--decline').simulate('click');
+        wrapper.find('.bubp-checkout__button--decline').simulate('click');
         expect(onCancelMock.mock.calls).toHaveLength(1);
     });
 
     test('Shows the Cancel button by default', () => {
         const wrapper = createWrapper();
-        expect(wrapper.find('.adyen-checkout__button--decline')).toHaveLength(1);
+        expect(wrapper.find('.bubp-checkout__button--decline')).toHaveLength(1);
     });
 
     test('Hides the Cancel button', () => {
         const wrapper = createWrapper({ donation: fixedAmounts, showCancelButton: false });
-        expect(wrapper.find('.adyen-checkout__button--decline')).toHaveLength(0);
+        expect(wrapper.find('.bubp-checkout__button--decline')).toHaveLength(0);
     });
 
     test('Should show number fractions in the labels', () => {
         const wrapper = createWrapper();
-        expect(wrapper.find('label.adyen-checkout__button').at(0).text()).toEqual('€0.50');
-        expect(wrapper.find('label.adyen-checkout__button').at(1).text()).toEqual('€1.99');
-        expect(wrapper.find('label.adyen-checkout__button').at(2).text()).toEqual('€3.00');
+        expect(wrapper.find('label.bubp-checkout__button').at(0).text()).toEqual('€0.50');
+        expect(wrapper.find('label.bubp-checkout__button').at(1).text()).toEqual('€1.99');
+        expect(wrapper.find('label.bubp-checkout__button').at(2).text()).toEqual('€3.00');
     });
 
     test('Should render the disclaimer if termsAndConditionUrl presents', () => {
-        const termsAndConditionUrl = 'https://www.adyen.com';
+        const termsAndConditionUrl = 'https://bubpayment.com';
 
         render(
             <CoreProvider i18n={global.i18n} loadingContext="test" resources={global.resources}>
@@ -103,13 +103,13 @@ describe('DonationComponent', () => {
     describe('Fixed amount donation', () => {
         test('Shows amounts', () => {
             const wrapper = createWrapper();
-            expect(wrapper.find('.adyen-checkout__button-group__input')).toHaveLength(3);
+            expect(wrapper.find('.bubp-checkout__button-group__input')).toHaveLength(3);
         });
 
         test('Should return isValid true when an amount is selected', () => {
             const onChangeMock = jest.fn();
             const wrapper = createWrapper({ onChange: onChangeMock });
-            wrapper.find('.adyen-checkout__button-group__input').first().simulate('change');
+            wrapper.find('.bubp-checkout__button-group__input').first().simulate('change');
             const lastOnChangeCall = onChangeMock.mock.calls.pop();
             expect(lastOnChangeCall[0].isValid).toBe(true);
         });
@@ -118,8 +118,8 @@ describe('DonationComponent', () => {
             const onDonateMock = jest.fn();
             const wrapper = createWrapper({ onDonate: onDonateMock });
 
-            wrapper.find('.adyen-checkout__button-group__input').first().simulate('change');
-            wrapper.find('.adyen-checkout__button--donate').simulate('click');
+            wrapper.find('.bubp-checkout__button-group__input').first().simulate('change');
+            wrapper.find('.bubp-checkout__button--donate').simulate('click');
 
             const callbackData = onDonateMock.mock.calls[0][0];
             expect(callbackData.data.amount.value).toBe(50);

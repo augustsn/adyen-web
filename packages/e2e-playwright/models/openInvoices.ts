@@ -16,10 +16,10 @@ class OpenInvoices extends Base {
         this.rootElement = this.page.locator(rootElementSelector);
         this.rootElementSelector = rootElementSelector;
 
-        this.riverty = this.rootElement.locator('.adyen-checkout__open-invoice');
+        this.riverty = this.rootElement.locator('.bubp-checkout__open-invoice');
 
         this.rivertyDeliveryAddressCheckbox = this.riverty
-            .locator('.adyen-checkout__checkbox')
+            .locator('.bubp-checkout__checkbox')
             .filter({ hasText: 'Specify a separate delivery address' });
     }
 

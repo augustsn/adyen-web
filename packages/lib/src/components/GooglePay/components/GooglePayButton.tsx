@@ -38,7 +38,7 @@ const GooglePayButton = (props: GooglePayButtonProps) => {
             });
     }, [props.buttonColor, props.buttonType, props.buttonLocale, props.buttonSizeMode, props.buttonRootNode, props.paymentsClient]);
 
-    return <div data-testid="googlepay-button-container" className={'adyen-checkout__paywithgoogle'} ref={googlePayWrapperRef} />;
+    return <div data-testid="googlepay-button-container" className={'bubp-checkout__paywithgoogle'} ref={googlePayWrapperRef} />;
 };
 
 export default GooglePayButton;

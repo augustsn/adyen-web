@@ -5,7 +5,7 @@
     border-right: 1.5px solid $color;
 }
 
-.adyen-checkout-checkmark {
+.bubp-checkout-checkmark {
     @include set-checkmark-color;
 
     transform: rotate(45deg);
@@ -13,7 +13,7 @@
     width: token(spacer-030);
 }
 
-.adyen-checkout__segmented-control {
+.bubp-checkout__segmented-control {
     display: flex;
     justify-content: space-between;
     gap: token(spacer-020);
@@ -24,19 +24,19 @@
     &--disabled {
         pointer-events: none;
 
-        > .adyen-checkout__segmented-control-segment {
+        > .bubp-checkout__segmented-control-segment {
             color: token(color-label-disabled);
         }
 
-        > .adyen-checkout__segmented-control-segment--selected {
-            .adyen-checkout-checkmark {
+        > .bubp-checkout__segmented-control-segment--selected {
+            .bubp-checkout-checkmark {
                 @include set-checkmark-color(token(color-label-disabled));
             }
         }
     }
 }
 
-.adyen-checkout__segmented-control-segment {
+.bubp-checkout__segmented-control-segment {
     display: flex;
     align-items: center;
     justify-content: center;

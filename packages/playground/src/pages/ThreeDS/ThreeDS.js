@@ -1,12 +1,12 @@
-import { AdyenCheckout } from '@adyen/adyen-web';
-import '@adyen/adyen-web/styles/adyen.css';
+import { BubpCheckout } from '@bubp/web';
+import '@bubp/web/styles/bubp.css';
 import '../../../config/polyfills';
 import '../../style.scss';
 import { makeDetailsCall } from '../../services';
 import { shopperLocale, countryCode } from '../../config/commonConfig';
 
 (async () => {
-    const checkout = await AdyenCheckout({
+    const checkout = await BubpCheckout({
         countryCode,
         locale: shopperLocale,
         environment: 'test',

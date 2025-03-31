@@ -15,14 +15,14 @@ function IssuerButton({ name, id, icon, onClick, selected = false }: IssuerButto
     return (
         <button
             type="button"
-            className={cx('adyen-checkout__issuer-button', { 'adyen-checkout__issuer-button--selected': selected })}
+            className={cx('bubp-checkout__issuer-button', { 'bubp-checkout__issuer-button--selected': selected })}
             aria-label={name}
             aria-pressed={selected}
             onClick={onClick}
             value={id}
         >
-            {!!icon && <Img className="adyen-checkout__issuer-button-img" alt={name} src={icon} />}
-            <span className="adyen-checkout__issuer-button-text">{name}</span>
+            {!!icon && <Img className="bubp-checkout__issuer-button-img" alt={name} src={icon} />}
+            <span className="bubp-checkout__issuer-button-text">{name}</span>
         </button>
     );
 }

@@ -18,17 +18,17 @@ const CtPSingleCard = ({ card, errorMessage }: CtPSingleCardProps) => {
 
     return (
         <Fragment>
-            <div className="adyen-checkout-ctp__card-list-single-card">
-                <Img src={cardImage} height={24} className={'adyen-checkout-ctp__card-image'} />
+            <div className="bubp-checkout-ctp__card-list-single-card">
+                <Img src={cardImage} height={24} className={'bubp-checkout-ctp__card-image'} />
 
-                <span className={classnames({ 'adyen-checkout-ctp__card-list-single-card-expired': card.isExpired })}>
+                <span className={classnames({ 'bubp-checkout-ctp__card-list-single-card-expired': card.isExpired })}>
                     {card.title} {`•••• ${card.panLastFour}`}
                 </span>
 
-                {card.isExpired && <span className="adyen-checkout-ctp__expired-label">{i18n.get('ctp.cards.expiredCard')}</span>}
+                {card.isExpired && <span className="bubp-checkout-ctp__expired-label">{i18n.get('ctp.cards.expiredCard')}</span>}
             </div>
 
-            {errorMessage && <div className="adyen-checkout-contextual-text--error">{errorMessage}</div>}
+            {errorMessage && <div className="bubp-checkout-contextual-text--error">{errorMessage}</div>}
         </Fragment>
     );
 };

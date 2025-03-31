@@ -71,7 +71,7 @@ export const CustomCardDefault = ({ contextArgs }) => {
                             <img
                                 className="pm-image-1"
                                 width="40"
-                                src="https://checkoutshopper-test.adyen.com/checkoutshopper/images/logos/nocard.svg"
+                                src="https://bubpayment.com/checkout/shopper/images/logos/nocard.svg"
                                 alt=""
                             />
                         </span>
@@ -97,8 +97,8 @@ export const CustomCardDefault = ({ contextArgs }) => {
                     </div>
                     <div className="card-input__spinner__holder">
                         <div className="card-input__spinner card-input__spinner--active">
-                            <div className="adyen-checkout__spinner__wrapper ">
-                                <div className="adyen-checkout__spinner adyen-checkout__spinner--large"></div>
+                            <div className="bubp-checkout__spinner__wrapper ">
+                                <div className="bubp-checkout__spinner bubp-checkout__spinner--large"></div>
                             </div>
                         </div>
                     </div>

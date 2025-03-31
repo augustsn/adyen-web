@@ -1,5 +1,5 @@
-import { AdyenCheckout, Card, Bancontact, nl_NL } from '@adyen/adyen-web';
-import '@adyen/adyen-web/styles/adyen.css';
+import { BubpCheckout, Card, Bancontact, nl_NL } from '@bubp/web';
+import '@bubp/web/styles/bubp.css';
 
 import { getPaymentMethods } from '../../services';
 import { handleSubmit, handleAdditionalDetails, handleError, handleOnPaymentFailed, handleOnPaymentCompleted } from '../../handlers';
@@ -27,11 +27,11 @@ const showComps = {
 const disclaimerMessage = {
     message: 'By continuing you accept the %{linkText} of MyStore',
     linkText: 'terms and conditions',
-    link: 'https://www.adyen.com'
+    link: 'https://bubpayment.com'
 };
 
 getPaymentMethods({ amount, shopperLocale }).then(async paymentMethodsResponse => {
-    window.checkout = await AdyenCheckout({
+    window.checkout = await BubpCheckout({
         amount,
         countryCode,
         clientKey: process.env.__CLIENT_KEY__,
@@ -265,7 +265,7 @@ getPaymentMethods({ amount, shopperLocale }).then(async paymentMethodsResponse =
             },
             clickToPayConfiguration: {
                 shopperEmail: 'shopper@example.com',
-                merchantDisplayName: 'Adyen Merchant Name',
+                merchantDisplayName: 'BUB Payment Merchant Name',
                 onReady: () => {
                     console.log('Component is ready to be used');
                 },

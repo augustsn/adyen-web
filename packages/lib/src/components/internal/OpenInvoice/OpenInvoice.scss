@@ -1,36 +1,36 @@
 @use 'styles/index';
 @import 'styles/variable-generator';
 
-.adyen-checkout__field--separateDeliveryAddress {
-    .adyen-checkout__input-wrapper {
-        @include index.adyen-checkout-input-wrapper-reset;
+.bubp-checkout__field--separateDeliveryAddress {
+    .bubp-checkout__input-wrapper {
+        @include index.bubp-checkout-input-wrapper-reset;
     }
 }
 
-.adyen-checkout__open-invoice .adyen-checkout__fieldset--personalDetails {
+.bubp-checkout__open-invoice .bubp-checkout__fieldset--personalDetails {
     padding-bottom: token(spacer-040);
 }
 
-.adyen-checkout__open-invoice .adyen-checkout__fieldset--billingAddress {
+.bubp-checkout__open-invoice .bubp-checkout__fieldset--billingAddress {
     padding-bottom: token(spacer-040);
 }
 
-.adyen-checkout__open-invoice .adyen-checkout__fieldset--deliveryAddress {
+.bubp-checkout__open-invoice .bubp-checkout__fieldset--deliveryAddress {
     margin-top: token(spacer-090);
     padding-bottom: token(spacer-040);
 }
 
-.adyen-checkout__open-invoice .adyen-checkout__input--separateDeliveryAddress {
+.bubp-checkout__open-invoice .bubp-checkout__input--separateDeliveryAddress {
     margin-bottom: 0;
 }
 
-.adyen-checkout__open-invoice .adyen-checkout__field--consentCheckbox {
+.bubp-checkout__open-invoice .bubp-checkout__field--consentCheckbox {
     margin-top: token(spacer-070);
 }
 
-.adyen-checkout__open-invoice{
+.bubp-checkout__open-invoice{
     &--loading{
-        @include index.adyen-checkout-component-loading;
+        @include index.bubp-checkout-component-loading;
     }
 }
 

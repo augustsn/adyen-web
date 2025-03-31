@@ -1,5 +1,5 @@
-import { AdyenCheckout, Dropin, Card, WeChat, Giftcard, PayPal, Ach, GooglePay, Riverty, Bancontact, Klarna } from '@adyen/adyen-web';
-import '@adyen/adyen-web/styles/adyen.css';
+import { BubpCheckout, Dropin, Card, WeChat, Giftcard, PayPal, Ach, GooglePay, Riverty, Bancontact, Klarna } from '@bubp/web';
+import '@bubp/web/styles/bubp.css';
 import { createSession } from '../../services';
 import { amount, shopperLocale, shopperReference, countryCode, returnUrl } from '../../config/commonConfig';
 import { handleOnPaymentCompleted, handleOnPaymentFailed } from '../../handlers';
@@ -12,11 +12,11 @@ export async function initSession() {
         shopperLocale,
         shopperReference,
         telephoneNumber: '+611223344',
-        shopperEmail: 'shopper.email@adyen.com',
+        shopperEmail: 'shopper.email@bubpayment.com',
         countryCode
     });
 
-    const checkout = await AdyenCheckout({
+    const checkout = await BubpCheckout({
         environment: process.env.__CLIENT_ENV__,
         clientKey: process.env.__CLIENT_KEY__,
 

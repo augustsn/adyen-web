@@ -99,7 +99,7 @@ const createApplePayTotal = (lineItems: ApplePayJS.ApplePayLineItem[]): ApplePay
 const createApplePayAmountHelper = () => {
     let applePayTotal: ApplePayJS.ApplePayLineItem = null;
 
-    function convertFloatAmountToAdyenAmount(totalPrice: string): number {
+    function convertFloatAmountToBubpAmount(totalPrice: string): number {
         if (totalPrice.includes('.')) {
             return Number(totalPrice.replace('.', ''));
         }
@@ -107,8 +107,8 @@ const createApplePayAmountHelper = () => {
     }
 
     return {
-        getFinalAdyenAmount() {
-            return convertFloatAmountToAdyenAmount(applePayTotal.amount);
+        getFinalBubpAmount() {
+            return convertFloatAmountToBubpAmount(applePayTotal.amount);
         },
         getApplePayTotal() {
             return applePayTotal;
@@ -158,7 +158,7 @@ export const Express: ApplePayStory = {
                     const paymentData = {
                         amount: {
                             currency: getCurrency(COUNTRY_CODE),
-                            value: ApplePayAmountHelper.getFinalAdyenAmount()
+                            value: ApplePayAmountHelper.getFinalBubpAmount()
                         },
                         countryCode: COUNTRY_CODE,
                         shopperLocale: SHOPPER_LOCALE

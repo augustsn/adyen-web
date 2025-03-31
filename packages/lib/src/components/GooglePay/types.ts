@@ -179,7 +179,7 @@ export interface GooglePayConfiguration extends UIElementProps {
 
     configuration?: {
         /**
-         * Adyen's merchant account name
+         * BUB Payment's merchant account name
          * @see https://developers.google.com/pay/api/web/reference/request-objects#gateway
          */
         gatewayMerchantId: string;

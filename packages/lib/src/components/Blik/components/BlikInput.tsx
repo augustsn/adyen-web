@@ -46,8 +46,8 @@ function BlikInput(props: BlikInputProps) {
     this.showValidation = triggerValidation;
 
     return (
-        <div className="adyen-checkout__blik">
-            <p className="adyen-checkout__blik__helper">{i18n.get('blik.help')}</p>
+        <div className="bubp-checkout__blik">
+            <p className="bubp-checkout__blik__helper">{i18n.get('blik.help')}</p>
             <Field
                 errorMessage={!!errors.blikCode && i18n.get(errors.blikCode.errorMessage)}
                 label={i18n.get('blik.code')}

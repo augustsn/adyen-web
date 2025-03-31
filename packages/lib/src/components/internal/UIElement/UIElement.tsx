@@ -2,7 +2,7 @@ import { h } from 'preact';
 import BaseElement from '../BaseElement/BaseElement';
 import PayButton from '../PayButton';
 import { assertIsDropin, cleanupFinalResult, getRegulatoryDefaults, sanitizeResponse, verifyPaymentDidNotFail } from './utils';
-import AdyenCheckoutError, { NETWORK_ERROR } from '../../../core/Errors/AdyenCheckoutError';
+import BubpCheckoutError, { NETWORK_ERROR } from '../../../core/Errors/BubpCheckoutError';
 import { hasOwnProperty } from '../../../utils/hasOwnProperty';
 import { Resources } from '../../../core/Context/Resources';
 import { ANALYTICS_ERROR_TYPE, ANALYTICS_EVENT, ANALYTICS_SUBMIT_STR } from '../../../core/Analytics/constants';
@@ -225,7 +225,7 @@ export abstract class UIElement<P extends UIElementProps = UIElementProps> exten
         }
 
         this.handleError(
-            new AdyenCheckoutError(
+            new BubpCheckoutError(
                 'IMPLEMENTATION_ERROR',
                 'It can not perform /payments call. Callback "onSubmit" is missing or Checkout session is not available'
             )
@@ -254,10 +254,10 @@ export abstract class UIElement<P extends UIElementProps = UIElementProps> exten
         try {
             return await this.core.session.submitPayment(data);
         } catch (error: unknown) {
-            if (error instanceof AdyenCheckoutError) {
+            if (error instanceof BubpCheckoutError) {
                 this.handleError(error);
             } else {
-                this.handleError(new AdyenCheckoutError('ERROR', 'Error when making /payments call', { cause: error }));
+                this.handleError(new BubpCheckoutError('ERROR', 'Error when making /payments call', { cause: error }));
             }
 
             return Promise.reject(error);
@@ -277,7 +277,7 @@ export abstract class UIElement<P extends UIElementProps = UIElementProps> exten
         if (this.props.onComplete) this.props.onComplete(state, this.elementRef);
     }
 
-    protected handleError = (error: AdyenCheckoutError): void => {
+    protected handleError = (error: BubpCheckoutError): void => {
         /**
          * Set status using elementRef, which:
          * - If Drop-in, will set status for Dropin component, and then it will propagate the new status for the active payment method component
@@ -314,7 +314,7 @@ export abstract class UIElement<P extends UIElementProps = UIElementProps> exten
         }
 
         this.handleError(
-            new AdyenCheckoutError(
+            new BubpCheckoutError(
                 'IMPLEMENTATION_ERROR',
                 'It can not perform /payments/details call. Callback "onAdditionalDetails" is missing or Checkout session is not available'
             )
@@ -325,8 +325,8 @@ export abstract class UIElement<P extends UIElementProps = UIElementProps> exten
         try {
             return await this.core.session.submitDetails(data);
         } catch (error: unknown) {
-            if (error instanceof AdyenCheckoutError) this.handleError(error);
-            else this.handleError(new AdyenCheckoutError('ERROR', 'Error when making /details call', { cause: error }));
+            if (error instanceof BubpCheckoutError) this.handleError(error);
+            else this.handleError(new BubpCheckoutError('ERROR', 'Error when making /details call', { cause: error }));
 
             return Promise.reject(error);
         }
@@ -535,7 +535,7 @@ export abstract class UIElement<P extends UIElementProps = UIElementProps> exten
         })
             .catch(error => {
                 this.handleError(
-                    new AdyenCheckoutError(
+                    new BubpCheckoutError(
                         'IMPLEMENTATION_ERROR',
                         'Something failed during payment methods update or onPaymentMethodsRequest was not implemented',
                         {

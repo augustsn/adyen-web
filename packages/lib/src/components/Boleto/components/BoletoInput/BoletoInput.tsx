@@ -79,7 +79,7 @@ function BoletoInput(props: BoletoInputProps) {
     const showFormInstruction = props.personalDetailsRequired || props.billingAddressRequired;
 
     return (
-        <div className="adyen-checkout__boleto-input__field">
+        <div className="bubp-checkout__boleto-input__field">
             {showFormInstruction && <FormInstruction />}
 
             {props.personalDetailsRequired && (

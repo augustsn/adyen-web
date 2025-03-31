@@ -186,7 +186,7 @@ class IbanInput extends Component<IbanInputProps, IbanInputState> {
             <Fieldset classNameModifiers={['iban-input']} label={this.props.label}>
                 {this.props.holderName && (
                     <Field
-                        className={'adyen-checkout__field--owner-name'}
+                        className={'bubp-checkout__field--owner-name'}
                         label={i18n.get('sepa.ownerName')}
                         filled={data['ownerName'] && data['ownerName'].length}
                         errorMessage={errors.holder ? i18n.get(errors.holder.error) : false}
@@ -196,7 +196,7 @@ class IbanInput extends Component<IbanInputProps, IbanInputState> {
                     >
                         <InputText
                             name={'ownerName'}
-                            className={'adyen-checkout__iban-input__owner-name'}
+                            className={'bubp-checkout__iban-input__owner-name'}
                             placeholder={placeholders?.ownerName}
                             value={data['ownerName']}
                             aria-invalid={!!this.state.errors.holder}
@@ -208,7 +208,7 @@ class IbanInput extends Component<IbanInputProps, IbanInputState> {
                 )}
 
                 <Field
-                    className={'adyen-checkout__field--iban-number'}
+                    className={'bubp-checkout__field--iban-number'}
                     label={i18n.get('sepa.ibanNumber')}
                     errorMessage={errors.iban ? i18n.get(errors.iban.error) : false}
                     filled={data['ibanNumber'] && data['ibanNumber'].length}
@@ -223,7 +223,7 @@ class IbanInput extends Component<IbanInputProps, IbanInputState> {
                             this.ibanNumber = ref;
                         }}
                         name={'ibanNumber'}
-                        className={'adyen-checkout__iban-input__iban-number'}
+                        className={'bubp-checkout__iban-input__iban-number'}
                         classNameModifiers={['large']}
                         placeholder={placeholders?.ibanNumber}
                         value={data['ibanNumber']}

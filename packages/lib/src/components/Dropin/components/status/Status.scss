@@ -1,6 +1,6 @@
 @import 'styles/variable-generator';
 
-.adyen-checkout__status {
+.bubp-checkout__status {
     display: flex;
     text-align: center;
     align-items: center;
@@ -19,7 +19,7 @@
         margin-bottom: token(spacer-090);
     }
 
-    .adyen-checkout__spinner__wrapper {
+    .bubp-checkout__spinner__wrapper {
         max-height: 88px;
     }
 }

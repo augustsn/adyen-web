@@ -17,7 +17,7 @@ export function processGlobalOptions(globalOptions) {
  * Validates that there is no unknown property as part of the CoreConfiguration.
  * The validator makes sure to throw a lint error in case a property is added to CoreConfiguration, but it is not added here
  *
- * @param props - AdyenCheckout props
+ * @param props - BubpCheckout props
  */
 export function assertConfigurationPropertiesAreValid(propsSetByMerchant: CoreConfiguration): void {
     /** Helper that creates a function that validates the array contain ALL CoreConfiguration properties in it */
@@ -71,7 +71,7 @@ export function assertConfigurationPropertiesAreValid(propsSetByMerchant: CoreCo
     Object.keys(propsSetByMerchant).forEach((prop: keyof CoreConfiguration) => {
         if (!possibleFields.includes(prop)) {
             console.warn(
-                `AdyenCheckout - Configuration property "${prop}" is not a valid AdyenCheckout property. If it is a payment method configuration, make sure to pass it directly to the Component. If you are using Drop-in, make sure to pass it to "paymentMethodsConfiguration" object`
+                `BubpCheckout - Configuration property "${prop}" is not a valid BubpCheckout property. If it is a payment method configuration, make sure to pass it directly to the Component. If you are using Drop-in, make sure to pass it to "paymentMethodsConfiguration" object`
             );
         }
     });

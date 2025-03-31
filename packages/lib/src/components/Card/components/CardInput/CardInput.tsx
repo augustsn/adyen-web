@@ -89,7 +89,7 @@ const CardInput = (props: CardInputProps) => {
 
     // re. Disable arrows for iOS: The name of the element calling for other elements to be disabled
     // - either a securedField type (like 'encryptedCardNumber') when call is coming from SF
-    // or else the name of an internal, Adyen-web, element (like 'holderName')
+    // or else the name of an internal, BUBP-web, element (like 'holderName')
     const [iOSFocusedField, setIOSFocusedField] = useState(null);
 
     /**
@@ -421,10 +421,10 @@ const CardInput = (props: CardInputProps) => {
                     <div
                         ref={setRootNode}
                         className={classNames({
-                            'adyen-checkout__card-input': true,
-                            'adyen-checkout-card-input__wrapper': true,
-                            [`adyen-checkout__card-input--${props.fundingSource ?? 'credit'}`]: true,
-                            'adyen-checkout__card-input--loading': status === 'loading'
+                            'bubp-checkout__card-input': true,
+                            'bubp-checkout-card-input__wrapper': true,
+                            [`bubp-checkout__card-input--${props.fundingSource ?? 'credit'}`]: true,
+                            'bubp-checkout__card-input--loading': status === 'loading'
                         })}
                         role={'form'}
                     >

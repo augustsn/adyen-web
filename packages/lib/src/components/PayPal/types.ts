@@ -57,7 +57,7 @@ export interface PayPalConfiguration extends UIElementProps {
      * Callback called when PayPal authorizes the payment.
      * Must be resolved/rejected with the action object. If resolved, the additional details will be invoked. Otherwise it will be skipped
      *
-     * @param data - Contains the raw event from PayPal, along with the billingAddress and deliveryAddress parsed by Adyen based on the raw event data
+     * @param data - Contains the raw event from PayPal, along with the billingAddress and deliveryAddress parsed by BUB Payment based on the raw event data
      * @param actions - Used to indicate that payment flow must continue or must stop
      */
     onAuthorized?: (
@@ -71,7 +71,7 @@ export interface PayPalConfiguration extends UIElementProps {
      *
      * @param data - PayPal data object
      * @param actions - Used to reject the address change in case the address is invalid
-     * @param component - Adyen instance of its PayPal implementation. It must be used to manipulate the 'paymentData' in order to apply the amount patch correctly
+     * @param component - BUB Payment instance of its PayPal implementation. It must be used to manipulate the 'paymentData' in order to apply the amount patch correctly
      */
     onShippingAddressChange?: (data: any, actions: { reject: (reason?: string) => Promise<void> }, component: PaypalElement) => Promise<void>;
 
@@ -81,7 +81,7 @@ export interface PayPalConfiguration extends UIElementProps {
      *
      * @param data - An PayPal object containing the payer’s selected shipping option
      * @param actions - Used to indicates to PayPal that you will not support the shipping method selected by the buyer
-     * @param component - Adyen instance of its PayPal implementation. It must be used to manipulate the 'paymentData' in order to apply the amount patch correctly
+     * @param component - BUB Payment instance of its PayPal implementation. It must be used to manipulate the 'paymentData' in order to apply the amount patch correctly
      */
     onShippingOptionsChange?: (data: any, actions: { reject: (reason?: string) => Promise<void> }, component: PaypalElement) => Promise<void>;
 

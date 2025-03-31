@@ -8,7 +8,7 @@ export const preparePaymentRequest = (paymentRequest): ApplePayJS.ApplePayPaymen
     const formattedAmount = formatAmount(amount);
 
     if (!countryCode) {
-        console.warn('Apple Pay - Make sure to set the countryCode in the AdyenCheckout configuration or in the Checkout Session creation');
+        console.warn('Apple Pay - Make sure to set the countryCode in the BubpCheckout configuration or in the Checkout Session creation');
     }
 
     return {

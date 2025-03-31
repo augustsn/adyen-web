@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/preact';
-import { AdyenCheckout } from '../../core/AdyenCheckout';
+import { BubpCheckout } from '../../core/BubpCheckout';
 import Dropin from '../Dropin';
 import Blik from './Blik';
 
@@ -7,7 +7,7 @@ jest.mock('../../core/Services/get-translations');
 
 describe('Blik', () => {
     const createDropin = async paymentMethodsResponse => {
-        const checkout = await AdyenCheckout({
+        const checkout = await BubpCheckout({
             countryCode: 'US',
             environment: 'test',
             clientKey: 'test_123456',

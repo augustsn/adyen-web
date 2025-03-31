@@ -6,7 +6,7 @@ class Address {
 
     constructor(
         public readonly page: Page,
-        rootElementSelector: string = '.adyen-checkout__fieldset--billingAddress'
+        rootElementSelector: string = '.bubp-checkout__fieldset--billingAddress'
     ) {
         this.rootElement = page.locator(rootElementSelector);
         this.rootElementSelector = rootElementSelector;
@@ -17,7 +17,7 @@ class Address {
     }
 
     get stateError() {
-        return this.rootElement.locator('.adyen-checkout__field--stateOrProvince').locator('.adyen-checkout-contextual-text--error');
+        return this.rootElement.locator('.bubp-checkout__field--stateOrProvince').locator('.bubp-checkout-contextual-text--error');
     }
 
     get streetInput() {
@@ -25,7 +25,7 @@ class Address {
     }
 
     get streetInputError() {
-        return this.rootElement.locator('.adyen-checkout__field--street').locator('.adyen-checkout-contextual-text--error');
+        return this.rootElement.locator('.bubp-checkout__field--street').locator('.bubp-checkout-contextual-text--error');
     }
 
     get houseNumberInput() {
@@ -37,7 +37,7 @@ class Address {
     }
 
     get cityError() {
-        return this.rootElement.locator('.adyen-checkout__field--city').locator('.adyen-checkout-contextual-text--error');
+        return this.rootElement.locator('.bubp-checkout__field--city').locator('.bubp-checkout-contextual-text--error');
     }
 
     get postalCodeInput() {
@@ -45,7 +45,7 @@ class Address {
     }
 
     get postalCodeError() {
-        return this.rootElement.locator('.adyen-checkout__field--postalCode').locator('.adyen-checkout-contextual-text--error');
+        return this.rootElement.locator('.bubp-checkout__field--postalCode').locator('.bubp-checkout-contextual-text--error');
     }
 
     get stateInput() {

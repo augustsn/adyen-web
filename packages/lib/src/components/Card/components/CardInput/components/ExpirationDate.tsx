@@ -31,9 +31,9 @@ export default function ExpirationDate(props: ExpirationDateProps) {
     const getImage = useImage();
 
     const fieldClassnames = classNames(className, {
-        'adyen-checkout__field__exp-date': true,
-        'adyen-checkout__card__exp-date__input--hidden': expiryDatePolicy === DATE_POLICY_HIDDEN,
-        'adyen-checkout__field__exp-date--optional': expiryDatePolicy === DATE_POLICY_OPTIONAL
+        'bubp-checkout__field__exp-date': true,
+        'bubp-checkout__card__exp-date__input--hidden': expiryDatePolicy === DATE_POLICY_HIDDEN,
+        'bubp-checkout__field__exp-date--optional': expiryDatePolicy === DATE_POLICY_OPTIONAL
     });
 
     const fieldLabel = expiryDatePolicy !== DATE_POLICY_OPTIONAL ? label : `${label} ${i18n.get('field.title.optional')}`;
@@ -65,21 +65,21 @@ export default function ExpirationDate(props: ExpirationDateProps) {
         >
             <DataSfSpan
                 encryptedFieldType={ENCRYPTED_EXPIRY_DATE}
-                className={classNames('adyen-checkout__input', 'adyen-checkout__input--small', 'adyen-checkout__card__exp-date__input', {
-                    'adyen-checkout__input--error': error,
-                    'adyen-checkout__input--focus': focused,
-                    'adyen-checkout__input--valid': isValid
+                className={classNames('bubp-checkout__input', 'bubp-checkout__input--small', 'bubp-checkout__card__exp-date__input', {
+                    'bubp-checkout__input--error': error,
+                    'bubp-checkout__input--focus': focused,
+                    'bubp-checkout__input--valid': isValid
                 })}
             />
             <span
-                className={classNames('adyen-checkout__field__exp-date_hint_wrapper', {
-                    'adyen-checkout__field__exp-date_hint_wrapper--hidden': error || isValid
+                className={classNames('bubp-checkout__field__exp-date_hint_wrapper', {
+                    'bubp-checkout__field__exp-date_hint_wrapper--hidden': error || isValid
                 })}
             >
                 {/*eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-noninteractive-element-interactions*/}
                 <img
                     src={getImage({ imageFolder: 'components/' })('expiry_date_hint')}
-                    className="adyen-checkout__field__exp-date_hint"
+                    className="bubp-checkout__field__exp-date_hint"
                     alt={imageDescription}
                     onClick={handleIconClick}
                 />

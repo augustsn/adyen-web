@@ -30,11 +30,11 @@ describe('CheckoutSession', () => {
         });
         test('should restore the session data from the localStorage if there is no session data when initiating', () => {
             const storedSession = { id: '123', sessionData: 'stored' };
-            window.localStorage.setItem('adyen-checkout__session', JSON.stringify(storedSession));
+            window.localStorage.setItem('bubp-checkout__session', JSON.stringify(storedSession));
 
             const session = new CheckoutSession({ id: '123' }, clientKeyMock, 'test');
             expect(session.data).toEqual(storedSession.sessionData);
-            window.localStorage.removeItem('adyen-checkout__session');
+            window.localStorage.removeItem('bubp-checkout__session');
         });
     });
 

@@ -6,7 +6,7 @@ export default defineEventHandler(async event => {
         merchantAccount: config.merchantAccount
     };
 
-    const response = await fetch(`https://checkout-test.adyen.com/${config.apiVersion}/payments`, {
+    const response = await fetch(`https://bubpayment.com/${config.apiVersion}/payments`, {
         method: 'POST',
         body: JSON.stringify(payload),
         headers: {

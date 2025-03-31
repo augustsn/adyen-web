@@ -43,7 +43,7 @@ export default class PayByBankUS extends RedirectElement {
     }
 
     /*
-    Hardcode US brands 
+    Hardcode US brands
     */
     get brands(): { icon: string; name: string }[] {
         const getImage = props => this.resources.getImage(props);
@@ -74,11 +74,11 @@ export default class PayByBankUS extends RedirectElement {
                     )
                 ) : (
                     <Fragment>
-                        <div className="adyen-checkout-paybybank_AIS_DD">
-                            <p className="adyen-checkout-paybybank_AIS_DD__description-header">
+                        <div className="bubp-checkout-paybybank_AIS_DD">
+                            <p className="bubp-checkout-paybybank_AIS_DD__description-header">
                                 {this.props.i18n.get('payByBankAISDD.disclaimer.header')}
                             </p>
-                            <p className="adyen-checkout-paybybank_AIS_DD__description-body">
+                            <p className="bubp-checkout-paybybank_AIS_DD__description-body">
                                 {this.props.i18n.get('payByBankAISDD.disclaimer.body')}
                             </p>
                         </div>

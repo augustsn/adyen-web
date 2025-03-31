@@ -1,12 +1,12 @@
-import { AdyenCheckout, BacsDirectDebit, Multibanco, Oxxo, Dragonpay, Boleto, Doku, Econtext } from '@adyen/adyen-web';
-import '@adyen/adyen-web/styles/adyen.css';
+import { BubpCheckout, BacsDirectDebit, Multibanco, Oxxo, Dragonpay, Boleto, Doku, Econtext } from '@bubp/web';
+import '@bubp/web/styles/bubp.css';
 import { shopperLocale, countryCode } from '../../config/commonConfig';
 import '../../../config/polyfills';
 import '../../style.scss';
 import '../../utils';
 import './Vouchers.scss';
 (async () => {
-    window.checkout = await AdyenCheckout({
+    window.checkout = await BubpCheckout({
         clientKey: process.env.__CLIENT_KEY__,
         countryCode,
         locale: shopperLocale,
@@ -26,7 +26,7 @@ import './Vouchers.scss';
         }
     }).mount('#bacsdd-input-container');
 
-    AdyenCheckout.register(BacsDirectDebit);
+    BubpCheckout.register(BacsDirectDebit);
     window.bacsddResult = checkout
         .createFromAction({
             paymentMethodType: 'directdebit_GB',
@@ -35,7 +35,7 @@ import './Vouchers.scss';
         })
         .mount('#bacsdd-result-container');
 
-    AdyenCheckout.register(Multibanco);
+    BubpCheckout.register(Multibanco);
     window.multibancoResult = checkout
         .createFromAction({
             expiresAt: '2019-09-28T12:54:17',
@@ -71,7 +71,7 @@ import './Vouchers.scss';
                 postalCode: '12345678',
                 stateOrProvince: 'SP'
             },
-            shopperEmail: 'paolo@adyen.nl'
+            shopperEmail: 'paolo@bubp.nl'
         },
         // onChange: console.log,
         onSubmit: e => console.log('SUBMIT:', e)
@@ -98,7 +98,7 @@ import './Vouchers.scss';
         .mount('#boleto-result-container');
 
     // Oxxo Result
-    AdyenCheckout.register(Oxxo);
+    BubpCheckout.register(Oxxo);
     window.oxxoResult = checkout
         .createFromAction({
             expiresAt: '2019-08-17T23:59:59',
@@ -135,7 +135,7 @@ import './Vouchers.scss';
                 value: 1000
             },
             instructionsUrl:
-                'https://checkoutshopper-test.adyen.com/checkoutshopper/voucherInstructions.shtml?txVariant=dragonpay_otc_banking&issuerId=BPXB',
+                'https://bubpayment.com/checkout/shopper/voucherInstructions.shtml?txVariant=dragonpay_otc_banking&issuerId=BPXB',
             issuer: 'BPXB',
             merchantName: 'TestMerchantCheckout',
             paymentMethodType: 'dragonpay_otc_banking',
@@ -165,7 +165,7 @@ import './Vouchers.scss';
                 currency: 'IDR',
                 value: 1000
             },
-            instructionsUrl: 'https://checkoutshopper-test.adyen.com/checkoutshopper/voucherInstructions.shtml?txVariant=doku_alfamart',
+            instructionsUrl: 'https://bubpayment.com/checkout/shopper/voucherInstructions.shtml?txVariant=doku_alfamart',
             merchantName: 'TestMerchantCheckout',
             paymentMethodType: 'doku_alfamart',
             reference: '8888826030103141',
@@ -209,7 +209,7 @@ import './Vouchers.scss';
             },
             instructionsUrl: 'https://www.econtext.jp/support/cvs/8brand.html',
             maskedTelephoneNumber: '98******10',
-            merchantName: 'Adyen Demo Shop',
+            merchantName: 'BUB Payment Demo Shop',
             reference: '458535',
             totalAmount: {
                 currency: 'JPY',
@@ -242,7 +242,7 @@ import './Vouchers.scss';
             },
             instructionsUrl: 'https://www.econtext.jp/support/atm/index.html',
             maskedTelephoneNumber: '98******10',
-            merchantName: 'Adyen Demo Shop',
+            merchantName: 'BUB Payment Demo Shop',
             reference: '458535',
             totalAmount: {
                 currency: 'JPY',
@@ -266,8 +266,8 @@ import './Vouchers.scss';
                 value: 1000
             },
             instructionsUrl:
-                'https://checkoutshopper-test.adyen.com/checkoutshopper/voucherInstructions.shtml?txVariant=econtext_stores&shopperLocale=en-US',
-            merchantName: 'Adyen Demo Shop',
+                'https://bubpayment.com/checkout/shopper/voucherInstructions.shtml?txVariant=econtext_stores&shopperLocale=en-US',
+            merchantName: 'BUB Payment Demo Shop',
             paymentMethodType: 'econtext_seven_eleven',
             reference: '458535',
             totalAmount: {

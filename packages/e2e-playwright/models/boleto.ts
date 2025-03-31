@@ -14,7 +14,7 @@ class Boleto extends Base {
     }
 
     get barcodeLocator() {
-        return this.page.locator('.adyen-checkout__voucher-result__code > img');
+        return this.page.locator('.bubp-checkout__voucher-result__code > img');
     }
 }
 

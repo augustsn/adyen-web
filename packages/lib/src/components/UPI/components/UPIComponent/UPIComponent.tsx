@@ -98,7 +98,7 @@ export default function UPIComponent({ defaultMode, onChange, onUpdateMode, payB
 
     return (
         <Fragment>
-            <p className="adyen-checkout_upi-mode-selection-text">{i18n.get('upi.modeSelection')}</p>
+            <p className="bubp-checkout_upi-mode-selection-text">{i18n.get('upi.modeSelection')}</p>
             <SegmentedControl
                 onChange={onChangeUpiMode}
                 selectedValue={mode}
@@ -108,7 +108,7 @@ export default function UPIComponent({ defaultMode, onChange, onUpdateMode, payB
             />
             <ContentSeparator label={i18n.get('upi.completePayment')} />
             {mode === 'intent' && (
-                <div id={A11Y.AreaId.INTENT} aria-labelledby={A11Y.ButtonId.INTENT} className="adyen-checkout-upi-area-intent" role="region">
+                <div id={A11Y.AreaId.INTENT} aria-labelledby={A11Y.ButtonId.INTENT} className="bubp-checkout-upi-area-intent" role="region">
                     <UPIIntentAppList
                         disabled={status === 'loading'}
                         apps={apps}
@@ -127,7 +127,7 @@ export default function UPIComponent({ defaultMode, onChange, onUpdateMode, payB
                 </div>
             )}
             {mode === 'vpa' && (
-                <div id={A11Y.AreaId.VPA} aria-labelledby={A11Y.ButtonId.VPA} className="adyen-checkout-upi-area-vpa" role="region">
+                <div id={A11Y.AreaId.VPA} aria-labelledby={A11Y.ButtonId.VPA} className="bubp-checkout-upi-area-vpa" role="region">
                     <VpaInput disabled={status === 'loading'} onChange={onChange} onSetInputHandlers={onSetVpaInputHandlers} />
 
                     {showPayButton &&
@@ -138,7 +138,7 @@ export default function UPIComponent({ defaultMode, onChange, onUpdateMode, payB
                 </div>
             )}
             {mode === 'qrCode' && (
-                <div id={A11Y.AreaId.QR} aria-labelledby={A11Y.ButtonId.QR} className="adyen-checkout-upi-area-qr-code" role="region">
+                <div id={A11Y.AreaId.QR} aria-labelledby={A11Y.ButtonId.QR} className="bubp-checkout-upi-area-qr-code" role="region">
                     {showPayButton &&
                         payButton({
                             label: i18n.get('generateQRCode'),

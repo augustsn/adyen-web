@@ -55,7 +55,7 @@ const CtPCardsList = ({ cardSelected, cards, errorMessage, onChangeCard }: CtPCa
                 selectedValue={data['srcDigitalCardId']}
                 name={'cards'}
                 filterable={false}
-                className={'adyen-checkout-ctp__cards-list-dropdown'}
+                className={'bubp-checkout-ctp__cards-list-dropdown'}
                 readonly={status === 'loading'}
                 onChange={handleChangeFor('srcDigitalCardId')}
             />

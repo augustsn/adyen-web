@@ -2,16 +2,16 @@
 @import 'styles/variable-generator';
 
 // Workaround to remove autofill background and text color, works on most browsers except for Chrome mobile
-.adyen-checkout__filter-input:-webkit-autofill,
-.adyen-checkout__filter-input:-webkit-autofill:active,
-.adyen-checkout__filter-input:-webkit-autofill:hover,
-.adyen-checkout__filter-input:-webkit-autofill:focus,
-.adyen-checkout__filter-input:autofill,
-.adyen-checkout__input:-webkit-autofill,
-.adyen-checkout__input:-webkit-autofill:active,
-.adyen-checkout__input:-webkit-autofill:hover,
-.adyen-checkout__input:-webkit-autofill:focus,
-.adyen-checkout__input:autofill {
+.bubp-checkout__filter-input:-webkit-autofill,
+.bubp-checkout__filter-input:-webkit-autofill:active,
+.bubp-checkout__filter-input:-webkit-autofill:hover,
+.bubp-checkout__filter-input:-webkit-autofill:focus,
+.bubp-checkout__filter-input:autofill,
+.bubp-checkout__input:-webkit-autofill,
+.bubp-checkout__input:-webkit-autofill:active,
+.bubp-checkout__input:-webkit-autofill:hover,
+.bubp-checkout__input:-webkit-autofill:focus,
+.bubp-checkout__input:autofill {
     color: token(color-label-primary) !important;
     -webkit-text-fill-color: token(color-label-primary) !important;
     box-shadow: 0 0 0 1000px token(color-background-primary) inset !important;
@@ -21,54 +21,54 @@
 }
 
 // Additional workaround for Chrome mobile to remove autofill background and text color
-.adyen-checkout__input,
-.adyen-checkout__filter-input {
+.bubp-checkout__input,
+.bubp-checkout__filter-input {
     color: token(color-label-primary) !important;
     background-clip: text !important;
 }
 
-.adyen-checkout__field-wrapper {
+.bubp-checkout__field-wrapper {
     display: flex;
     width: 100%;
 }
 
-.adyen-checkout__field--20 {
+.bubp-checkout__field--20 {
     @include index.screen-s-and-up {
         width: 20%;
     }
 }
 
-.adyen-checkout__field--30 {
+.bubp-checkout__field--30 {
     @include index.screen-s-and-up {
         width: 30%;
     }
 }
 
-.adyen-checkout__field--40 {
+.bubp-checkout__field--40 {
     @include index.screen-s-and-up {
         width: 40%;
     }
 }
 
-.adyen-checkout__field--50 {
+.bubp-checkout__field--50 {
     @include index.screen-s-and-up {
         width: 50%;
     }
 }
 
-.adyen-checkout__field--60 {
+.bubp-checkout__field--60 {
     @include index.screen-s-and-up {
         width: 60%;
     }
 }
 
-.adyen-checkout__field--70 {
+.bubp-checkout__field--70 {
     @include index.screen-s-and-up {
         width: 70%;
     }
 }
 
-.adyen-checkout__field--80 {
+.bubp-checkout__field--80 {
     @include index.screen-s-and-up {
         width: 80%;
     }
@@ -76,50 +76,50 @@
 
 $deduct-width: token(spacer-040);
 
-.adyen-checkout__field--col-20 {
+.bubp-checkout__field--col-20 {
     @include index.screen-s-and-up {
         width: calc(20% - $deduct-width);
     }
 }
 
-.adyen-checkout__field--col-30 {
+.bubp-checkout__field--col-30 {
     @include index.screen-s-and-up {
         width: calc(30% - $deduct-width);
     }
 }
 
-.adyen-checkout__field--col-40 {
+.bubp-checkout__field--col-40 {
     @include index.screen-s-and-up {
         width: calc(40% - $deduct-width);
     }
 }
 
-.adyen-checkout__field--col-50 {
+.bubp-checkout__field--col-50 {
     @include index.screen-s-and-up {
         width: calc(50% - $deduct-width);
     }
 }
 
-.adyen-checkout__field--col-60 {
+.bubp-checkout__field--col-60 {
     @include index.screen-s-and-up {
         width: calc(60% - $deduct-width);
     }
 }
 
-.adyen-checkout__field--col-70 {
+.bubp-checkout__field--col-70 {
     @include index.screen-s-and-up {
         width: calc(70% - $deduct-width);
     }
 }
 
-.adyen-checkout__field--col-80 {
+.bubp-checkout__field--col-80 {
     @include index.screen-s-and-up {
         width: calc(80% - $deduct-width);
     }
 }
 
 
-.adyen-checkout__field-wrapper > .adyen-checkout__field:first-child {
+.bubp-checkout__field-wrapper > .bubp-checkout__field:first-child {
     margin-right: token(spacer-040);
 
     [dir='rtl'] & {
@@ -128,7 +128,7 @@ $deduct-width: token(spacer-040);
     }
 }
 
-.adyen-checkout__field-wrapper > .adyen-checkout__field:nth-child(2) {
+.bubp-checkout__field-wrapper > .bubp-checkout__field:nth-child(2) {
     margin-left: token(spacer-040);
 
     [dir='rtl'] & {
@@ -137,11 +137,11 @@ $deduct-width: token(spacer-040);
     }
 }
 
-.adyen-checkout__field-wrapper:last-of-type > .adyen-checkout__field {
+.bubp-checkout__field-wrapper:last-of-type > .bubp-checkout__field {
     margin-bottom: 0;
 }
 
-.adyen-checkout__input {
+.bubp-checkout__input {
     width: 100%;
     color: token(color-label-primary);
     font-size: token(text-subtitle-font-size);
@@ -166,11 +166,11 @@ $deduct-width: token(spacer-040);
     }
 }
 
-span.adyen-checkout__input {
+span.bubp-checkout__input {
     overflow: hidden;
 }
 
-.adyen-checkout-input__inline-validation {
+.bubp-checkout-input__inline-validation {
     width: token(spacer-070);
     height: token(spacer-070);
     margin-right: token(spacer-060);
@@ -179,19 +179,19 @@ span.adyen-checkout__input {
         margin-left: token(spacer-060);
     }
 
-    > .adyen-checkout__icon {
+    > .bubp-checkout__icon {
         display: block;
     }
 }
 
-.adyen-checkout-input__inline-validation--valid {
+.bubp-checkout-input__inline-validation--valid {
     color: token(color-label-success);
 }
 
-.adyen-checkout-input__inline-validation--invalid {
+.bubp-checkout-input__inline-validation--invalid {
     color: token(color-label-critical);
 }
 
-.adyen-checkout__input--date {
+.bubp-checkout__input--date {
     padding: 0.5em;
 }

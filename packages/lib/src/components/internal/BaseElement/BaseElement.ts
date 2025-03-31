@@ -1,7 +1,7 @@
 import { ComponentChild, h, render } from 'preact';
 import getProp from '../../../utils/getProp';
 import uuid from '../../../utils/uuid';
-import AdyenCheckoutError from '../../../core/Errors/AdyenCheckoutError';
+import BubpCheckoutError from '../../../core/Errors/BubpCheckoutError';
 import { ANALYTICS_RENDERED_STR, NO_CHECKOUT_ATTEMPT_ID } from '../../../core/Analytics/constants';
 
 import type { ICore } from '../../../core/types';
@@ -37,9 +37,9 @@ abstract class BaseElement<P extends BaseElementProps> implements IBaseElement {
         const isCoreInstance = assertIsCoreInstance(checkout);
 
         if (!isCoreInstance) {
-            throw new AdyenCheckoutError(
+            throw new BubpCheckoutError(
                 'IMPLEMENTATION_ERROR',
-                `Trying to initialise the component '${this.constructor['type']}' without a reference to an instance of AdyenCheckout`
+                `Trying to initialise the component '${this.constructor['type']}' without a reference to an instance of BubpCheckout`
             );
         }
 

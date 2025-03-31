@@ -1,6 +1,6 @@
 import { BIN_LOOKUP_VERSION } from '../../utils/constants';
 
-export const binLookupUrl = `https://checkoutshopper-test.adyen.com/checkoutshopper/${BIN_LOOKUP_VERSION}/bin/binLookup?token=${process.env.CLIENT_KEY}`;
+export const binLookupUrl = `https://bubpayment.com/checkout/shopper/${BIN_LOOKUP_VERSION}/bin/binLookup?token=${process.env.CLIENT_KEY}`;
 
 /**
  * Functionality for mocking a /binLookup API response via testcafe's fixture.requestHooks()

@@ -28,7 +28,7 @@ const initCSF = (pSetupObj: CSFSetupObject): CSFReturnObject => {
     }
 
     if (falsy(setupObj.clientKey)) {
-        return logger.warn('WARNING: AdyenCheckout configuration object is missing a "clientKey" property.');
+        return logger.warn('WARNING: BubpCheckout configuration object is missing a "clientKey" property.');
     }
 
     //----------------------------------------------------------------------------

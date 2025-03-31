@@ -1,11 +1,11 @@
 import { Component, ElementRef, ViewChild, OnInit, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import {
-    AdyenCheckout,
+    BubpCheckout,
     CoreConfiguration,
     Dropin,
     Card,
-    AdyenCheckoutError,
+    BubpCheckoutError,
     PaymentCompletedData,
     UIElement,
     PaymentFailedData,
@@ -15,7 +15,7 @@ import {
     SubmitData,
     PayPal,
     GooglePay
-} from '@adyen/adyen-web';
+} from '@bubp/web';
 import { environment } from '../../environments/environment';
 import { parseAmount } from '../../utils/amount-utils';
 import { DEFAULT_AMOUNT, DEFAULT_COUNTRY, DEFAULT_LOCALE } from '../../utils/constants';
@@ -23,7 +23,7 @@ import { AdvancedFlowApiService } from '../../services/AdvancedFlowApi.service';
 import { ModeSwitcher } from '../mode-switcher/mode-switcher';
 
 @Component({
-    selector: 'adyen-advanced-flow',
+    selector: 'bubp-advanced-flow',
     standalone: true,
     templateUrl: './advanced.component.html',
     imports: [ModeSwitcher]
@@ -100,7 +100,7 @@ export class AdvancedFlow implements OnInit {
                     });
                 },
 
-                onError(error: AdyenCheckoutError) {
+                onError(error: BubpCheckoutError) {
                     console.error('Something went wrong', error);
                 },
 
@@ -113,7 +113,7 @@ export class AdvancedFlow implements OnInit {
                 }
             };
 
-            const checkout = await AdyenCheckout(options);
+            const checkout = await BubpCheckout(options);
             this.dropin = new Dropin(checkout, {
                 paymentMethodsConfiguration: {
                     card: {

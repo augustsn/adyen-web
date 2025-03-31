@@ -1,6 +1,6 @@
 import { h } from 'preact';
 import { CustomTranslations } from './types';
-import AdyenCheckoutError from '../core/Errors/AdyenCheckoutError';
+import BubpCheckoutError from '../core/Errors/BubpCheckoutError';
 
 /**
  * Returns a locale with the proper format
@@ -21,7 +21,7 @@ export function formatLocale(localeParam: string): string {
     // If no country code is defined (Ex: 'ar') , then returns 'ar'
     const [languageCode, countryCode] = locale.split('-');
     if (languageCode.length !== 2) {
-        throw new AdyenCheckoutError('IMPLEMENTATION_ERROR', `Locale '${localeParam}' does not match the expected format`);
+        throw new BubpCheckoutError('IMPLEMENTATION_ERROR', `Locale '${localeParam}' does not match the expected format`);
     }
     if (!countryCode) {
         return languageCode.toLowerCase();
@@ -32,7 +32,7 @@ export function formatLocale(localeParam: string): string {
     if (format.test(fullLocale)) {
         return fullLocale;
     } else {
-        throw new AdyenCheckoutError('IMPLEMENTATION_ERROR', `Locale '${localeParam}' does not match the expected format`);
+        throw new BubpCheckoutError('IMPLEMENTATION_ERROR', `Locale '${localeParam}' does not match the expected format`);
     }
 }
 

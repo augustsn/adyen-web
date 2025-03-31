@@ -1,6 +1,6 @@
 import { Page } from '@playwright/test';
 
-const PAYMENTS_URL = 'https://checkoutshopper-*.adyen.com/checkoutshopper/v1/sessions/*/payments?*';
+const PAYMENTS_URL = 'https://bubpayment.com/checkout/shopper/v1/sessions/*/payments?*';
 
 const paymentsMock = async (page: Page, mockedResponse: any): Promise<void> => {
     await page.route(PAYMENTS_URL, async (route, request) => {

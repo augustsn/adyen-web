@@ -1,11 +1,11 @@
 const API_ENVIRONMENTS = {
-    test: 'https://checkoutshopper-test.adyen.com/checkoutshopper/',
-    live: 'https://checkoutshopper-live.adyen.com/checkoutshopper/',
+    test: 'https://bubpayment.com/checkout/shopper/',
+    live: 'https://bubpayment.com/checkout/shopper/',
     'live-us': 'https://checkoutshopper-live-us.adyen.com/checkoutshopper/',
     'live-au': 'https://checkoutshopper-live-au.adyen.com/checkoutshopper/',
     'live-apse': 'https://checkoutshopper-live-apse.adyen.com/checkoutshopper/',
     'live-in': 'https://checkoutshopper-live-in.adyen.com/checkoutshopper/',
-    fallback: 'https://checkoutshopper-live.adyen.com/checkoutshopper/'
+    fallback: 'https://bubpayment.com/checkout/shopper/'
 };
 
 const CDN_ENVIRONMENTS = {

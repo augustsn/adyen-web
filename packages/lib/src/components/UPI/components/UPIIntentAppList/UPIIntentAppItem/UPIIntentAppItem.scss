@@ -1,8 +1,8 @@
 @import 'styles/variable-generator';
 
-$expand-btn: '.adyen-checkout-expand-button--upi-app-item';
+$expand-btn: '.bubp-checkout-expand-button--upi-app-item';
 
-.adyen-checkout-upi-app-item {
+.bubp-checkout-upi-app-item {
     background: token(color-background-primary);
     display: flex;
     gap: token(spacer-070);

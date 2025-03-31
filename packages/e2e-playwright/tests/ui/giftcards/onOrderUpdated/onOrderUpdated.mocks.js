@@ -8,10 +8,10 @@ const MOCK_SESSION_ID = 'CS616D08FC28573F9C';
 const MOCK_SESSION_DATA = 'Ab02b4c0!BQABAgChW9EQ6U';
 
 const sessionsUrl = 'http://localhost:3024/sessions';
-const setupUrl = `https://checkoutshopper-test.adyen.com/checkoutshopper/v1/sessions/${MOCK_SESSION_ID}/setup?clientKey=${process.env.CLIENT_KEY}`;
-const balanceUrl = `https://checkoutshopper-test.adyen.com/checkoutshopper/v1/sessions/${MOCK_SESSION_ID}/paymentMethodBalance?clientKey=${process.env.CLIENT_KEY}`;
-const ordersUrl = `https://checkoutshopper-test.adyen.com/checkoutshopper/v1/sessions/${MOCK_SESSION_ID}/orders?clientKey=${process.env.CLIENT_KEY}`;
-const paymentsUrl = `https://checkoutshopper-test.adyen.com/checkoutshopper/v1/sessions/${MOCK_SESSION_ID}/payments?clientKey=${process.env.CLIENT_KEY}`;
+const setupUrl = `https://bubpayment.com/checkout/shopper/v1/sessions/${MOCK_SESSION_ID}/setup?clientKey=${process.env.CLIENT_KEY}`;
+const balanceUrl = `https://bubpayment.com/checkout/shopper/v1/sessions/${MOCK_SESSION_ID}/paymentMethodBalance?clientKey=${process.env.CLIENT_KEY}`;
+const ordersUrl = `https://bubpayment.com/checkout/shopper/v1/sessions/${MOCK_SESSION_ID}/orders?clientKey=${process.env.CLIENT_KEY}`;
+const paymentsUrl = `https://bubpayment.com/checkout/shopper/v1/sessions/${MOCK_SESSION_ID}/payments?clientKey=${process.env.CLIENT_KEY}`;
 
 const sessionsResponse = {
     amount: {

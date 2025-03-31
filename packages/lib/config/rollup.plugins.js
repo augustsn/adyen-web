@@ -36,7 +36,7 @@ export const replaceValues = ({ bundleType = undefined, buildType } = {}) => {
 
 export const convertJsonToESM = () => json({ namedExports: false, compact: true, preferConst: true });
 
-export const compileCSS = ({ extract = 'adyen.css' } = {}) =>
+export const compileCSS = ({ extract = 'bubp.css' } = {}) =>
     postcss({
         use: { sass: { includePaths: [pathResolve(__dirname, '../src')] } },
         config: {

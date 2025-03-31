@@ -2,7 +2,7 @@
   "name": "@adyen/adyen-web-playwright",
   "private": true,
   "version": "1.0.0",
-  "repository": "github:Adyen/adyen-web",
+  "repository": "github:augustsn/adyen-web",
   "license": "MIT",
   "scripts": {
     "test:headless": "npx playwright test",

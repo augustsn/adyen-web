@@ -74,7 +74,7 @@ class DoFingerprint3DS2 extends Component<DoFingerprint3DS2Props, DoFingerprint3
 
     render({ threeDSMethodURL, onActionHandled, onFormSubmit }, { base64URLencodedData }) {
         return (
-            <div className="adyen-checkout__3ds2-device-fingerprint">
+            <div className="bubp-checkout__3ds2-device-fingerprint">
                 {this.props.showSpinner && <Spinner />}
                 <div style={{ display: 'none' }}>
                     <Iframe

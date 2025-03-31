@@ -26,7 +26,7 @@ describe('Calling initCSF', () => {
 
     test('initializing with a setup object missing a clientKey property should throw an error', () => {
         /* @ts-ignore deliberately-not-implementing-all-members */
-        expect(() => initCSF({ rootNode: {} })).toThrow('WARNING: AdyenCheckout configuration object is missing a "clientKey" property.');
+        expect(() => initCSF({ rootNode: {} })).toThrow('WARNING: BubpCheckout configuration object is missing a "clientKey" property.');
     });
 
     test("initializing with a setup object whose rootNode property can't be found should throw an error", () => {

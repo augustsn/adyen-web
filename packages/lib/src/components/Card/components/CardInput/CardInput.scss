@@ -1,6 +1,6 @@
 @import 'styles/variable-generator';
 
-.adyen-checkout-card-input {
+.bubp-checkout-card-input {
     &__wrapper {
         position: relative;
     }
@@ -35,17 +35,17 @@
     }
 }
 
-.adyen-checkout__input {
+.bubp-checkout__input {
     display: block;
     max-height: 100px;
 }
 
-.adyen-checkout__field.adyen-checkout__card__cvc__input--hidden,
-.adyen-checkout__field.adyen-checkout__card__exp-date__input--hidden {
+.bubp-checkout__field.bubp-checkout__card__cvc__input--hidden,
+.bubp-checkout__field.bubp-checkout__card__exp-date__input--hidden {
     display: none;
 }
 
-.adyen-checkout__card__exp-cvc__exp-date__input--hidden {
+.bubp-checkout__card__exp-cvc__exp-date__input--hidden {
     justify-content: flex-end;
 }
 
@@ -56,19 +56,19 @@
     }
 }
 
-.adyen-checkout__card-input__form {
+.bubp-checkout__card-input__form {
     transition: opacity 0.25s ease-out;
 }
 
-.adyen-checkout__card__cardNumber {
+.bubp-checkout__card__cardNumber {
     max-width: 400px;
 }
 
-.adyen-checkout__card__cardNumber__input {
+.bubp-checkout__card__cardNumber__input {
     padding-left: token(spacer-060);
 }
 
-.adyen-checkout__card__exp-date__input--oneclick {
+.bubp-checkout__card__exp-date__input--oneclick {
     line-height: token(text-title-line-height);
     font-weight: token(text-body-font-weight);
     text-overflow: ellipsis;
@@ -77,13 +77,13 @@
     text-align: left;
 }
 
-.adyen-checkout__field--storedCard,
-.adyen-checkout__field--expiryDate,
-.adyen-checkout__card__holderName {
+.bubp-checkout__field--storedCard,
+.bubp-checkout__field--expiryDate,
+.bubp-checkout__card__holderName {
     margin-bottom: 0;
 }
 
-.adyen-checkout__store-details {
+.bubp-checkout__store-details {
     display: flex;
     align-items: center;
     background: token(color-background-primary);
@@ -94,38 +94,38 @@
     border-radius: token(border-radius-m);
 }
 
-.adyen-checkout__card__holderName,
-.adyen-checkout__card__kcp-authentication,
-.adyen-checkout__card__socialSecurityNumber,
-.adyen-checkout__installments,
-.adyen-checkout__card-input .adyen-checkout__fieldset--billingAddress {
+.bubp-checkout__card__holderName,
+.bubp-checkout__card__kcp-authentication,
+.bubp-checkout__card__socialSecurityNumber,
+.bubp-checkout__installments,
+.bubp-checkout__card-input .bubp-checkout__fieldset--billingAddress {
     margin-top: token(spacer-070);
 }
 
-.adyen-checkout__card-input.adyen-checkout__card-input--loading {
+.bubp-checkout__card-input.bubp-checkout__card-input--loading {
     pointer-events: none;
 }
 
-.adyen-checkout__card__holderName:first-child {
+.bubp-checkout__card__holderName:first-child {
     margin: 0 0 token(spacer-060);
 }
 
 /* Hide card brand icon when cardNumber is in an error state */
-.adyen-checkout__field--cardNumber .adyen-checkout__input--error + .adyen-checkout__card__cardNumber__brandIcon {
+.bubp-checkout__field--cardNumber .bubp-checkout__input--error + .bubp-checkout__card__cardNumber__brandIcon {
     display: none;
 }
 
 /* Hide checkmark when cardNumber is in a valid state (only show brand icon) */
-.adyen-checkout__field--cardNumber .adyen-checkout__input--valid:not(.adyen-checkout__card__cardNumber__input--noBrand) + .adyen-checkout-input__inline-validation--valid {
+.bubp-checkout__field--cardNumber .bubp-checkout__input--valid:not(.bubp-checkout__card__cardNumber__input--noBrand) + .bubp-checkout-input__inline-validation--valid {
     display: none;
 }
 
-.adyen-checkout__field--cardNumber .adyen-checkout-card-input__icon--hidden {
+.bubp-checkout__field--cardNumber .bubp-checkout-card-input__icon--hidden {
     display: none;
 }
 
-.adyen-checkout__field--securityCode.adyen-checkout__field--error .adyen-checkout__card__cvc__hint,
-.adyen-checkout__field--securityCode.adyen-checkout__field--valid .adyen-checkout__card__cvc__hint {
+.bubp-checkout__field--securityCode.bubp-checkout__field--error .bubp-checkout__card__cvc__hint,
+.bubp-checkout__field--securityCode.bubp-checkout__field--valid .bubp-checkout__card__cvc__hint {
     opacity: 0;
 }
 
@@ -139,10 +139,10 @@
     }
 }
 
-.adyen-checkout__label--focused {
-    .adyen-checkout__field__cvc--front-hint .adyen-checkout__card__cvc__hint--front,
-    .adyen-checkout__field__cvc--back-hint .adyen-checkout__card__cvc__hint--back {
-        .adyen-checkout__card__cvc__hint__location {
+.bubp-checkout__label--focused {
+    .bubp-checkout__field__cvc--front-hint .bubp-checkout__card__cvc__hint--front,
+    .bubp-checkout__field__cvc--back-hint .bubp-checkout__card__cvc__hint--back {
+        .bubp-checkout__card__cvc__hint__location {
             animation-duration: 1s;
             animation-name: cvc-indicate-location;
             animation-iteration-count: infinite;
@@ -151,7 +151,7 @@
     }
 }
 
-.adyen-checkout__card__cvc__hint__wrapper {
+.bubp-checkout__card__cvc__hint__wrapper {
     position: absolute;
     right: 0;
     height: 100%;
@@ -170,17 +170,17 @@
 }
 
 // Flip the card
-.adyen-checkout__field__cvc--front-hint.adyen-checkout__card__cvc__hint__wrapper {
+.bubp-checkout__field__cvc--front-hint.bubp-checkout__card__cvc__hint__wrapper {
     transform: rotateY(180deg);
 }
 
-.adyen-checkout__card__cvc__hint {
+.bubp-checkout__card__cvc__hint {
     backface-visibility: hidden;
     position: absolute;
     transition: opacity 0.1s linear;
 }
 
-.adyen-checkout__field__exp-date_hint_wrapper {
+.bubp-checkout__field__exp-date_hint_wrapper {
     position: absolute;
     right: 0;
     display: flex;
@@ -188,42 +188,42 @@
     transition: opacity 0.1s linear;
     margin-right: token(spacer-060);
 
-    &.adyen-checkout__field__exp-date_hint_wrapper--hidden {
+    &.bubp-checkout__field__exp-date_hint_wrapper--hidden {
         opacity: 0;
     }
 }
 
-.adyen-checkout__field__exp-date_hint {
+.bubp-checkout__field__exp-date_hint {
     width: 27px;
     height: 18px;
 }
 
 // Front of the card is our back
-.adyen-checkout__card__cvc__hint--front {
+.bubp-checkout__card__cvc__hint--front {
     transform: rotateY(180deg);
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .adyen-checkout__card__cvc__hint__wrapper {
+    .bubp-checkout__card__cvc__hint__wrapper {
         transition: none;
     }
 }
 
-.adyen-checkout__fieldset--revolving-plan {
-    .adyen-checkout__fieldset__fields {
+.bubp-checkout__fieldset--revolving-plan {
+    .bubp-checkout__fieldset__fields {
         justify-content: left;
     }
 
-    .adyen-checkout__radio_group {
+    .bubp-checkout__radio_group {
         display: flex;
         flex-direction: column;
     }
 
-    .adyen-checkout__radio_group__input-wrapper {
+    .bubp-checkout__radio_group__input-wrapper {
         margin-top: token(spacer-080);
     }
 
-    .adyen-checkout__field--revolving-plan-installments {
+    .bubp-checkout__field--revolving-plan-installments {
         position: relative;
         top: 52px;
         width: 30%;

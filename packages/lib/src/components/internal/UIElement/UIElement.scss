@@ -2,6 +2,6 @@
 @use 'styles/index';
 @import 'styles/link';
 
-[class^='adyen-checkout'] {
+[class^='bubp-checkout'] {
     @include index.box-sizing-setter(true);
 }

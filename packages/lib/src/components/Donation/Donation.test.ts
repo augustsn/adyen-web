@@ -5,7 +5,7 @@ import DonationElement from './Donation';
 const coreProp = { i18n: global.i18n, loadingContext: 'test', modules: { resources: global.resources } };
 const shared = {
     commercialTxAmount: 1000,
-    termsAndConditionsUrl: 'https://www.adyen.com',
+    termsAndConditionsUrl: 'https://bubpayment.com',
     bannerUrl: '/banner.png',
     logoUrl: '/logo.png',
     nonprofitDescription: 'Lorem ipsum...',

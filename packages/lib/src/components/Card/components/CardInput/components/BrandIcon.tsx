@@ -21,9 +21,9 @@ export default function BrandIcon({ brand, brandsConfiguration = {}, onClick }: 
     };
 
     const fieldClassnames = classNames({
-        'adyen-checkout-card-input__icon': true,
-        'adyen-checkout__card__cardNumber__brandIcon': true,
-        'adyen-checkout-card-input__icon--hidden': !hasLoaded
+        'bubp-checkout-card-input__icon': true,
+        'bubp-checkout__card__cardNumber__brandIcon': true,
+        'bubp-checkout-card-input__icon--hidden': !hasLoaded
     });
 
     return (

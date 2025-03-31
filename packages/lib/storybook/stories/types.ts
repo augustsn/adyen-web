@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/preact';
 import UIElement from '../../src/components/internal/UIElement';
 import { CoreConfiguration, PaymentMethodsResponse } from '../../src/types';
 
-export type GlobalStoryProps = AdyenCheckoutProps &
+export type GlobalStoryProps = BubpCheckoutProps &
     CoreConfiguration & {
         useSessions: boolean;
     };
@@ -21,7 +21,7 @@ export type CustomCardStoryConfiguration<Q> = StoryObj<CardPaymentMethodStoryPro
 
 export type MetaConfiguration<T> = Meta<PaymentMethodStoryProps<T>>;
 
-export type AdyenCheckoutProps = {
+export type BubpCheckoutProps = {
     showPayButton: boolean;
     countryCode: string;
     shopperLocale: string;

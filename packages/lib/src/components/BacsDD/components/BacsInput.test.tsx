@@ -23,19 +23,19 @@ describe('BacsInput', () => {
         const wrapper = getWrapper({});
 
         // Main holder
-        expect(wrapper.find('.adyen-checkout__bacs')).toHaveLength(1);
+        expect(wrapper.find('.bubp-checkout__bacs')).toHaveLength(1);
 
         // Name (active)
-        expect(wrapper.find('div.adyen-checkout__bacs--holder-name')).toHaveLength(1);
-        expect(wrapper.find('div.adyen-checkout__bacs--holder-name.adyen-checkout__field--inactive')).toHaveLength(0);
+        expect(wrapper.find('div.bubp-checkout__bacs--holder-name')).toHaveLength(1);
+        expect(wrapper.find('div.bubp-checkout__bacs--holder-name.bubp-checkout__field--inactive')).toHaveLength(0);
 
         // Holder for account & location + account & location fields
-        expect(wrapper.find('.adyen-checkout__bacs .adyen-checkout__bacs__num-id')).toHaveLength(1);
-        expect(wrapper.find('div.adyen-checkout__bacs--bank-account-number')).toHaveLength(1);
-        expect(wrapper.find('div.adyen-checkout__bacs--bank-location-id')).toHaveLength(1);
+        expect(wrapper.find('.bubp-checkout__bacs .bubp-checkout__bacs__num-id')).toHaveLength(1);
+        expect(wrapper.find('div.bubp-checkout__bacs--bank-account-number')).toHaveLength(1);
+        expect(wrapper.find('div.bubp-checkout__bacs--bank-location-id')).toHaveLength(1);
 
         // Email
-        expect(wrapper.find('div.adyen-checkout__bacs--shopper-email')).toHaveLength(1);
+        expect(wrapper.find('div.bubp-checkout__bacs--shopper-email')).toHaveLength(1);
 
         // Consent checkboxes
         expect(wrapper.find('ConsentCheckbox')).toHaveLength(2);
@@ -48,21 +48,21 @@ describe('BacsInput', () => {
         wrapper.update();
 
         // Main holder (with additional 'confim' class)
-        expect(wrapper.find('.adyen-checkout__bacs.adyen-checkout__bacs--confirm')).toHaveLength(1);
+        expect(wrapper.find('.bubp-checkout__bacs.bubp-checkout__bacs--confirm')).toHaveLength(1);
 
         // Edit button
-        expect(wrapper.find('.adyen-checkout__bacs .adyen-checkout__bacs--edit')).toHaveLength(1);
+        expect(wrapper.find('.bubp-checkout__bacs .bubp-checkout__bacs--edit')).toHaveLength(1);
 
         // Name (inactive)
-        expect(wrapper.find('div.adyen-checkout__bacs--holder-name.adyen-checkout__field--inactive')).toHaveLength(1);
+        expect(wrapper.find('div.bubp-checkout__bacs--holder-name.bubp-checkout__field--inactive')).toHaveLength(1);
 
         // Holder for account & location + inactive account & location fields
-        expect(wrapper.find('.adyen-checkout__bacs .adyen-checkout__bacs__num-id')).toHaveLength(1);
-        expect(wrapper.find('div.adyen-checkout__bacs--bank-account-number.adyen-checkout__field--inactive')).toHaveLength(1);
-        expect(wrapper.find('div.adyen-checkout__bacs--bank-location-id.adyen-checkout__field--inactive')).toHaveLength(1);
+        expect(wrapper.find('.bubp-checkout__bacs .bubp-checkout__bacs__num-id')).toHaveLength(1);
+        expect(wrapper.find('div.bubp-checkout__bacs--bank-account-number.bubp-checkout__field--inactive')).toHaveLength(1);
+        expect(wrapper.find('div.bubp-checkout__bacs--bank-location-id.bubp-checkout__field--inactive')).toHaveLength(1);
 
         // Email (inactive)
-        expect(wrapper.find('div.adyen-checkout__bacs--shopper-email.adyen-checkout__field--inactive')).toHaveLength(1);
+        expect(wrapper.find('div.bubp-checkout__bacs--shopper-email.bubp-checkout__field--inactive')).toHaveLength(1);
 
         // No consent checkboxes
         expect(wrapper.find('ConsentCheckbox')).toHaveLength(0);

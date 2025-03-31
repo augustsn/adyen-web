@@ -36,8 +36,8 @@ test.describe('Testing branding - especially regarding optional and hidden cvc f
 
             // visible & required cvc field
             await expect(cardBrandingPage.cvcField).toBeVisible();
-            await expect(cardBrandingPage.cvcField).toHaveClass(/adyen-checkout__field__cvc/); // Note: "relaxed" regular expression to detect one class amongst several that are set on the element
-            await expect(cardBrandingPage.cvcField).not.toHaveClass(/adyen-checkout__field__cvc--optional/);
+            await expect(cardBrandingPage.cvcField).toHaveClass(/bubp-checkout__field__cvc/); // Note: "relaxed" regular expression to detect one class amongst several that are set on the element
+            await expect(cardBrandingPage.cvcField).not.toHaveClass(/bubp-checkout__field__cvc--optional/);
 
             // with regular text
             await expect(cardBrandingPage.cvcLabelText).toHaveText(CVC_LABEL);
@@ -52,7 +52,7 @@ test.describe('Testing branding - especially regarding optional and hidden cvc f
             // with "optional" text
             await expect(cardBrandingPage.cvcLabelText).toHaveText(CVC_LABEL_OPTIONAL);
             // and optional class
-            await expect(cardBrandingPage.cvcField).toHaveClass(/adyen-checkout__field__cvc--optional/);
+            await expect(cardBrandingPage.cvcField).toHaveClass(/bubp-checkout__field__cvc--optional/);
 
             // Add digit so card is recognised as bcmc
             await cardBrandingPage.cardNumberInput.press('End'); /** NOTE: how to add text at end */
@@ -79,8 +79,8 @@ test.describe('Testing branding - especially regarding optional and hidden cvc f
             await expect(cardBrandingPage.cvcLabelText).toHaveText(CVC_LABEL);
 
             // and required cvc field
-            await expect(cardBrandingPage.cvcField).toHaveClass(/adyen-checkout__field__cvc/);
-            await expect(cardBrandingPage.cvcField).not.toHaveClass(/adyen-checkout__field__cvc--optional/);
+            await expect(cardBrandingPage.cvcField).toHaveClass(/bubp-checkout__field__cvc/);
+            await expect(cardBrandingPage.cvcField).not.toHaveClass(/bubp-checkout__field__cvc--optional/);
         }
     );
 
@@ -98,7 +98,7 @@ test.describe('Testing branding - especially regarding optional and hidden cvc f
             // with "optional" text
             await expect(cardBrandingPage.cvcLabelText).toHaveText(CVC_LABEL_OPTIONAL);
             // and optional class
-            await expect(cardBrandingPage.cvcField).toHaveClass(/adyen-checkout__field__cvc--optional/);
+            await expect(cardBrandingPage.cvcField).toHaveClass(/bubp-checkout__field__cvc--optional/);
 
             // Is valid
             let cardValid = await page.evaluate('window.component.isValid');

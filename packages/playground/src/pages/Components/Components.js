@@ -1,5 +1,5 @@
 import {
-    AdyenCheckout,
+    BubpCheckout,
     BankTransfer,
     MBWay,
     Klarna,
@@ -13,8 +13,8 @@ import {
     Oxxo,
     Redirect,
     Twint
-} from '@adyen/adyen-web';
-import '@adyen/adyen-web/styles/adyen.css';
+} from '@bubp/web';
+import '@bubp/web/styles/bubp.css';
 
 import '../../../config/polyfills';
 import '../../style.scss';
@@ -23,7 +23,7 @@ import { handleSubmit, handleAdditionalDetails, handleChange, handleOnPaymentFai
 import { amount, shopperLocale, countryCode } from '../../config/commonConfig';
 
 getPaymentMethods({ amount, shopperLocale }).then(async paymentMethodsResponse => {
-    window.checkout = await AdyenCheckout({
+    window.checkout = await BubpCheckout({
         amount, // Optional. Used to display the amount in the Pay Button.
         countryCode,
         clientKey: process.env.__CLIENT_KEY__,

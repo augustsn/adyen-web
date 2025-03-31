@@ -1,7 +1,7 @@
 @use 'styles/index';
 
-.adyen-checkout__field--sendCopyToEmail {
-    .adyen-checkout__input-wrapper {
-        @include index.adyen-checkout-input-wrapper-reset;
+.bubp-checkout__field--sendCopyToEmail {
+    .bubp-checkout__input-wrapper {
+        @include index.bubp-checkout-input-wrapper-reset;
     }
 }

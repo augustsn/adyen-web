@@ -115,7 +115,7 @@ function touchstartListener(e: Event): void {
  * We can use this event to:
  * 1. Set focus on these other elements, and
  * 2. Tell SecuredFields that this has happened so they can blur themselves
- * (see note in adyen-secured-fields...inputBase.js - "Blur event never fires on input field")
+ * (see note in bubp-secured-fields...inputBase.js - "Blur event never fires on input field")
  *
  * NOTE: Only called when iOS detected
  */

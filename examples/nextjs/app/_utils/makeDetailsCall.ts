@@ -1,4 +1,4 @@
-import type { AdditionalDetailsData } from "@adyen/adyen-web";
+import type { AdditionalDetailsData } from "@bubp/web";
 
 async function makeDetailsCall(data: AdditionalDetailsData["data"]) {
     try {

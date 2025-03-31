@@ -18,10 +18,10 @@ jobs:
 
       - run: yarn install --frozen-lockfile
 
-      # Copy README to adyen-web package
+      # Copy README to @bubp/web package
       - run: cp README.md packages/lib/
 
-      # Copy LICENSE to adyen-web package
+      # Copy LICENSE to @bubp/web package
       - run: cp LICENSE packages/lib/
 
       # Build and publish to npm

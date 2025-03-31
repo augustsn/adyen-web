@@ -37,3 +37,10 @@ Vagrantfile
 # Certifictes
 cert
 *.pem
+
+# Yarn
+.yarn/*
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions

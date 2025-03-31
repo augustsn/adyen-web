@@ -79,7 +79,7 @@ export class SRPanel extends BaseElement<SRPanelProps> {
     }
 
     public setAriaProps(ariaAttributes: AriaAttributes): void {
-        const firstPanel = document.querySelector('[class^="adyen-checkout-sr-panel"]');
+        const firstPanel = document.querySelector('[class^="bubp-checkout-sr-panel"]');
         for (const [key, value] of Object.entries(ariaAttributes)) {
             firstPanel.setAttribute(key, value);
         }
@@ -103,7 +103,7 @@ export class SRPanel extends BaseElement<SRPanelProps> {
         if (!this.props.enabled) return null;
         return (
             <div
-                className={this.showPanel ? 'adyen-checkout-sr-panel' : 'adyen-checkout-sr-panel--sr-only'}
+                className={this.showPanel ? 'bubp-checkout-sr-panel' : 'bubp-checkout-sr-panel--sr-only'}
                 role={'log'}
                 {...this.props.ariaAttributes}
                 {...(process.env.NODE_ENV !== 'production' && { 'data-testid': this.id })}

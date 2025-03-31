@@ -348,7 +348,7 @@ describe('Testing creating a configData object for the Card components', () => {
         test('Expect the prop, when disclaimerMessage is passed, to equal true', () => {
             const configData = getCardConfigData({
                 ...defaultCardProps,
-                [CARD_CONFIG_PROP]: { message: 'By continuing you accept', linkText: 't&c', link: 'https://www.adyen.com' }
+                [CARD_CONFIG_PROP]: { message: 'By continuing you accept', linkText: 't&c', link: 'https://bubpayment.com' }
             });
             expect(configData[ANALYTICS_DATA_PROP]).toEqual(true);
         });

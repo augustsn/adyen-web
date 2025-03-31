@@ -12,10 +12,10 @@ const SelectListItem = ({ item, active, selected, ...props }: SelectItemProps) =
             aria-disabled={!!item.disabled}
             aria-selected={selected}
             className={cx([
-                'adyen-checkout__dropdown__element',
+                'bubp-checkout__dropdown__element',
                 {
-                    'adyen-checkout__dropdown__element--active': active,
-                    'adyen-checkout__dropdown__element--disabled': !!item.disabled
+                    'bubp-checkout__dropdown__element--active': active,
+                    'bubp-checkout__dropdown__element--disabled': !!item.disabled
                 }
             ])}
             // A change in Preact v10.11.1 means that all falsy values are assessed and set on data attributes.
@@ -30,9 +30,9 @@ const SelectListItem = ({ item, active, selected, ...props }: SelectItemProps) =
             //tabIndex={-1}
             id={`listItem-${item.id}`}
         >
-            {item.icon && <Img className="adyen-checkout__dropdown__element__icon" alt={item.name} src={item.icon} />}
-            <span className="adyen-checkout__dropdown__element__text">{item.name}</span>
-            {item.secondaryText && <span className="adyen-checkout__dropdown__element__secondary-text">{item.secondaryText}</span>}
+            {item.icon && <Img className="bubp-checkout__dropdown__element__icon" alt={item.name} src={item.icon} />}
+            <span className="bubp-checkout__dropdown__element__text">{item.name}</span>
+            {item.secondaryText && <span className="bubp-checkout__dropdown__element__secondary-text">{item.secondaryText}</span>}
             {selected && <Icon type={`${PREFIX}checkmark`} height={14} width={14} />}
         </li>
     );

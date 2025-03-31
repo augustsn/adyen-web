@@ -1,4 +1,4 @@
-# @adyen/adyen-web v6 + Nuxt3
+# @bubp/web v6 + Nuxt3
 
 ### Steps to run the project:
 

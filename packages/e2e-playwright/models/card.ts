@@ -57,17 +57,17 @@ class Card extends Base {
         public readonly rootElementSelector?: Locator | string
     ) {
         super(page);
-        const selector = rootElementSelector ?? '.adyen-checkout__card-input';
+        const selector = rootElementSelector ?? '.bubp-checkout__card-input';
         this.rootElement = typeof selector === 'string' ? this.page.locator(selector) : selector;
 
         /**
          * Card Number elements, in Checkout
          */
-        this.cardNumberField = this.rootElement.locator('.adyen-checkout__field--cardNumber'); // Holder
-        this.cardNumberLabelElement = this.cardNumberField.locator('.adyen-checkout__label');
-        this.cardNumberErrorElement = this.cardNumberField.locator('.adyen-checkout-contextual-text--error');
+        this.cardNumberField = this.rootElement.locator('.bubp-checkout__field--cardNumber'); // Holder
+        this.cardNumberLabelElement = this.cardNumberField.locator('.bubp-checkout__label');
+        this.cardNumberErrorElement = this.cardNumberField.locator('.bubp-checkout-contextual-text--error');
 
-        this.brandingIcon = this.rootElement.locator('.adyen-checkout__card__cardNumber__brandIcon');
+        this.brandingIcon = this.rootElement.locator('.bubp-checkout__card__cardNumber__brandIcon');
         /**
          * Card Number elements, in iframe
          */
@@ -77,11 +77,11 @@ class Card extends Base {
         /**
          * Expiry Date elements, in Checkout
          */
-        this.expiryDateField = this.rootElement.locator('.adyen-checkout__field--expiryDate'); // Holder
-        this.expiryDateLabelElement = this.expiryDateField.locator('.adyen-checkout__label');
-        this.expiryDateLabelText = this.expiryDateField.locator('.adyen-checkout__label__text');
-        this.expiryDateContextualElement = this.expiryDateField.locator('.adyen-checkout-contextual-text'); // Related contextual element
-        this.expiryDateErrorElement = this.expiryDateField.locator('.adyen-checkout-contextual-text--error'); // Related error element
+        this.expiryDateField = this.rootElement.locator('.bubp-checkout__field--expiryDate'); // Holder
+        this.expiryDateLabelElement = this.expiryDateField.locator('.bubp-checkout__label');
+        this.expiryDateLabelText = this.expiryDateField.locator('.bubp-checkout__label__text');
+        this.expiryDateContextualElement = this.expiryDateField.locator('.bubp-checkout-contextual-text'); // Related contextual element
+        this.expiryDateErrorElement = this.expiryDateField.locator('.bubp-checkout-contextual-text--error'); // Related error element
 
         /**
          * Expiry Date elements, in iframe
@@ -93,11 +93,11 @@ class Card extends Base {
         /**
          * Security code elements, in Checkout
          */
-        this.cvcField = this.rootElement.locator('.adyen-checkout__field--securityCode'); // Holder
-        this.cvcLabelElement = this.cvcField.locator('.adyen-checkout__label');
-        this.cvcLabelText = this.cvcField.locator('.adyen-checkout__label__text');
-        this.cvcContextualElement = this.cvcField.locator('.adyen-checkout-contextual-text'); // Related contextual element
-        this.cvcErrorElement = this.cvcField.locator('.adyen-checkout-contextual-text--error'); // Related error element
+        this.cvcField = this.rootElement.locator('.bubp-checkout__field--securityCode'); // Holder
+        this.cvcLabelElement = this.cvcField.locator('.bubp-checkout__label');
+        this.cvcLabelText = this.cvcField.locator('.bubp-checkout__label__text');
+        this.cvcContextualElement = this.cvcField.locator('.bubp-checkout-contextual-text'); // Related contextual element
+        this.cvcErrorElement = this.cvcField.locator('.bubp-checkout-contextual-text--error'); // Related error element
 
         /**
          * Security code elements, in iframe
@@ -109,7 +109,7 @@ class Card extends Base {
         /**
          * HolderName elements, in Checkout
          */
-        this.holderNameField = this.rootElement.locator('.adyen-checkout__card__holderName'); // Holder
+        this.holderNameField = this.rootElement.locator('.bubp-checkout__card__holderName'); // Holder
         this.holderNameInput = this.holderNameField.getByRole('textbox', { name: /name on card/i });
 
         /**
@@ -117,7 +117,7 @@ class Card extends Base {
          */
         this.installmentsPaymentLabel = this.rootElement.getByText(INSTALLMENTS_PAYMENTS);
         this.revolvingPaymentLabel = this.rootElement.getByText(REVOLVING_PAYMENT);
-        this.installmentsDropdown = this.rootElement.locator('.adyen-checkout__dropdown__button');
+        this.installmentsDropdown = this.rootElement.locator('.bubp-checkout__dropdown__button');
         this.selectorList = this.rootElement.getByRole('listbox');
 
         this.threeDs2Challenge = new ThreeDs2Challenge(page);
@@ -125,25 +125,25 @@ class Card extends Base {
 
     // The brands as displayed under the CardNumber field
     get availableBrands() {
-        return this.rootElement.locator('.adyen-checkout__card__brands').getByRole('img').all();
+        return this.rootElement.locator('.bubp-checkout__card__brands').getByRole('img').all();
     }
 
     // The holder for the icons in the CardNumber field (when dual branding occurs)
     get dualBrandingIconsHolder() {
-        return this.rootElement.locator('.adyen-checkout__card__dual-branding__buttons');
+        return this.rootElement.locator('.bubp-checkout__card__dual-branding__buttons');
     }
 
     // The brands as displayed directly in the CardNumber field (when dual branding occurs)
     async waitForVisibleBrands(expectedNumber = 2) {
         return await this.page.waitForFunction(
-            expectedLength => [...document.querySelectorAll('.adyen-checkout__card__cardNumber__brandIcon')].length === expectedLength,
+            expectedLength => [...document.querySelectorAll('.bubp-checkout__card__cardNumber__brandIcon')].length === expectedLength,
             expectedNumber
         );
     }
 
     // Retrieve dual brands
     get brands() {
-        return this.cardNumberField.locator('.adyen-checkout__card__cardNumber__brandIcon').all();
+        return this.cardNumberField.locator('.bubp-checkout__card__cardNumber__brandIcon').all();
     }
 
     // Select one of the dual brands
@@ -228,7 +228,7 @@ class Card extends Base {
     }
 
     async selectCVCIcon() {
-        await this.cvcField.locator('.adyen-checkout__card__cvc__hint__wrapper').click();
+        await this.cvcField.locator('.bubp-checkout__card__cvc__hint__wrapper').click();
     }
 }
 

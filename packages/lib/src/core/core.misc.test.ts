@@ -1,4 +1,4 @@
-import AdyenCheckout from './core';
+import BubpCheckout from './core';
 import { render, screen, within } from '@testing-library/preact';
 import { Ach, Card, Dropin } from '../components';
 
@@ -56,7 +56,7 @@ const checkoutConfig = {
 };
 
 const createDropinComponent = async mergeConfig => {
-    const checkout = new AdyenCheckout({ ...checkoutConfig, ...mergeConfig });
+    const checkout = new BubpCheckout({ ...checkoutConfig, ...mergeConfig });
     await checkout.initialize();
     const component = new Dropin(checkout, {
         paymentMethodComponents: [Ach, Card]

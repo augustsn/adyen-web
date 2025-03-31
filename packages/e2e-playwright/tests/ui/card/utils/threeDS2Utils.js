@@ -1,6 +1,6 @@
 import { fillIFrame, getIframeSelector } from '../../utils/commonUtils';
 
-const iframeSelector = getIframeSelector('.adyen-checkout__threeds2__challenge iframe');
+const iframeSelector = getIframeSelector('.bubp-checkout__threeds2__challenge iframe');
 
 // Added now acs simulator places another iframe inside the iframe that we provide in Components
 // const iframeSelector2 = getIframeSelector('[name="acsFrame"]');

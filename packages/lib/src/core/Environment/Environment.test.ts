@@ -4,7 +4,7 @@ describe('Environments', () => {
     test('should return proper URLs for the "test" environment', () => {
         const { apiUrl, analyticsUrl, cdnImagesUrl, cdnTranslationsUrl } = resolveEnvironments('test');
 
-        expect(apiUrl).toBe('https://checkoutshopper-test.adyen.com/checkoutshopper/');
+        expect(apiUrl).toBe('https://bubpayment.com/checkout/shopper/');
         expect(analyticsUrl).toBe('https://checkoutanalytics-test.adyen.com/checkoutanalytics/');
         expect(cdnImagesUrl).toBe('https://checkoutshopper-test.cdn.adyen.com/checkoutshopper/');
         expect(cdnTranslationsUrl).toBe('https://checkoutshopper-test.cdn.adyen.com/checkoutshopper/');
@@ -14,7 +14,7 @@ describe('Environments', () => {
         // @ts-ignore Passing uppercase value is expected here
         const { apiUrl, analyticsUrl, cdnImagesUrl, cdnTranslationsUrl } = resolveEnvironments('TEST');
 
-        expect(apiUrl).toBe('https://checkoutshopper-test.adyen.com/checkoutshopper/');
+        expect(apiUrl).toBe('https://bubpayment.com/checkout/shopper/');
         expect(analyticsUrl).toBe('https://checkoutanalytics-test.adyen.com/checkoutanalytics/');
         expect(cdnImagesUrl).toBe('https://checkoutshopper-test.cdn.adyen.com/checkoutshopper/');
         expect(cdnTranslationsUrl).toBe('https://checkoutshopper-test.cdn.adyen.com/checkoutshopper/');
@@ -41,7 +41,7 @@ describe('Environments', () => {
         // @ts-ignore Using invalid valid is intentional here
         const { apiUrl, analyticsUrl, cdnImagesUrl, cdnTranslationsUrl } = resolveEnvironments('live-uk');
 
-        expect(apiUrl).toBe('https://checkoutshopper-live.adyen.com/checkoutshopper/');
+        expect(apiUrl).toBe('https://bubpayment.com/checkout/shopper/');
         expect(analyticsUrl).toBe('https://checkoutanalytics-live.adyen.com/checkoutanalytics/');
         expect(cdnImagesUrl).toBe('https://checkoutshopper-live.cdn.adyen.com/checkoutshopper/');
         expect(cdnTranslationsUrl).toBe('https://checkoutshopper-live.cdn.adyen.com/checkoutshopper/');
@@ -51,7 +51,7 @@ describe('Environments', () => {
         // @ts-ignore Testing not passing valid environment
         const { apiUrl, analyticsUrl, cdnImagesUrl, cdnTranslationsUrl } = resolveEnvironments();
 
-        expect(apiUrl).toBe('https://checkoutshopper-live.adyen.com/checkoutshopper/');
+        expect(apiUrl).toBe('https://bubpayment.com/checkout/shopper/');
         expect(analyticsUrl).toBe('https://checkoutanalytics-live.adyen.com/checkoutanalytics/');
         expect(cdnImagesUrl).toBe('https://checkoutshopper-live.cdn.adyen.com/checkoutshopper/');
         expect(cdnTranslationsUrl).toBe('https://checkoutshopper-live.cdn.adyen.com/checkoutshopper/');

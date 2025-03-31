@@ -25,7 +25,7 @@ export function SRMessages({ setComponentRef }: SRMessagesProps) {
         <Fragment>
             {messages.map(msg => {
                 return (
-                    <div key={msg} className="adyen-checkout-sr-panel__msg" {...(process.env.NODE_ENV !== 'production' && { 'data-testid': msg })}>
+                    <div key={msg} className="bubp-checkout-sr-panel__msg" {...(process.env.NODE_ENV !== 'production' && { 'data-testid': msg })}>
                         {msg}
                     </div>
                 );

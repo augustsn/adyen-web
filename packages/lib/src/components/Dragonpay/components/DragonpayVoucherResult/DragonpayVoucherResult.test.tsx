@@ -18,7 +18,7 @@ describe('DragonpayVoucherResult', () => {
     test('should render issuer image for dragonpay_otc_non_banking', () => {
         global.resources.getImage.mockImplementation(
             // eslint-disable-next-line @typescript-eslint/no-unused-vars
-            props => props => 'https://checkoutshopper-live.adyen.com/checkoutshopper/images/logos/dragonpay_otc_non_banking/bpxb.svg'
+            props => props => 'https://bubpayment.com/checkout/shopper/images/logos/dragonpay_otc_non_banking/bpxb.svg'
         );
 
         const wrapper = mount(
@@ -30,7 +30,7 @@ describe('DragonpayVoucherResult', () => {
         const voucher = wrapper.find('Voucher');
         expect(voucher.props()).toHaveProperty(
             'issuerImageUrl',
-            'https://checkoutshopper-live.adyen.com/checkoutshopper/images/logos/dragonpay_otc_non_banking/bpxb.svg'
+            'https://bubpayment.com/checkout/shopper/images/logos/dragonpay_otc_non_banking/bpxb.svg'
         );
     });
 });

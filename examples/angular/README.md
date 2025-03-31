@@ -1,4 +1,4 @@
-# @adyen/adyen-web v6 + Angular 18 with Server Side Rendering
+# @bubp/web v6 + Angular 18 with Server Side Rendering
 
 ### Steps to run the project:
 

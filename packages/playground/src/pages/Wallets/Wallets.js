@@ -1,5 +1,5 @@
-import { AdyenCheckout, CashAppPay, ClickToPay, AmazonPay, PayPal, GooglePay, ApplePay } from '@adyen/adyen-web';
-import '@adyen/adyen-web/styles/adyen.css';
+import { BubpCheckout, CashAppPay, ClickToPay, AmazonPay, PayPal, GooglePay, ApplePay } from '@bubp/web';
+import '@bubp/web/styles/bubp.css';
 
 import { getPaymentMethods, makePayment } from '../../services';
 import { handleSubmit, handleAdditionalDetails } from '../../handlers';
@@ -9,7 +9,7 @@ import '../../../config/polyfills';
 import '../../style.scss';
 
 getPaymentMethods({ amount, shopperLocale }).then(async paymentMethodsResponse => {
-    window.checkout = await AdyenCheckout({
+    window.checkout = await BubpCheckout({
         amount, // Optional. Used to display the amount in the Pay Button.
         countryCode,
         clientKey: process.env.__CLIENT_KEY__,
@@ -56,7 +56,7 @@ getPaymentMethods({ amount, shopperLocale }).then(async paymentMethodsResponse =
 
     // CLICK TO PAY
     window.clickToPay = new ClickToPay(window.checkout, {
-        shopperEmail: 'gui.ctp@adyen.com',
+        shopperEmail: 'gui.ctp@bubpayment.com',
         onReady() {
             console.log('ClickToPay is ready');
         },

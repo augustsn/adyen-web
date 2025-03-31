@@ -19,7 +19,7 @@ export class Giftcard extends Base {
 
     constructor(
         public readonly page: Page,
-        rootElementSelector = '.adyen-checkout__giftcard'
+        rootElementSelector = '.bubp-checkout__giftcard'
     ) {
         super(page);
         this.rootElement = this.page.locator(rootElementSelector);

@@ -1,7 +1,7 @@
 import { httpPost } from '../../core/Services/http';
 import { pick } from '../../utils/commonUtils';
 import { ThreeDS2FingerprintResponse } from './types';
-import AdyenCheckoutError from '../../core/Errors/AdyenCheckoutError';
+import BubpCheckoutError from '../../core/Errors/BubpCheckoutError';
 import { THREEDS2_ERROR, THREEDS2_FINGERPRINT_SUBMIT } from './constants';
 import { ANALYTICS_ERROR_TYPE, Analytics3DS2Errors } from '../../core/Analytics/constants';
 import { SendAnalyticsObject } from '../../core/Analytics/types';
@@ -107,7 +107,7 @@ export default function callSubmit3DS2Fingerprint({ data }): void {
                 return actionHandler.handleAction(resData.action);
             }
         })
-        .catch((error: AdyenCheckoutError) => {
+        .catch((error: BubpCheckoutError) => {
             this.handleError(error);
         });
 }

@@ -1,6 +1,6 @@
 @import 'styles/variable-generator';
 
-.adyen-checkout__ctp-modal {
+.bubp-checkout__ctp-modal {
     &-header-image {
         display: block;
         margin: auto;
@@ -33,12 +33,12 @@
 }
 
 // Classname modifier that set max size of CTP modal
-.adyen-checkout__modal-wrapper--ctp .adyen-checkout__modal {
+.bubp-checkout__modal-wrapper--ctp .bubp-checkout__modal {
     max-width: 464px;
 }
 
 // Classname modifier that align brands inside CTP modal
-.adyen_checkout-ctp__brand-wrapper--popup {
+.bubp_checkout-ctp__brand-wrapper--popup {
     justify-content: center;
     margin-bottom: token(spacer-090);
 }

@@ -23,22 +23,22 @@ export default function Checkbox({ classNameModifiers = [], label, isInvalid, on
     const { uniqueId: uid, showErrorElement, showContextualElement, ...newProps } = props;
 
     return (
-        <label className="adyen-checkout__checkbox" htmlFor={uid}>
+        <label className="bubp-checkout__checkbox" htmlFor={uid}>
             <input
                 id={uid}
                 {...newProps}
                 {...(showErrorElement && { 'aria-describedby': `${uid}${ARIA_ERROR_SUFFIX}` })}
                 {...(showContextualElement && { 'aria-describedby': `${uid}${ARIA_CONTEXT_SUFFIX}` })}
                 className={cx([
-                    'adyen-checkout__checkbox__input',
+                    'bubp-checkout__checkbox__input',
                     [props.className],
-                    { 'adyen-checkout__checkbox__input--invalid': isInvalid },
-                    classNameModifiers.map(m => `adyen-checkout__input--${m}`)
+                    { 'bubp-checkout__checkbox__input--invalid': isInvalid },
+                    classNameModifiers.map(m => `bubp-checkout__input--${m}`)
                 ])}
                 type="checkbox"
                 onChange={onChange}
             />
-            <span className="adyen-checkout__checkbox__label">{label}</span>
+            <span className="bubp-checkout__checkbox__label">{label}</span>
         </label>
     );
 }

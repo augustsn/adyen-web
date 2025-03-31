@@ -1,6 +1,6 @@
 @import 'styles/variable-generator';
 
-.adyen-checkout__payment-method__header__title {
+.bubp-checkout__payment-method__header__title {
     max-height: 38px;
     display: flex;
     gap: token(spacer-060);
@@ -25,7 +25,7 @@
 }
 
 /*  Payment Method Radio Button */
-.adyen-checkout__payment-method__radio {
+.bubp-checkout__payment-method__radio {
     background-color: token(color-background-primary);
     border: token(border-width-s) solid token(color-outline-secondary);
     border-radius: 50%;
@@ -42,7 +42,7 @@
     }
 }
 
-.adyen-checkout__payment-method__radio::after {
+.bubp-checkout__payment-method__radio::after {
     content: '';
     display: block;
     position: relative;
@@ -58,7 +58,7 @@
     transition: transform 0.3s ease-out;
 }
 
-.adyen-checkout__payment-method__radio--selected {
+.bubp-checkout__payment-method__radio--selected {
     background-color: token(color-label-primary);
     border: 0;
     transition: all 0.3s ease-out;

@@ -9,7 +9,7 @@ import createClickToPayService from '../internal/ClickToPay/services/create-clic
 import { CtpState } from '../internal/ClickToPay/services/ClickToPayService';
 import ClickToPayProvider from '../internal/ClickToPay/context/ClickToPayProvider';
 import ClickToPayComponent from '../internal/ClickToPay';
-import AdyenCheckoutError from '../../core/Errors/AdyenCheckoutError';
+import BubpCheckoutError from '../../core/Errors/BubpCheckoutError';
 import { TxVariants } from '../tx-variants';
 import type { ICore } from '../../core/types';
 
@@ -33,7 +33,7 @@ export class ClickToPayElement extends UIElement<ClickToPayConfiguration> {
 
         this.clickToPayService = createClickToPayService(this.props.configuration, this.ctpConfiguration, this.props.environment);
         this.clickToPayService?.initialize().catch(error => {
-            this.handleError(new AdyenCheckoutError('ERROR', error.toString(), { cause: error }));
+            this.handleError(new BubpCheckoutError('ERROR', error.toString(), { cause: error }));
         });
 
         if (!this.clickToPayService) {

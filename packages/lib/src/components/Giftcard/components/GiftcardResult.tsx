@@ -20,17 +20,17 @@ function GiftcardResult({ amount, balance, transactionLimit, status, makePayment
     const remainingBalance = balance?.value - transactionAmount?.value;
 
     return (
-        <div className="adyen-checkout__giftcard-result">
-            <ul className="adyen-checkout__giftcard-result__balance">
-                <li className="adyen-checkout__giftcard-result__balance__item">
-                    <span className="adyen-checkout__giftcard-result__balance__title">{i18n.get('giftcardBalance')}</span>
-                    <span className="adyen-checkout__giftcard-result__balance__value adyen-checkout__giftcard-result__balance__value--amount">
+        <div className="bubp-checkout__giftcard-result">
+            <ul className="bubp-checkout__giftcard-result__balance">
+                <li className="bubp-checkout__giftcard-result__balance__item">
+                    <span className="bubp-checkout__giftcard-result__balance__title">{i18n.get('giftcardBalance')}</span>
+                    <span className="bubp-checkout__giftcard-result__balance__value bubp-checkout__giftcard-result__balance__value--amount">
                         {i18n.amount(balance.value, balance.currency)}
                     </span>
                 </li>
                 {transactionLimit && transactionLimit.value && (
-                    <li className="adyen-checkout__giftcard-result__balance__item">
-                        <span className="adyen-checkout__giftcard-result__balance__title adyen-checkout__giftcard-result__balance__title--transactionLimit">
+                    <li className="bubp-checkout__giftcard-result__balance__item">
+                        <span className="bubp-checkout__giftcard-result__balance__title bubp-checkout__giftcard-result__balance__title--transactionLimit">
                             {i18n.get('giftcardTransactionLimit', {
                                 values: { amount: i18n.amount(transactionLimit.value, transactionLimit.currency) }
                             })}
@@ -46,7 +46,7 @@ function GiftcardResult({ amount, balance, transactionLimit, status, makePayment
                     onClick: makePayment
                 })}
 
-            <p className="adyen-checkout__giftcard-result__remaining-balance">
+            <p className="bubp-checkout__giftcard-result__remaining-balance">
                 {i18n.get('partialPayment.remainingBalance', {
                     values: { amount: i18n.amount(remainingBalance, balance.currency) }
                 })}

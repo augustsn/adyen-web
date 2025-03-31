@@ -1,5 +1,5 @@
 import { ICashAppSdkLoader } from './CashAppSdkLoader';
-import AdyenCheckoutError from '../../../core/Errors/AdyenCheckoutError';
+import BubpCheckoutError from '../../../core/Errors/BubpCheckoutError';
 import { CashAppPayEvents, CashAppServiceConfig, ICashAppSDK, ICashAppService } from './types';
 
 export default class CashAppService implements ICashAppService {
@@ -41,7 +41,7 @@ export default class CashAppService implements ICashAppService {
             const cashApp = await this.sdkLoader.load(environment);
             this.pay = await cashApp.pay({ clientId });
         } catch (error) {
-            throw new AdyenCheckoutError('ERROR', 'Error during initialization', { cause: error });
+            throw new BubpCheckoutError('ERROR', 'Error during initialization', { cause: error });
         }
     }
 
@@ -55,7 +55,7 @@ export default class CashAppService implements ICashAppService {
             });
             this.startAuthorization = begin;
         } catch (error) {
-            throw new AdyenCheckoutError('ERROR', 'Error rendering CashAppPay button', { cause: error });
+            throw new BubpCheckoutError('ERROR', 'Error rendering CashAppPay button', { cause: error });
         }
     }
 
@@ -94,7 +94,7 @@ export default class CashAppService implements ICashAppService {
             };
             await this.pay.customerRequest(customerRequest);
         } catch (error) {
-            throw new AdyenCheckoutError('ERROR', 'Something went wrong during customerRequest creation', { cause: error });
+            throw new BubpCheckoutError('ERROR', 'Something went wrong during customerRequest creation', { cause: error });
         }
     }
 

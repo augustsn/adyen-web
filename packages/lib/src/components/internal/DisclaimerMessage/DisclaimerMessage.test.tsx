@@ -5,7 +5,7 @@ import { render, screen } from '@testing-library/preact';
 describe('DisclaimerMessage', () => {
     const disclaimerMessage = {
         message: 'By continuing you accept the %#terms and conditions%# of MyStore',
-        urls: ['https://www.adyen.com']
+        urls: ['https://bubpayment.com']
     };
 
     test('Renders the DisclaimerMessage with text before and after the link', () => {
@@ -13,7 +13,7 @@ describe('DisclaimerMessage', () => {
         expect(screen.getByText('By continuing', { exact: false }).textContent).toEqual(
             'By continuing you accept the terms and conditions of MyStore'
         );
-        expect(screen.getByRole('link', { name: 'terms and conditions' })).toHaveAttribute('href', 'https://www.adyen.com');
+        expect(screen.getByRole('link', { name: 'terms and conditions' })).toHaveAttribute('href', 'https://bubpayment.com');
     });
 
     test('Renders the DisclaimerMessage just with text before the link', () => {
@@ -28,12 +28,12 @@ describe('DisclaimerMessage', () => {
         /* eslint-enable testing-library/prefer-presence-queries */
 
         expect(screen.getByText('By continuing', { exact: false }).textContent).toEqual('By continuing you accept the terms and conditions');
-        expect(screen.getByRole('link', { name: 'terms and conditions' })).toHaveAttribute('href', 'https://www.adyen.com');
+        expect(screen.getByRole('link', { name: 'terms and conditions' })).toHaveAttribute('href', 'https://bubpayment.com');
     });
 
     test("Doesn't render the DisclaimerMessage because the link is not https", () => {
         const nuMsg = { ...disclaimerMessage };
-        nuMsg.urls = ['http://www.adyen.com'];
+        nuMsg.urls = ['http://bubpayment.com'];
 
         render(<DisclaimerMessage {...nuMsg} />);
         expect(screen.queryByText('By continuing', { exact: false })).toBeNull(); // non-presence

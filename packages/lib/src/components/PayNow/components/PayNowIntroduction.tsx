@@ -17,7 +17,7 @@ const PayNowIntroduction = () => {
     ];
 
     return (
-        <div className="adyen-checkout-paynow__introduction" data-testid="paynow-introduction">
+        <div className="bubp-checkout-paynow__introduction" data-testid="paynow-introduction">
             {isMobileScreenSize ? (
                 <TimelineWrapper>
                     <Timeline instructions={instructions} />

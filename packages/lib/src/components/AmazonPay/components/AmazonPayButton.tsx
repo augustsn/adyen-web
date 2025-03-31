@@ -53,5 +53,5 @@ export default function AmazonPayButton(props: AmazonPayButtonProps) {
     }, []);
 
     if (!props.showPayButton) return null;
-    return <div className="adyen-checkout__amazonpay__button" id="amazonPayButton" />;
+    return <div className="bubp-checkout__amazonpay__button" id="amazonPayButton" />;
 }

@@ -58,8 +58,8 @@ export default function PayToComponent(props: PayToComponentProps) {
     return (
         <div
             className={classNames({
-                'adyen-checkout__payto-component': true,
-                'adyen-checkout__payto-component--loading': status === 'loading'
+                'bubp-checkout__payto-component': true,
+                'bubp-checkout__payto-component--loading': status === 'loading'
             })}
         >
             <SegmentedControl selectedValue={selectedInput} options={inputOptions} onChange={setSelectedInput} />

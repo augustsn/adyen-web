@@ -3,7 +3,7 @@ import { Resources } from '../core/Context/Resources';
 describe('Ideal utils', () => {
     describe('getImageUrl', () => {
         const issuer = 123;
-        const loadingContext = 'http://adyen.com/';
+        const loadingContext = 'http://bubpayment.com/';
         const type = 'ideal';
         const resources = new Resources(loadingContext);
         const getImageUrl = props => resources.getImage(props);
@@ -13,7 +13,7 @@ describe('Ideal utils', () => {
                 loadingContext,
                 parentFolder: 'ideal/'
             };
-            expect(getImageUrl(options)(issuer)).toBe('http://adyen.com/images/logos/ideal/123.svg');
+            expect(getImageUrl(options)(issuer)).toBe('http://bubpayment.com/images/logos/ideal/123.svg');
         });
 
         test('Gets an image under components/ folder', () => {
@@ -21,7 +21,7 @@ describe('Ideal utils', () => {
                 loadingContext,
                 imageFolder: 'components/'
             };
-            expect(getImageUrl(options)('success')).toBe('http://adyen.com/images/components/success.svg');
+            expect(getImageUrl(options)('success')).toBe('http://bubpayment.com/images/components/success.svg');
         });
 
         test('Gets a full url without a parentContext (default ideal image)', () => {
@@ -29,7 +29,7 @@ describe('Ideal utils', () => {
                 loadingContext,
                 parentFolder: ''
             };
-            expect(getImageUrl(options)(type)).toBe('http://adyen.com/images/logos/ideal.svg');
+            expect(getImageUrl(options)(type)).toBe('http://bubpayment.com/images/logos/ideal.svg');
         });
 
         test('Gets an image in PNG', () => {
@@ -39,7 +39,7 @@ describe('Ideal utils', () => {
                 extension: 'png'
             };
 
-            expect(getImageUrl(options)(issuer)).toBe('http://adyen.com/images/logos/ideal/123.png');
+            expect(getImageUrl(options)(issuer)).toBe('http://bubpayment.com/images/logos/ideal/123.png');
         });
     });
 });

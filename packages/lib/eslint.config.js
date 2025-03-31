@@ -48,7 +48,7 @@ const config = tseslint.config(
                 'error',
                 {
                     name: 'preact/compat',
-                    message: 'preact/compat should be used to leverage a React app to start using Preact, which it is not the case for adyen-web SDK.'
+                    message: 'preact/compat should be used to leverage a React app to start using Preact, which it is not the case for bubp-web SDK.'
                 }
             ],
 

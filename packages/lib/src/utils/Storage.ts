@@ -27,7 +27,7 @@ class NonPersistentStorage {
 }
 
 class Storage<T> {
-    private readonly prefix = 'adyen-checkout__';
+    private readonly prefix = 'bubp-checkout__';
     private readonly key: string;
     private storage: globalThis.Storage | NonPersistentStorage;
 

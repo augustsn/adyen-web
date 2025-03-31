@@ -4,7 +4,7 @@ import { ClickToPayCheckoutPayload, IClickToPayService } from '../services/types
 import ShopperCard from '../models/ShopperCard';
 import { ClickToPayProps } from '../types';
 import { PaymentAmount } from '../../../../types/global-types';
-import AdyenCheckoutError from '../../../../core/Errors/AdyenCheckoutError';
+import BubpCheckoutError from '../../../../core/Errors/BubpCheckoutError';
 import { UIElementStatus } from '../../UIElement/types';
 
 export interface IClickToPayContext
@@ -25,7 +25,7 @@ export interface IClickToPayContext
     status: UIElementStatus;
     onSubmit(payload: ClickToPayCheckoutPayload): void;
     onSetStatus(status: UIElementStatus): void;
-    onError(error: AdyenCheckoutError): void;
+    onError(error: BubpCheckoutError): void;
     onReady(): void;
 }
 

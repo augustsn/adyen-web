@@ -76,7 +76,7 @@ module.exports = {
     },
 
     watchOptions: {
-        ignored: ['/node_modules/', '/!(@adyen/adyen-web/dist)/'],
+        ignored: ['/node_modules/', '/!(@bubp/web/dist)/'],
         aggregateTimeout: 200,
         poll: 500
     },

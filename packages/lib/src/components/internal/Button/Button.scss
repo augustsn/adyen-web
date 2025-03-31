@@ -1,7 +1,7 @@
 @use 'styles/index';
 @import 'styles/variable-generator';
 
-.adyen-checkout__button {
+.bubp-checkout__button {
     background: token(color-background-always-dark);
     border: 0;
     border-radius: token(border-radius-m);
@@ -51,14 +51,14 @@
         }
     }
 
-    &.adyen-checkout__button--loading {
+    &.bubp-checkout__button--loading {
         background: token(color-label-disabled);
         box-shadow: none;
         pointer-events: none;
         user-select: none;
     }
 
-    &.adyen-checkout__button--pay {
+    &.bubp-checkout__button--pay {
         margin-top: token(spacer-090);
         display: flex;
         justify-content: center;
@@ -68,11 +68,11 @@
         }
     }
 
-    &.adyen-checkout__button--standalone {
+    &.bubp-checkout__button--standalone {
         margin-top: 0;
     }
 
-    &.adyen-checkout__button--inline {
+    &.bubp-checkout__button--inline {
         display: block;
         width: auto;
         height: auto;
@@ -80,12 +80,12 @@
         font-size: 0.81em;
     }
 
-    &.adyen-checkout__button--ghost {
+    &.bubp-checkout__button--ghost {
         background: none;
         border: 0;
         color: token(color-label-primary);
 
-        .adyen-checkout__spinner {
+        .bubp-checkout__spinner {
             @include index.set-spinner-color;
         }
 
@@ -100,13 +100,13 @@
         }
     }
 
-    &.adyen-checkout__button--secondary {
+    &.bubp-checkout__button--secondary {
         padding: token(spacer-050) token(spacer-060);
         background: token(color-background-primary);
         border: token(border-width-s) solid token(color-label-primary);
         color: token(color-label-primary);
 
-        .adyen-checkout__spinner {
+        .bubp-checkout__spinner {
             @include index.set-spinner-color;
         }
 
@@ -141,7 +141,7 @@
         }
     }
 
-    &.adyen-checkout__button--action {
+    &.bubp-checkout__button--action {
         padding: token(spacer-050) token(spacer-060);
         background: token(color-background-always-dark);
         border: token(border-width-s) solid transparent;
@@ -159,7 +159,7 @@
         }
     }
 
-    &.adyen-checkout__button--link {
+    &.bubp-checkout__button--link {
         background: transparent;
         border: token(border-width-s) solid transparent;
         color: token(color-label-highlight);
@@ -175,7 +175,7 @@
         }
     }
 
-    &.adyen-checkout__button--completed {
+    &.bubp-checkout__button--completed {
         &,
         &:hover,
         &:active,
@@ -184,7 +184,7 @@
             color: token(color-label-on-color);
         }
 
-        .adyen-checkout__button__icon {
+        .bubp-checkout__button__icon {
             filter: brightness(0) invert(1);
         }
     }
@@ -217,7 +217,7 @@
         }
     }
 
-    .adyen-checkout__spinner {
+    .bubp-checkout__spinner {
         @include index.set-spinner-color(token(color-label-on-color), token(color-label-on-color));
     }
 }

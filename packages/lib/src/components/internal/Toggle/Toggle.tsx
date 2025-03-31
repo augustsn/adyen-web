@@ -20,9 +20,9 @@ const Toggle = ({ label, labelPosition = 'after', ariaLabel, description, checke
     const computedAriaLabel = useMemo(() => ariaLabel ?? label, [ariaLabel, label]);
 
     const conditionalClasses = cx({
-        'adyen-checkout-toggle--label-first': labelPosition === 'before',
-        'adyen-checkout-toggle--disabled': disabled,
-        'adyen-checkout-toggle--readonly': readonly
+        'bubp-checkout-toggle--label-first': labelPosition === 'before',
+        'bubp-checkout-toggle--disabled': disabled,
+        'bubp-checkout-toggle--readonly': readonly
     });
 
     const onInputChange = useCallback(
@@ -33,7 +33,7 @@ const Toggle = ({ label, labelPosition = 'after', ariaLabel, description, checke
     );
 
     return (
-        <label className={`adyen-checkout-toggle ${conditionalClasses}`}>
+        <label className={`bubp-checkout-toggle ${conditionalClasses}`}>
             <input
                 disabled={disabled}
                 checked={checked}
@@ -43,11 +43,11 @@ const Toggle = ({ label, labelPosition = 'after', ariaLabel, description, checke
                 aria-describedby={descriptionId}
                 role="switch"
                 type="checkbox"
-                className="adyen-checkout-toggle__input"
+                className="bubp-checkout-toggle__input"
             />
 
-            <span aria-hidden={true} className="adyen-checkout-toggle__track">
-                <span className="adyen-checkout-toggle__handle">
+            <span aria-hidden={true} className="bubp-checkout-toggle__track">
+                <span className="bubp-checkout-toggle__handle">
                     {checked && (
                         <svg role="img" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none">
                             <path
@@ -60,12 +60,12 @@ const Toggle = ({ label, labelPosition = 'after', ariaLabel, description, checke
             </span>
 
             {label && (
-                <span className="adyen-checkout-toggle__label-container">
-                    <span className="adyen-checkout-toggle__label-text" data-testid="inner-label">
+                <span className="bubp-checkout-toggle__label-container">
+                    <span className="bubp-checkout-toggle__label-text" data-testid="inner-label">
                         {label}
                     </span>
                     {description && (
-                        <span data-testid="description" className="adyen-checkout-toggle__description" id={descriptionId}>
+                        <span data-testid="description" className="bubp-checkout-toggle__description" id={descriptionId}>
                             {description}
                         </span>
                     )}

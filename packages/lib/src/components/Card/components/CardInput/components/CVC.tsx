@@ -31,18 +31,18 @@ export default function CVC(props: CVCProps) {
     const { i18n } = useCoreContext();
 
     const fieldClassnames = classNames(className, {
-        'adyen-checkout__field__cvc': true,
-        'adyen-checkout__card__cvc__input--hidden': cvcPolicy === CVC_POLICY_HIDDEN,
-        'adyen-checkout__field__cvc--optional': cvcPolicy === CVC_POLICY_OPTIONAL
+        'bubp-checkout__field__cvc': true,
+        'bubp-checkout__card__cvc__input--hidden': cvcPolicy === CVC_POLICY_HIDDEN,
+        'bubp-checkout__field__cvc--optional': cvcPolicy === CVC_POLICY_OPTIONAL
     });
 
     const cvcClassnames = classNames({
-        'adyen-checkout__input': true,
-        'adyen-checkout__input--small': true,
-        'adyen-checkout__card__cvc__input': true,
-        'adyen-checkout__input--error': error,
-        'adyen-checkout__input--focus': focused,
-        'adyen-checkout__input--valid': isValid
+        'bubp-checkout__input': true,
+        'bubp-checkout__input--small': true,
+        'bubp-checkout__card__cvc__input': true,
+        'bubp-checkout__input--error': error,
+        'bubp-checkout__input--focus': focused,
+        'bubp-checkout__input--valid': isValid
     });
 
     const fieldLabel = cvcPolicy !== CVC_POLICY_OPTIONAL ? label : i18n.get('creditCard.securityCode.label.optional');

@@ -16,7 +16,7 @@ import {
     ANALYTICS_EVENT
 } from './constants';
 import { THREEDS2_ERROR, THREEDS2_FULL } from '../../components/ThreeDS2/constants';
-import AdyenCheckoutError, { SDK_ERROR } from '../Errors/AdyenCheckoutError';
+import BubpCheckoutError, { SDK_ERROR } from '../Errors/BubpCheckoutError';
 import { getCardConfigData } from './utils';
 
 export const analyticsPreProcessor = (analyticsModule: AnalyticsModule) => {
@@ -25,7 +25,7 @@ export const analyticsPreProcessor = (analyticsModule: AnalyticsModule) => {
         const { type, target } = analyticsObj;
 
         if (!type) {
-            throw new AdyenCheckoutError(SDK_ERROR, 'You are trying to create an analytics event without a type');
+            throw new BubpCheckoutError(SDK_ERROR, 'You are trying to create an analytics event without a type');
         }
 
         switch (type) {

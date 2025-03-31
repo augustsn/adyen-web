@@ -17,7 +17,7 @@ test('#2 Click pay with empty fields and error panel is populated', async ({ car
     await card.pay();
     // Wait for all sr panel messages
     await page.waitForFunction(
-        expectedLength => [...document.querySelectorAll('.adyen-checkout-sr-panel__msg')].map(el => el.textContent).length === expectedLength,
+        expectedLength => [...document.querySelectorAll('.bubp-checkout-sr-panel__msg')].map(el => el.textContent).length === expectedLength,
         expectedSRPanelTexts.length
     );
     // check individual messages
@@ -39,7 +39,7 @@ test('#3 Fill out PAN & see that first error in error panel is date related', as
     await card.pay();
     // Wait for all sr panel messages
     await page.waitForFunction(
-        expectedLength => [...document.querySelectorAll('.adyen-checkout-sr-panel__msg')].map(el => el.textContent).length === expectedLength,
+        expectedLength => [...document.querySelectorAll('.bubp-checkout-sr-panel__msg')].map(el => el.textContent).length === expectedLength,
         expectedSRPanelTexts.length
     );
     // check individual messages

@@ -3,9 +3,9 @@ import UIElement from '../internal/UIElement/UIElement';
 import GooglePayService from './GooglePayService';
 import GooglePayButton from './components/GooglePayButton';
 import defaultProps from './defaultProps';
-import { formatGooglePayContactToAdyenAddressFormat, getGooglePayLocale } from './utils';
+import { formatGooglePayContactToBubpAddressFormat, getGooglePayLocale } from './utils';
 import collectBrowserInfo from '../../utils/browserInfo';
-import AdyenCheckoutError from '../../core/Errors/AdyenCheckoutError';
+import BubpCheckoutError from '../../core/Errors/BubpCheckoutError';
 import { TxVariants } from '../tx-variants';
 import { sanitizeResponse, verifyPaymentDidNotFail } from '../internal/UIElement/utils';
 import { ANALYTICS_INSTANT_PAYMENT_BUTTON, ANALYTICS_SELECTED_STR } from '../../core/Analytics/constants';
@@ -30,14 +30,14 @@ class GooglePay extends UIElement<GooglePayConfiguration> {
         const { isExpress, paymentDataCallbacks } = this.props;
 
         if (isExpress === false && paymentDataCallbacks?.onPaymentDataChanged) {
-            throw new AdyenCheckoutError(
+            throw new BubpCheckoutError(
                 'IMPLEMENTATION_ERROR',
                 'GooglePay - You must set "isExpress" flag to "true" in order to use "onPaymentDataChanged" callback'
             );
         }
 
         if (!this.props.configuration.merchantId) {
-            throw new AdyenCheckoutError(
+            throw new BubpCheckoutError(
                 'IMPLEMENTATION_ERROR',
                 'GooglePay - Missing merchantId. Please ensure that it is correctly configured in your customer area.'
             );
@@ -96,7 +96,7 @@ class GooglePay extends UIElement<GooglePayConfiguration> {
     private showGooglePayPaymentSheet() {
         this.googlePay.initiatePayment(this.props, this.core.options.countryCode).catch((error: google.payments.api.PaymentsError) => {
             // eslint-disable-next-line @typescript-eslint/no-base-to-string
-            this.handleError(new AdyenCheckoutError(error.statusCode === 'CANCELED' ? 'CANCEL' : 'ERROR', error.toString(), { cause: error }));
+            this.handleError(new BubpCheckoutError(error.statusCode === 'CANCELED' ? 'CANCEL' : 'ERROR', error.toString(), { cause: error }));
         });
     }
 
@@ -116,8 +116,8 @@ class GooglePay extends UIElement<GooglePayConfiguration> {
      * @see https://developers.google.com/pay/api/web/reference/client#onPaymentAuthorized
      **/
     private onPaymentAuthorized = async (paymentData: google.payments.api.PaymentData): Promise<google.payments.api.PaymentAuthorizationResult> => {
-        const billingAddress: AddressData = formatGooglePayContactToAdyenAddressFormat(paymentData.paymentMethodData.info.billingAddress);
-        const deliveryAddress: AddressData = formatGooglePayContactToAdyenAddressFormat(paymentData.shippingAddress, true);
+        const billingAddress: AddressData = formatGooglePayContactToBubpAddressFormat(paymentData.paymentMethodData.info.billingAddress);
+        const deliveryAddress: AddressData = formatGooglePayContactToBubpAddressFormat(paymentData.shippingAddress, true);
 
         this.setState({
             authorizedEvent: paymentData,
@@ -216,11 +216,11 @@ class GooglePay extends UIElement<GooglePayConfiguration> {
         return this.isReadyToPay()
             .then(response => {
                 if (!response.result) {
-                    throw new AdyenCheckoutError('ERROR', 'GooglePay is not available');
+                    throw new BubpCheckoutError('ERROR', 'GooglePay is not available');
                 }
 
                 if (response.paymentMethodPresent === false) {
-                    throw new AdyenCheckoutError('ERROR', 'GooglePay - No paymentMethodPresent');
+                    throw new BubpCheckoutError('ERROR', 'GooglePay - No paymentMethodPresent');
                 }
 
                 return Promise.resolve();

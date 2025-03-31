@@ -41,7 +41,7 @@ export default function EcontextInput({ personalDetailsRequired = true, data, on
     econtextRef.current.setStatus = setStatus;
 
     return (
-        <div className="adyen-checkout__econtext-input__field">
+        <div className="bubp-checkout__econtext-input__field">
             {personalDetailsRequired && (
                 <Fragment>
                     <FormInstruction />

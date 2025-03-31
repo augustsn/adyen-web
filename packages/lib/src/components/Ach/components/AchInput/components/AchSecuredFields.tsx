@@ -6,7 +6,7 @@ const AchSecuredFields = ({ focusedElement, onFocusField, errors, valid }) => {
     const { i18n } = useCoreContext();
 
     return (
-        <div className="adyen-checkout__ach-sf__form adyen-checkout__field-wrapper">
+        <div className="bubp-checkout__ach-sf__form bubp-checkout__field-wrapper">
             <AchSFInput
                 id="bankAccountNumber"
                 focused={focusedElement === 'encryptedBankAccountNumber'}
@@ -16,7 +16,7 @@ const AchSecuredFields = ({ focusedElement, onFocusField, errors, valid }) => {
                 filled={!!errors.encryptedBankAccountNumber || !!valid.encryptedBankAccountNumber}
                 errorMessage={!!errors.encryptedBankAccountNumber && i18n.get(errors.encryptedBankAccountNumber)}
                 dataInfo='{"length":"4-17"}'
-                className={'adyen-checkout__field--50'}
+                className={'bubp-checkout__field--50'}
                 dir={'ltr'}
             />
             <AchSFInput
@@ -28,7 +28,7 @@ const AchSecuredFields = ({ focusedElement, onFocusField, errors, valid }) => {
                 filled={!!errors.encryptedBankLocationId || !!valid.encryptedBankLocationId}
                 errorMessage={!!errors.encryptedBankLocationId && i18n.get(errors.encryptedBankLocationId)}
                 dataInfo='{"length":9}'
-                className={'adyen-checkout__field--50'}
+                className={'bubp-checkout__field--50'}
                 dir={'ltr'}
             />
         </div>

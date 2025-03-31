@@ -39,8 +39,8 @@ export default function AmazonPayComponent(props: AmazonPayComponentProps) {
 
     if (status === 'pending') {
         return (
-            <div className="adyen-checkout__amazonpay">
-                <div className="adyen-checkout__amazonpay__status adyen-checkout__amazonpay__status--pending">
+            <div className="bubp-checkout__amazonpay">
+                <div className="bubp-checkout__amazonpay__status bubp-checkout__amazonpay__status--pending">
                     <Spinner />
                 </div>
             </div>
@@ -49,7 +49,7 @@ export default function AmazonPayComponent(props: AmazonPayComponentProps) {
 
     if (props.showSignOutButton) {
         return (
-            <div className="adyen-checkout__amazonpay">
+            <div className="bubp-checkout__amazonpay">
                 <SignOutButton amazonRef={window.amazon} onSignOut={props.onSignOut} />
             </div>
         );
@@ -57,7 +57,7 @@ export default function AmazonPayComponent(props: AmazonPayComponentProps) {
 
     if (props.amazonCheckoutSessionId) {
         return (
-            <div className="adyen-checkout__amazonpay">
+            <div className="bubp-checkout__amazonpay">
                 {props.showOrderButton && (
                     <OrderButton
                         amazonCheckoutSessionId={props.amazonCheckoutSessionId}
@@ -81,7 +81,7 @@ export default function AmazonPayComponent(props: AmazonPayComponentProps) {
     }
 
     return (
-        <div className="adyen-checkout__amazonpay">
+        <div className="bubp-checkout__amazonpay">
             <AmazonPayButton {...props} showPayButton={this.props.showPayButton} amazonRef={window.amazon} ref={amazonPayButtonRef} />
         </div>
     );

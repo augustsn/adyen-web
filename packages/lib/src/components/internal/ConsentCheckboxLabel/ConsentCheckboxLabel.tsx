@@ -15,7 +15,7 @@ export default function ConsentCheckboxLabel(props: ConsentCheckboxLabelProps) {
         return (
             <Fragment>
                 {textBeforeLink}
-                <a className="adyen-checkout-link" target="_blank" rel="noopener noreferrer" href={props.url}>
+                <a className="bubp-checkout-link" target="_blank" rel="noopener noreferrer" href={props.url}>
                     {linkText}
                 </a>
                 {textAfterLink}
@@ -23,5 +23,5 @@ export default function ConsentCheckboxLabel(props: ConsentCheckboxLabelProps) {
         );
     }
 
-    return <span className="adyen-checkout__checkbox__label">{i18n.get('privacyPolicy')}</span>;
+    return <span className="bubp-checkout__checkbox__label">{i18n.get('privacyPolicy')}</span>;
 }

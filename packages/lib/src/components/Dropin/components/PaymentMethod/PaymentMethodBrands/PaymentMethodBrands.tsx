@@ -37,14 +37,14 @@ const PaymentMethodBrands = ({
     const { visibleBrands, leftBrandsAmount } = prepareVisibleBrands(allowedBrands);
 
     return (
-        <span className="adyen-checkout__payment-method__brands">
+        <span className="bubp-checkout__payment-method__brands">
             {visibleBrands.map(brand => (
                 <PaymentMethodIcon key={brand.name} altDescription={getFullBrandName(brand.name)} type={brand.name} src={brand.icon} />
             ))}
             {showOtherInsteafOfNumber ? (
-                <span className="adyen-checkout__payment-method__brand-number">+ {i18n.get('paymentMethodBrand.other')}</span>
+                <span className="bubp-checkout__payment-method__brand-number">+ {i18n.get('paymentMethodBrand.other')}</span>
             ) : (
-                leftBrandsAmount !== 0 && <span className="adyen-checkout__payment-method__brand-number">+{leftBrandsAmount}</span>
+                leftBrandsAmount !== 0 && <span className="bubp-checkout__payment-method__brand-number">+{leftBrandsAmount}</span>
             )}
         </span>
     );

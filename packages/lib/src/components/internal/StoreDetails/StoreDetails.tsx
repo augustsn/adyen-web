@@ -19,7 +19,7 @@ function StoreDetails({ storeDetails = false, ...props }) {
     }, [value]);
 
     return (
-        <div className="adyen-checkout__store-details">
+        <div className="bubp-checkout__store-details">
             <Checkbox onChange={onChange} label={i18n.get('storeDetails')} name={'storeDetails'} />
         </div>
     );

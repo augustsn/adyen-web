@@ -2,9 +2,9 @@ import { createSession } from './checkout-api-calls';
 import { RETURN_URL, SHOPPER_REFERENCE } from '../config/commonConfig';
 import { handleError, handleFinalState } from './checkout-handlers';
 import getCurrency from '../utils/get-currency';
-import { AdyenCheckoutProps } from '../stories/types';
+import { BubpCheckoutProps } from '../stories/types';
 import Checkout from '../../src/core/core';
-import { AdyenCheckout } from '../../src/core/AdyenCheckout';
+import { BubpCheckout } from '../../src/core/BubpCheckout';
 
 async function createSessionsCheckout({
     showPayButton,
@@ -13,7 +13,7 @@ async function createSessionsCheckout({
     amount,
     sessionData,
     ...restCheckoutProps
-}: AdyenCheckoutProps): Promise<Checkout> {
+}: BubpCheckoutProps): Promise<Checkout> {
     const session = await createSession({
         amount: {
             currency: getCurrency(countryCode),
@@ -24,11 +24,11 @@ async function createSessionsCheckout({
         reference: 'ABC123',
         returnUrl: RETURN_URL,
         shopperReference: SHOPPER_REFERENCE,
-        shopperEmail: 'shopper.ctp1@adyen.com',
+        shopperEmail: 'shopper.ctp1@bubpayment.com',
         ...sessionData
     });
 
-    return AdyenCheckout({
+    return BubpCheckout({
         clientKey: process.env.CLIENT_KEY,
         environment: process.env.CLIENT_ENV as any,
         countryCode,

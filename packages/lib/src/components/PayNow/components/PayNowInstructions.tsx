@@ -11,7 +11,7 @@ const PayNowInstructions = () => {
     if (!isMobileScreenSize) return;
 
     return (
-        <div className="adyen-checkout-paynow__instructions">
+        <div className="bubp-checkout-paynow__instructions">
             <ContentSeparator />
             <p>{i18n.get('paynow.scanQrCode')}</p>
         </div>

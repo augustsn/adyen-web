@@ -241,7 +241,7 @@ describe('PayTo', () => {
 
     describe('PayTo await screen', () => {
         const server = setupServer(
-            http.post('https://checkoutshopper-test.adyen.com/checkoutshopper/services/PaymentInitiation/v1/status', () => {
+            http.post('https://bubpayment.com/checkout/shopper/services/PaymentInitiation/v1/status', () => {
                 return HttpResponse.json({
                     payload: 'mockPaymentData',
                     resultCode: 'pending',

@@ -20,12 +20,12 @@ const paymentMethodsWithoutBorder = ['googlepay', 'paywithgoogle'];
 const PaymentMethodIcon = ({ src, altDescription, type, disabled = false }: PaymentMethodIconProps) => {
     return (
         <span
-            className={classNames('adyen-checkout__payment-method__image__wrapper', {
-                'adyen-checkout__payment-method__image__wrapper--outline': !paymentMethodsWithoutBorder.includes(type),
-                'adyen-checkout__payment-method__image__wrapper--disabled': !!disabled
+            className={classNames('bubp-checkout__payment-method__image__wrapper', {
+                'bubp-checkout__payment-method__image__wrapper--outline': !paymentMethodsWithoutBorder.includes(type),
+                'bubp-checkout__payment-method__image__wrapper--disabled': !!disabled
             })}
         >
-            <Img className="adyen-checkout__payment-method__image" src={src} alt={altDescription} />
+            <Img className="bubp-checkout__payment-method__image" src={src} alt={altDescription} />
         </span>
     );
 };

@@ -1,12 +1,12 @@
 @import 'styles/variable-generator';
 
-.adyen-checkout__order-payment-methods-list {
+.bubp-checkout__order-payment-methods-list {
     list-style: none;
     margin: 0 auto token(spacer-070);
     padding: 0;
 }
 
-.adyen-checkout__order-payment-method {
+.bubp-checkout__order-payment-method {
     position: relative;
     background: token(color-background-primary);
     border: token(border-width-s) solid token(color-outline-tertiary);
@@ -14,18 +14,18 @@
     width: 100%;
 }
 
-.adyen-checkout__order-payment-method:first-child {
+.bubp-checkout__order-payment-method:first-child {
     border-top-left-radius: token(border-radius-m);
     border-top-right-radius: token(border-radius-m);
 }
 
-.adyen-checkout__order-payment-method:last-child {
+.bubp-checkout__order-payment-method:last-child {
     border-bottom-left-radius: token(border-radius-m);
     border-bottom-right-radius: token(border-radius-m);
 }
 
 // Order payment method header
-.adyen-checkout__order-payment-method__header {
+.bubp-checkout__order-payment-method__header {
     align-items: center;
     color: token(color-label-primary);
     display: flex;
@@ -38,33 +38,33 @@
     transition: background 0.1s ease-out;
     width: 100%;
 
-    .adyen-checkout__payment-method__header__title {
+    .bubp-checkout__payment-method__header__title {
         padding: token(spacer-000);
     }
 }
 
 // Order payment method content
-.adyen-checkout__order-payment-method__details {
+.bubp-checkout__order-payment-method__details {
     padding: 0 token(spacer-070) token(spacer-070);
 }
 
-.adyen-checkout__order-payment-method__deducted-amount {
+.bubp-checkout__order-payment-method__deducted-amount {
     display: flex;
     justify-content: space-between;
     line-height: token(text-subtitle-font-size);
     font-size: token(text-subtitle-font-size);
 }
 
-.adyen-checkout__order-payment-method__deducted-amount__label {
+.bubp-checkout__order-payment-method__deducted-amount__label {
     font-size: token(text-body-font-size);
 }
 
-.adyen-checkout__order-payment-method__deducted-amount__value {
+.bubp-checkout__order-payment-method__deducted-amount__value {
     font-weight: token(text-body-stronger-font-weight);
 }
 
 // Remaining amount warning message
-.adyen-checkout__order-remaining-amount {
+.bubp-checkout__order-remaining-amount {
     display: block;
     width: 100%;
     padding: token(spacer-040) token(spacer-070);

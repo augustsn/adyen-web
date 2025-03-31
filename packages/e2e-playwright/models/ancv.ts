@@ -15,7 +15,7 @@ class ANCV extends Base {
 
     constructor(
         public readonly page: Page,
-        rootElementSelector = '.adyen-checkout__ancv'
+        rootElementSelector = '.bubp-checkout__ancv'
     ) {
         super(page);
         this.rootElement = page.locator(rootElementSelector);
@@ -41,7 +41,7 @@ class ANCV extends Base {
     }
 
     get paymentResult() {
-        return this.page.locator('.adyen-checkout__await__subtitle--result');
+        return this.page.locator('.bubp-checkout__await__subtitle--result');
     }
 }
 

@@ -45,7 +45,7 @@ export default function CardFields({
         : i18n.get('creditCard.securityCode.contextualText.3digits');
 
     return (
-        <div className="adyen-checkout__card__form">
+        <div className="bubp-checkout__card__form">
             <CardNumber
                 brand={brand}
                 brandsConfiguration={brandsConfiguration}
@@ -64,8 +64,8 @@ export default function CardFields({
             <AvailableBrands activeBrand={brand} brands={allowedBrands} />
 
             <div
-                className={classNames('adyen-checkout__card__exp-cvc adyen-checkout__field-wrapper', {
-                    'adyen-checkout__card__exp-cvc__exp-date__input--hidden': expiryDatePolicy === DATE_POLICY_HIDDEN
+                className={classNames('bubp-checkout__card__exp-cvc bubp-checkout__field-wrapper', {
+                    'bubp-checkout__card__exp-cvc__exp-date__input--hidden': expiryDatePolicy === DATE_POLICY_HIDDEN
                 })}
             >
                 <ExpirationDate
@@ -75,7 +75,7 @@ export default function CardFields({
                     filled={!!errors.encryptedExpiryDate || !!valid.encryptedExpiryYear}
                     label={i18n.get('creditCard.expiryDate.label')}
                     onFocusField={onFocusField}
-                    className={'adyen-checkout__field--50'}
+                    className={'bubp-checkout__field--50'}
                     expiryDatePolicy={expiryDatePolicy}
                     showContextualElement={showContextualElement}
                     contextualText={i18n.get('creditCard.expiryDate.contextualText')}
@@ -90,7 +90,7 @@ export default function CardFields({
                         filled={!!errors.encryptedSecurityCode || !!valid.encryptedSecurityCode}
                         label={i18n.get('creditCard.securityCode.label')}
                         onFocusField={onFocusField}
-                        className={'adyen-checkout__field--50'}
+                        className={'bubp-checkout__field--50'}
                         frontCVC={isAmex}
                         showContextualElement={showContextualElement}
                         contextualText={cvcContextualText}

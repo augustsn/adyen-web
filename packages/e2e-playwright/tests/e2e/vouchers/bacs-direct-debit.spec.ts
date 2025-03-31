@@ -15,10 +15,10 @@ const test = base.extend<Fixture>({
 });
 
 test('should make a Bacs Direct Debit payment', async ({ bacs }) => {
-    await bacs.bankAccountHolderNameInput.fill('David Archer');
+    await bacs.bankAccountHolderNameInput.fill('Kain, Jonathan Doe');
     await bacs.bankAccountNumberInput.fill('40308669');
     await bacs.sortCodeInput.fill('560036');
-    await bacs.emailAddressInput.fill('david.archer@adyen.com');
+    await bacs.emailAddressInput.fill('john.doe@bubpayment.com');
 
     await bacs.consentCheckbox.click();
     await bacs.accountConsentCheckbox.click();

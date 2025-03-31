@@ -96,7 +96,7 @@ function IssuerList({ items, placeholder, issuer, highlightedIds = [], showConte
         const srPanelResp: SetSRMessagesReturnObject = setSRMessages?.({ errors, isValidating: true });
         if (srPanelResp?.action === ERROR_ACTION_FOCUS_FIELD) {
             // Focus field in error, if required
-            if (shouldMoveFocusSR) setFocusOnField('.adyen-checkout__issuer-list', srPanelResp.fieldToFocus);
+            if (shouldMoveFocusSR) setFocusOnField('.bubp-checkout__issuer-list', srPanelResp.fieldToFocus);
         }
     }, [data, valid, errors, isValid]);
 
@@ -113,7 +113,7 @@ function IssuerList({ items, placeholder, issuer, highlightedIds = [], showConte
     );
 
     return (
-        <div className="adyen-checkout__issuer-list">
+        <div className="bubp-checkout__issuer-list">
             {!!highlightedItems.length && (
                 <Fragment>
                     <IssuerButtonGroup
@@ -138,7 +138,7 @@ function IssuerList({ items, placeholder, issuer, highlightedIds = [], showConte
                     selectedValue={inputType === IssuerListInputTypes.Dropdown ? data['issuer'] : null}
                     placeholder={placeholder}
                     name={'issuer'}
-                    className={'adyen-checkout__issuer-list__dropdown'}
+                    className={'bubp-checkout__issuer-list__dropdown'}
                     onChange={handleInputChange(IssuerListInputTypes.Dropdown)}
                     onListToggle={handleListToggle}
                     onInput={handleSearch}
@@ -146,7 +146,7 @@ function IssuerList({ items, placeholder, issuer, highlightedIds = [], showConte
             </Field>
 
             {props.termsAndConditions && (
-                <div className="adyen-checkout__issuer-list__termsAndConditions">
+                <div className="bubp-checkout__issuer-list__termsAndConditions">
                     <DisclaimerMessage message={i18n.get(props.termsAndConditions.translationKey)} urls={props.termsAndConditions.urls} />
                 </div>
             )}

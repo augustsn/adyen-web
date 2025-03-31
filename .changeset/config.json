@@ -1,6 +1,6 @@
 {
   "$schema": "https://unpkg.com/@changesets/config@2.3.0/schema.json",
-  "changelog": ["./changelog-config.js", {"repo": "adyen/adyen-web"}],
+  "changelog": ["./changelog-config.js", {"repo": "augustsn/adyen-web"}],
   "commit": false,
   "fixed": [],
   "linked": [],

@@ -9,11 +9,11 @@ class PaymentMethodHeader {
     }
 
     async getVisibleCardBrands(): Promise<Locator[]> {
-        return await this.rootElement.locator('.adyen-checkout__payment-method__brands').getByRole('img').all();
+        return await this.rootElement.locator('.bubp-checkout__payment-method__brands').getByRole('img').all();
     }
 
     async getRemainingBrandsNumberLocator(): Promise<Locator> {
-        return this.rootElement.locator('.adyen-checkout__payment-method__brand-number');
+        return this.rootElement.locator('.bubp-checkout__payment-method__brand-number');
     }
 
     async getRemainingBrandsNumberText(): Promise<string> {
@@ -35,13 +35,13 @@ class Dropin extends Base {
 
     constructor(
         public readonly page: Page,
-        rootElementSelector = '.adyen-checkout__dropin'
+        rootElementSelector = '.bubp-checkout__dropin'
     ) {
         super(page);
         this.rootElement = this.page.locator(rootElementSelector);
         this.rootElementSelector = rootElementSelector;
 
-        this.pmList = this.rootElement.locator('.adyen-checkout__payment-methods-list').last();
+        this.pmList = this.rootElement.locator('.bubp-checkout__payment-methods-list').last();
         this.payButton = this.pmList.getByRole('button', { name: /Pay/i });
         this.saveDetailsButton = this.page.getByRole('button', { name: /Save details/i });
     }
@@ -64,7 +64,7 @@ class Dropin extends Base {
      */
     getPaymentMethodHeader(paymentMethodLabel: string): PaymentMethodHeader {
         const locator = this.rootElement
-            .locator('.adyen-checkout__payment-method')
+            .locator('.bubp-checkout__payment-method')
             .getByRole('radio', { name: paymentMethodLabel })
             .locator('..')
             .locator('..');
@@ -81,7 +81,7 @@ class Dropin extends Base {
         const pmLabel = this.paymentMethods.find((pm: { type: string }) => pm.type === pmType).name;
 
         const paymentMethodHeaderLocator = this.page
-            .locator('.adyen-checkout__payment-methods-list--otherPayments')
+            .locator('.bubp-checkout__payment-methods-list--otherPayments')
             .getByRole('radio', { name: pmLabel });
 
         await paymentMethodHeaderLocator.check();
@@ -89,7 +89,7 @@ class Dropin extends Base {
         const paymentMethodDetailsLocator = paymentMethodHeaderLocator
             .locator('..')
             .locator('..')
-            .locator(':scope > .adyen-checkout-pm-details-wrapper');
+            .locator(':scope > .bubp-checkout-pm-details-wrapper');
 
         return { paymentMethodDetailsLocator };
     }
@@ -99,7 +99,7 @@ class Dropin extends Base {
         const pmLabel = this.paymentMethods.find((pm: { type: string }) => pm.type === pmType)?.name;
 
         const paymentMethodHeaderLocator = await this.page
-            .locator('.adyen-checkout__payment-method')
+            .locator('.bubp-checkout__payment-method')
             .filter({ has: this.page.getByRole('img', { name: pmLabel ?? pmType }) }) // filter the payment methods which have the correct logo
             .getByRole('radio', { name: lastFour, exact: false })
             .first();
@@ -109,7 +109,7 @@ class Dropin extends Base {
         const paymentMethodDetailsLocator = paymentMethodHeaderLocator
             .locator('..')
             .locator('..')
-            .locator(':scope > .adyen-checkout-pm-details-wrapper');
+            .locator(':scope > .bubp-checkout-pm-details-wrapper');
 
         return { paymentMethodDetailsLocator };
     }
@@ -123,7 +123,7 @@ class Dropin extends Base {
     }
 
     get paymentResult() {
-        return this.page.locator('.adyen-checkout__status');
+        return this.page.locator('.bubp-checkout__status');
     }
 }
 

@@ -1,6 +1,6 @@
 import { getTranslation } from './utils';
 import { getLocalisedAmount } from '../utils/amount-util';
-import AdyenCheckoutError from '../core/Errors/AdyenCheckoutError';
+import BubpCheckoutError from '../core/Errors/BubpCheckoutError';
 import type { CustomTranslations, LanguageOptions, Translations } from './types';
 
 export class Language {
@@ -26,7 +26,7 @@ export class Language {
         const { locale, translations, customTranslations } = props;
 
         if (!locale) {
-            throw new AdyenCheckoutError('IMPLEMENTATION_ERROR', 'Language: "locale" property is not defined');
+            throw new BubpCheckoutError('IMPLEMENTATION_ERROR', 'Language: "locale" property is not defined');
         }
 
         this.locale = locale;

@@ -17,7 +17,7 @@ export default function SignOutButton(props: SignOutButtonProps) {
     return (
         <button
             type="button"
-            className="adyen-checkout__button  adyen-checkout__button--ghost adyen-checkout__amazonpay__button--signOut"
+            className="bubp-checkout__button  bubp-checkout__button--ghost bubp-checkout__amazonpay__button--signOut"
             onClick={handleClick}
         >
             {i18n.get('amazonpay.signout')}

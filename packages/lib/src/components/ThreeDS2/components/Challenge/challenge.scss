@@ -1,12 +1,12 @@
 @import 'styles/variable-generator';
 
-.adyen-checkout__threeds2-challenge-error {
-    .adyen-checkout__status__icon {
+.bubp-checkout__threeds2-challenge-error {
+    .bubp-checkout__status__icon {
         display: block;
         margin: token(spacer-130) auto token(spacer-100);
     }
 
-    .adyen-checkout__status__text {
+    .bubp-checkout__status__text {
         color: token(color-label-critical);
         margin-bottom: token(spacer-130);
         text-align: center;

@@ -15,9 +15,9 @@ class TrustlyElement extends RedirectElement {
     render() {
         return (
             <CoreProvider i18n={this.props.i18n} loadingContext={this.props.loadingContext} resources={this.resources}>
-                <div className="adyen-checkout-trustly">
-                    <p className="adyen-checkout-trustly__descriptor">{this.props.i18n.get('trustly.descriptor')}</p>
-                    <ul className="adyen-checkout-trustly__description-list">
+                <div className="bubp-checkout-trustly">
+                    <p className="bubp-checkout-trustly__descriptor">{this.props.i18n.get('trustly.descriptor')}</p>
+                    <ul className="bubp-checkout-trustly__description-list">
                         <li>{this.props.i18n.get('trustly.description1')}</li>
                         <li>{this.props.i18n.get('trustly.description2')}</li>
                     </ul>

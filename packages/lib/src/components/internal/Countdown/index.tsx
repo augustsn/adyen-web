@@ -38,7 +38,7 @@ function Countdown({ minutesFromNow, onTick = () => {}, onCompleted = () => {} }
     }, []);
 
     return (
-        <span className="adyen-checkout__countdown" role="timer">
+        <span className="bubp-checkout__countdown" role="timer">
             <span className="countdown__minutes">{time.minutes}</span>
             <span className="countdown__separator">:</span>
             <span className="countdown__seconds">{time.seconds}</span>

@@ -81,7 +81,7 @@ function Installments(props: InstallmentsProps) {
     // Alternate interface for installments with the possibility of a "revolving" plan
     if (hasRadioButtonUI) {
         return (
-            <div className="adyen-checkout__installments">
+            <div className="bubp-checkout__installments">
                 <Field
                     label={i18n.get('installments')}
                     classNameModifiers={['installments']}
@@ -125,7 +125,7 @@ function Installments(props: InstallmentsProps) {
     }
 
     return (
-        <div className="adyen-checkout__installments">
+        <div className="bubp-checkout__installments">
             <Field label={i18n.get('installments')} classNameModifiers={['installments']} name={'installments'} showContextualElement={false}>
                 <Select
                     filterable={false}

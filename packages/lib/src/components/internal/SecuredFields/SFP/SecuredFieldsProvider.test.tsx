@@ -115,7 +115,7 @@ describe('<SecuredFieldsProvider /> rendering', () => {
         expect(sfp.state.valid).toHaveProperty('encryptedSecurityCode', false);
     });
 
-    it('should initialize an instance of adyen-secured-fields', () => {
+    it('should initialize an instance of bubp-secured-fields', () => {
         expect(sfp.csf).toBeDefined();
     });
 

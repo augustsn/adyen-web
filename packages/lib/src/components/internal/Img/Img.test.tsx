@@ -8,7 +8,7 @@ describe('Image', () => {
     test('renders a component', () => {
         const wrapper = getWrapper();
         expect(wrapper.is('img')).toBe(true);
-        expect(wrapper.hasClass('adyen-checkout__image')).toBe(true);
+        expect(wrapper.hasClass('bubp-checkout__image')).toBe(true);
     });
 
     test('has passed className', () => {

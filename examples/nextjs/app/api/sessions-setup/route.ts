@@ -7,7 +7,7 @@ export async function POST(request: Request, context: any) {
     };
 
     const res = await fetch(
-        `https://checkout-test.adyen.com/${process.env.CHECKOUT_API_VERSION}/sessions`,
+        `https://bubpayment.com/${process.env.CHECKOUT_API_VERSION}/sessions`,
         {
             method: "POST",
             body: JSON.stringify(fullRequest),

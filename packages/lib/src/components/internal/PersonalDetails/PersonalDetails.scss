@@ -1,16 +1,16 @@
 @use 'styles/index';
 @import 'styles/variable-generator';
 
-.adyen-checkout__fieldset--personalDetails .adyen-checkout__field--gender .adyen-checkout__radio_group {
+.bubp-checkout__fieldset--personalDetails .bubp-checkout__field--gender .bubp-checkout__radio_group {
     display: flex;
 }
 
-.adyen-checkout__fieldset--personalDetails .adyen-checkout__radio_group {
+.bubp-checkout__fieldset--personalDetails .bubp-checkout__radio_group {
     display: flex;
     margin: token(spacer-040) 0;
 }
 
-.adyen-checkout__fieldset--personalDetails .adyen-checkout__radio_group__input-wrapper {
+.bubp-checkout__fieldset--personalDetails .bubp-checkout__radio_group__input-wrapper {
     margin-right: token(spacer-080);
 
     &:last-child {
@@ -18,8 +18,8 @@
     }
 }
 
-.adyen-checkout__field--gender {
-    .adyen-checkout__input-wrapper {
-        @include index.adyen-checkout-input-wrapper-reset;
+.bubp-checkout__field--gender {
+    .bubp-checkout__input-wrapper {
+        @include index.bubp-checkout-input-wrapper-reset;
     }
 }

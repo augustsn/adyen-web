@@ -3,10 +3,10 @@ import UIElement from '../internal/UIElement/UIElement';
 import PaypalComponent from './components/PaypalComponent';
 import defaultProps from './defaultProps';
 import { CoreProvider } from '../../core/Context/CoreProvider';
-import AdyenCheckoutError from '../../core/Errors/AdyenCheckoutError';
+import BubpCheckoutError from '../../core/Errors/BubpCheckoutError';
 import { ERRORS } from './constants';
 import { TxVariants } from '../tx-variants';
-import { formatPaypalOrderContactToAdyenFormat } from './utils/format-paypal-order-contact-to-adyen-format';
+import { formatPaypalOrderContactToBubpFormat } from './utils/format-paypal-order-contact-to-bubp-format';
 
 import type { ICore } from '../../core/types';
 import type { PaymentAction } from '../../types/global-types';
@@ -59,7 +59,7 @@ class PaypalElement extends UIElement<PayPalConfiguration> {
     }
 
     public submit = () => {
-        this.handleError(new AdyenCheckoutError('IMPLEMENTATION_ERROR', ERRORS.SUBMIT_NOT_SUPPORTED));
+        this.handleError(new BubpCheckoutError('IMPLEMENTATION_ERROR', ERRORS.SUBMIT_NOT_SUPPORTED));
     };
 
     /**
@@ -129,8 +129,8 @@ class PaypalElement extends UIElement<PayPalConfiguration> {
         return actions.order
             .get()
             .then((paypalOrder: any) => {
-                const billingAddress = formatPaypalOrderContactToAdyenFormat(paypalOrder?.payer);
-                const deliveryAddress = formatPaypalOrderContactToAdyenFormat(paypalOrder?.purchase_units?.[0].shipping, true);
+                const billingAddress = formatPaypalOrderContactToBubpFormat(paypalOrder?.payer);
+                const deliveryAddress = formatPaypalOrderContactToBubpFormat(paypalOrder?.purchase_units?.[0].shipping, true);
 
                 this.setState({
                     authorizedEvent: paypalOrder,
@@ -150,16 +150,16 @@ class PaypalElement extends UIElement<PayPalConfiguration> {
                 );
             })
             .then(() => this.handleAdditionalDetails(state))
-            .catch(error => this.handleError(new AdyenCheckoutError('ERROR', 'Something went wrong while parsing PayPal Order', { cause: error })));
+            .catch(error => this.handleError(new BubpCheckoutError('ERROR', 'Something went wrong while parsing PayPal Order', { cause: error })));
     };
 
     handleResolve(token: string) {
-        if (!this.resolve) return this.handleError(new AdyenCheckoutError('ERROR', ERRORS.WRONG_INSTANCE));
+        if (!this.resolve) return this.handleError(new BubpCheckoutError('ERROR', ERRORS.WRONG_INSTANCE));
         this.resolve(token);
     }
 
     handleReject(errorMessage: string) {
-        if (!this.reject) return this.handleError(new AdyenCheckoutError('ERROR', ERRORS.WRONG_INSTANCE));
+        if (!this.reject) return this.handleError(new BubpCheckoutError('ERROR', ERRORS.WRONG_INSTANCE));
         this.reject(new Error(errorMessage));
     }
 
@@ -210,11 +210,11 @@ class PaypalElement extends UIElement<PayPalConfiguration> {
                     {...rest}
                     {...(onShippingAddressChange && { onShippingAddressChange: this.handleOnShippingAddressChange })}
                     {...(onShippingOptionsChange && { onShippingOptionsChange: this.handleOnShippingOptionsChange })}
-                    onCancel={() => this.handleError(new AdyenCheckoutError('CANCEL'))}
+                    onCancel={() => this.handleError(new BubpCheckoutError('CANCEL'))}
                     onChange={this.setState}
                     onApprove={this.handleOnApprove}
                     onError={error => {
-                        this.handleError(new AdyenCheckoutError('ERROR', error.toString(), { cause: error }));
+                        this.handleError(new BubpCheckoutError('ERROR', error.toString(), { cause: error }));
                     }}
                     onScriptLoadFailure={error => this.handleError(error)}
                     onSubmit={this.handleSubmit}

@@ -37,8 +37,8 @@ function ANCVInput({ showPayButton, payButton, onChange, onSubmit }: ANCVInputPr
 
     return (
         <LoadingWrapper>
-            <div className="adyen-checkout__ancv">
-                <p className="adyen-checkout-form-instruction">{i18n.get('ancv.form.instruction')}</p>
+            <div className="bubp-checkout__ancv">
+                <p className="bubp-checkout-form-instruction">{i18n.get('ancv.form.instruction')}</p>
                 <Field
                     errorMessage={!!errors.beneficiaryId && i18n.get(errors.beneficiaryId.errorMessage)}
                     label={i18n.get('ancv.input.label')}

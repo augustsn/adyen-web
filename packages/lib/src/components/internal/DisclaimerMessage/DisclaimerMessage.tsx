@@ -17,14 +17,14 @@ interface InternalDisclaimerMsgObject {
 /**
  *  props: {
  *    message: 'By continuing you agree with the %#terms and conditions%#',
- *    urls: ['https://www.adyen.com']
+ *    urls: ['https://bubpayment.com']
  *  }
  *  String inside the '%#' token pair will be rendered as an anchor element.
  */
 
 export default function DisclaimerMessage({ message, urls }: InternalDisclaimerMsgObject) {
     return (
-        <span className="adyen-checkout-disclaimer__label">
+        <span className="bubp-checkout-disclaimer__label">
             <LabelOnlyDisclaimerMessage message={message} urls={urls} />
         </span>
     );
@@ -44,7 +44,7 @@ export function LabelOnlyDisclaimerMessage({ message, urls }: InternalDisclaimer
                     url =>
                         function createLink(translation) {
                             return (
-                                <a className="adyen-checkout__link" href={url} target="_blank" rel="noopener noreferrer">
+                                <a className="bubp-checkout__link" href={url} target="_blank" rel="noopener noreferrer">
                                     {translation}
                                 </a>
                             );

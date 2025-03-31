@@ -7,7 +7,7 @@ interface TimelineWrapperProps {
 }
 
 const TimelineWrapper = ({ children, className }: TimelineWrapperProps) => {
-    return <div className={`adyen-checkout-timeline-wrapper ${className}`}>{children}</div>;
+    return <div className={`bubp-checkout-timeline-wrapper ${className}`}>{children}</div>;
 };
 
 export { TimelineWrapper };

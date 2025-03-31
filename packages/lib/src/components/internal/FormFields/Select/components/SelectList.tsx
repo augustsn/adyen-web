@@ -11,8 +11,8 @@ function SelectList({ selected, active, filteredItems, showList, ...props }: Sel
         /* eslint-disable jsx-a11y/no-noninteractive-element-to-interactive-role */
         <ul
             className={cx({
-                'adyen-checkout__dropdown__list': true,
-                'adyen-checkout__dropdown__list--active': showList
+                'bubp-checkout__dropdown__list': true,
+                'bubp-checkout__dropdown__list--active': showList
             })}
             id={props.selectListId}
             ref={props.selectListRef}
@@ -30,7 +30,7 @@ function SelectList({ selected, active, filteredItems, showList, ...props }: Sel
                     />
                 ))
             ) : (
-                <div className="adyen-checkout__dropdown__element adyen-checkout__dropdown__element--no-options">
+                <div className="bubp-checkout__dropdown__element bubp-checkout__dropdown__element--no-options">
                     {i18n.get('select.noOptionsFound')}
                 </div>
             )}

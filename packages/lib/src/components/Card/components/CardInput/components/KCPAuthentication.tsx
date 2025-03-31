@@ -19,7 +19,7 @@ export default function KCPAuthentication(props: KCPProps) {
     }, [props.value]);
 
     return (
-        <div className="adyen-checkout__card__kcp-authentication">
+        <div className="bubp-checkout__card__kcp-authentication">
             <Field
                 label={taxNumberLabel}
                 filled={props.filled}
@@ -33,7 +33,7 @@ export default function KCPAuthentication(props: KCPProps) {
             >
                 <InputTelephone
                     name={'kcpTaxNumberOrDOB'}
-                    className="adyen-checkout__card__kcp-taxNumber__input adyen-checkout__input"
+                    className="bubp-checkout__card__kcp-taxNumber__input bubp-checkout__input"
                     maxLength={10}
                     minLength={6}
                     autoComplete={'false'}
@@ -62,11 +62,11 @@ export default function KCPAuthentication(props: KCPProps) {
                 <DataSfSpan
                     encryptedFieldType="encryptedPassword"
                     className={classNames({
-                        'adyen-checkout__input': true,
-                        'adyen-checkout__input--large': true,
-                        'adyen-checkout__input--error': props.encryptedPasswordState.errors,
-                        'adyen-checkout__input--valid': props.encryptedPasswordState.valid,
-                        'adyen-checkout__input--focus': props.focusedElement === 'encryptedPassword'
+                        'bubp-checkout__input': true,
+                        'bubp-checkout__input--large': true,
+                        'bubp-checkout__input--error': props.encryptedPasswordState.errors,
+                        'bubp-checkout__input--valid': props.encryptedPasswordState.valid,
+                        'bubp-checkout__input--focus': props.focusedElement === 'encryptedPassword'
                     })}
                 />
             </Field>

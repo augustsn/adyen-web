@@ -1,15 +1,15 @@
 <script lang="ts">
 import { DEFAULT_COUNTRY } from '~/constants';
-import { AdyenCheckout } from '@adyen/adyen-web/auto';
+import { BubpCheckout } from '@bubp/web/auto';
 import type {
     AdditionalDetailsActions,
     AdditionalDetailsData,
-    AdyenCheckoutError,
+    BubpCheckoutError,
     PaymentCompletedData,
     PaymentFailedData,
     UIElement
-} from '@adyen/adyen-web/auto';
-import '@adyen/adyen-web/styles/adyen.css';
+} from '@bubp/web/auto';
+import '@bubp/web/styles/bubp.css';
 
 
 export default {
@@ -38,7 +38,7 @@ export default {
 
             const isSessionsFlow = !!sessionId;
 
-            const checkout = await AdyenCheckout({
+            const checkout = await BubpCheckout({
                 analytics: {
                     enabled: false
                 },
@@ -85,7 +85,7 @@ export default {
                 onPaymentFailed: (data?: PaymentFailedData, component?: UIElement) => {
                     this.response = 'Payment failed';
                 },
-                onError: (error: AdyenCheckoutError) => {
+                onError: (error: BubpCheckoutError) => {
                     this.response = 'Something went wrong';
                     console.error(error);
                 }
@@ -100,7 +100,7 @@ export default {
 <template>
 
     <Head>
-        <Title>@adyen/adyen-web + Nuxt3</Title>
+        <Title>@bubp/web + Nuxt3</Title>
     </Head>
     <div class="redirect-result-page">
         <h1>Redirect response</h1>

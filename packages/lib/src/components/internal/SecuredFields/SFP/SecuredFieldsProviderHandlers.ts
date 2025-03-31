@@ -22,7 +22,7 @@ import {
     SFKeyPressObj
 } from '../lib/types';
 import { existy } from '../../../../utils/commonUtils';
-import AdyenCheckoutError from '../../../../core/Errors/AdyenCheckoutError';
+import BubpCheckoutError from '../../../../core/Errors/BubpCheckoutError';
 
 /**
  * Emits the onLoad event
@@ -48,7 +48,7 @@ function handleOnLoad(cbObj: CardLoadData): void {
             // Hide the spinner
             this.setState({ status: 'csfConfigFailure' });
             // Report the error
-            this.props.onError(new AdyenCheckoutError('ERROR', 'secured fields have failed to configure'));
+            this.props.onError(new BubpCheckoutError('ERROR', 'secured fields have failed to configure'));
         }
     }, this.csfConfigFailTimeoutMS);
 }

@@ -11,7 +11,7 @@ export const MealVoucherFields = (props: GiftcardFieldsProps) => {
         <div ref={setRootNode}>
             <GiftcardNumberField {...props} classNameModifiers={['100']} />
 
-            <div className="adyen-checkout__field-wrapper">
+            <div className="bubp-checkout__field-wrapper">
                 <MealVoucherExpiryField {...props} />
 
                 <GiftcardPinField {...pinFieldProps} classNameModifiers={['50']} />

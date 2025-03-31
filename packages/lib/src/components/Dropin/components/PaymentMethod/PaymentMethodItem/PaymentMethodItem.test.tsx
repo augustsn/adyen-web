@@ -42,8 +42,8 @@ describe('PaymentMethodItem', () => {
         /* eslint-disable testing-library/no-container */
         /* eslint-disable testing-library/no-node-access */
         expect(container.getElementsByClassName('123456').length).toBe(1);
-        expect(container.getElementsByClassName('adyen-checkout__payment-method').length).toBe(1);
-        expect(container.getElementsByClassName('adyen-checkout__payment-method--ideal').length).toBe(1);
+        expect(container.getElementsByClassName('bubp-checkout__payment-method').length).toBe(1);
+        expect(container.getElementsByClassName('bubp-checkout__payment-method--ideal').length).toBe(1);
         /* eslint-enable testing-library/no-container */
         /* eslint-enable testing-library/no-node-access */
     });

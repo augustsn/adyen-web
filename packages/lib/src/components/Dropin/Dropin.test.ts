@@ -1,4 +1,4 @@
-import { AdyenCheckout } from '../../index';
+import { BubpCheckout } from '../../index';
 import ThreeDS2DeviceFingerprint from '../ThreeDS2/ThreeDS2DeviceFingerprint';
 import ThreeDS2Challenge from '../ThreeDS2/ThreeDS2Challenge';
 import { screen, render, fireEvent, waitFor } from '@testing-library/preact';
@@ -37,7 +37,7 @@ describe('Dropin', () => {
             },
             onEnterKeyPressed: jest.fn(() => {})
         };
-        checkout = await AdyenCheckout(configObj);
+        checkout = await BubpCheckout(configObj);
     });
 
     describe('Configuration "disableFinalAnimation"', () => {
@@ -141,7 +141,7 @@ describe('Dropin', () => {
                 paymentMethodType: 'scheme'
             };
 
-            const checkout = await AdyenCheckout({
+            const checkout = await BubpCheckout({
                 countryCode: 'US',
                 environment: 'test',
                 clientKey: 'test_123456',

@@ -12,14 +12,14 @@ $loading-indicator-small-border-width: token(spacer-010);
 $loading-indicator-width: token(spacer-090);
 $loading-indicator-height: token(spacer-090);
 
-.adyen-checkout__spinner__wrapper {
+.bubp-checkout__spinner__wrapper {
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.adyen-checkout__spinner__wrapper--inline {
+.bubp-checkout__spinner__wrapper--inline {
     height: auto;
     display: inline-block;
     margin-right: token(spacer-040);
@@ -30,7 +30,7 @@ $loading-indicator-height: token(spacer-090);
     }
 }
 
-.adyen-checkout__spinner {
+.bubp-checkout__spinner {
     height: $loading-indicator-height;
     width: $loading-indicator-width;
     position: relative;

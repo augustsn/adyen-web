@@ -45,5 +45,5 @@ const checkPwd = iframeSelector => {
 };
 
 const fillTaxNumber = async (t, taxValue = TEST_TAX_NUMBER_VALUE) => {
-    return t.switchToMainWindow().typeText('.adyen-checkout__card__kcp-taxNumber__input', taxValue);
+    return t.switchToMainWindow().typeText('.bubp-checkout__card__kcp-taxNumber__input', taxValue);
 };

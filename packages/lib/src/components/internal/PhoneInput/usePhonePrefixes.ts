@@ -2,7 +2,7 @@ import { useLayoutEffect, useState } from 'preact/hooks';
 import getDataset from '../../../core/Services/get-dataset';
 import { DataSet } from '../../../core/Services/data-set';
 import { PhonePrefixes } from './types';
-import AdyenCheckoutError from '../../../core/Errors/AdyenCheckoutError';
+import BubpCheckoutError from '../../../core/Errors/BubpCheckoutError';
 
 function usePhonePrefixes({ allowedCountries, loadingContext, handleError }): PhonePrefixes {
     const [loadingStatus, setLoadingStatus] = useState<string>('loading');
@@ -25,7 +25,7 @@ function usePhonePrefixes({ allowedCountries, loadingContext, handleError }): Ph
             .catch(error => {
                 setPhonePrefixes([]);
                 setLoadingStatus('ready');
-                handleError?.(new AdyenCheckoutError('ERROR', error));
+                handleError?.(new BubpCheckoutError('ERROR', error));
             });
     }, []);
 

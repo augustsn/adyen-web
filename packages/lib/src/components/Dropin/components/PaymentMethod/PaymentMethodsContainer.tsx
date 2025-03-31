@@ -39,15 +39,15 @@ function PaymentMethodsContainer({
     const { i18n } = useCoreContext();
     const selectListId: string = useMemo(() => `select-${uuid()}`, []);
     const paymentMethodListClassnames = classNames([
-        'adyen-checkout__payment-methods-list',
-        { 'adyen-checkout__payment-methods-list--loading': isLoading },
-        ...classNameModifiers.map(m => `adyen-checkout__payment-methods-list--${m}`)
+        'bubp-checkout__payment-methods-list',
+        { 'bubp-checkout__payment-methods-list--loading': isLoading },
+        ...classNameModifiers.map(m => `bubp-checkout__payment-methods-list--${m}`)
     ]);
 
     return (
-        <div className="adyen-checkout-payment-methods-container">
+        <div className="bubp-checkout-payment-methods-container">
             {!!label.length && (
-                <label htmlFor={selectListId} className="adyen-checkout-payment-methods-list-label">
+                <label htmlFor={selectListId} className="bubp-checkout-payment-methods-list-label">
                     {label}
                 </label>
             )}
@@ -68,7 +68,7 @@ function PaymentMethodsContainer({
 
                     return (
                         <PaymentMethodItem
-                            className={classNames({ 'adyen-checkout__payment-method--next-selected': isNextOneSelected })}
+                            className={classNames({ 'bubp-checkout__payment-method--next-selected': isNextOneSelected })}
                             standalone={paymentMethods.length === 1}
                             paymentMethod={paymentMethod}
                             isSelected={isSelected}

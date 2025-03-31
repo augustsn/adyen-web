@@ -1,5 +1,5 @@
 {
-  "name": "@adyen/adyen-web",
+  "name": "@bubp/web",
   "version": "6.11.0",
   "license": "MIT",
   "homepage": "https://docs.adyen.com/checkout",
@@ -12,7 +12,7 @@
   "main": "dist/cjs/index.cjs",
   "module": "dist/es-legacy/index.js",
   "types": "dist/es/index.d.ts",
-  "style": "dist/es/adyen.css",
+  "style": "dist/es/bubp.css",
   "exports": {
     ".": {
       "import": {
@@ -24,27 +24,17 @@
         "default": "./dist/cjs/index.cjs"
       }
     },
-    "./auto": {
-      "import": {
-        "types": "./auto/auto.d.ts",
-        "default": "./auto/auto.js"
-      },
-      "require": {
-        "types": "./auto/auto.d.cts",
-        "default": "./auto/auto.cjs"
-      }
-    },
-    "./styles/adyen.css": "./dist/es/adyen.css"
+    "./styles/bubp.css": "./dist/es/bubp.css"
   },
   "keywords": [
-    "adyen",
-    "adyen-web",
+    "BUB Payments",
+    "bubp-web",
     "checkout",
     "payment",
     "payments",
     "components"
   ],
-  "repository": "github:Adyen/adyen-web",
+  "repository": "github:augustsn/adyen-web",
   "bugs": {
     "url": "https://support.adyen.com/"
   },
@@ -77,7 +67,7 @@
     "styles:fix": "npm run lint-styles -- --fix",
     "lint:fix": "npm run lint -- --fix",
     "prettier:fix": "prettier \"src/**/*.{js,ts,tsx}\" \"package.json\" --write --loglevel silent",
-    "prepublishOnly": "npm run build && rm -rf ./styles && mkdir ./styles && cp ./dist/es/adyen.css ./styles/adyen.css",
+    "prepublishOnly": "npm run build && rm -rf ./styles && mkdir ./styles && cp ./dist/es/bubp.css ./styles/bubp.css",
     "prepare": "cd ../.. && husky packages/lib/.husky",
     "size": "npm run build && size-limit"
   },

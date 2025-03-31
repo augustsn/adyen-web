@@ -33,10 +33,10 @@ function BankTransferInput(props) {
     }, [data, valid, errors, showingEmail, isValid]);
 
     return (
-        <div className="adyen-checkout__bankTransfer">
-            <p className="adyen-checkout__bankTransfer__introduction">{i18n.get('bankTransfer.introduction')}</p>
+        <div className="bubp-checkout__bankTransfer">
+            <p className="bubp-checkout__bankTransfer__introduction">{i18n.get('bankTransfer.introduction')}</p>
             <SendCopyToEmail
-                classNames={'adyen-checkout__bankTransfer__emailField'}
+                classNames={'bubp-checkout__bankTransfer__emailField'}
                 value={data.shopperEmail}
                 errors={errors.shopperEmail}
                 onToggle={toggleEmailField}

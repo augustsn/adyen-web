@@ -1,6 +1,6 @@
 import ApplePaySdkLoader, { APPLE_PAY_SDK_URL } from './ApplePaySdkLoader';
 import Script from '../../../utils/Script';
-import AdyenCheckoutError from '../../../core/Errors/AdyenCheckoutError';
+import BubpCheckoutError from '../../../core/Errors/BubpCheckoutError';
 import { mock } from 'jest-mock-extended';
 
 jest.mock('../../../utils/Script');
@@ -30,11 +30,11 @@ describe('ApplePaySdkLoader', () => {
         expect(mockLoad).toHaveBeenCalledTimes(1);
     });
 
-    test('should throw AdyenCheckoutError when script loading fails', async () => {
+    test('should throw BubpCheckoutError when script loading fails', async () => {
         // @ts-ignore 'Script' is mocked
         Script.mockImplementation(() => ({ load: jest.fn().mockRejectedValue(new Error('Network error')) }));
 
-        await expect(loader.load()).rejects.toThrow(AdyenCheckoutError);
+        await expect(loader.load()).rejects.toThrow(BubpCheckoutError);
         await expect(loader.load()).rejects.toThrow('ApplePaySDK failed to load');
     });
 

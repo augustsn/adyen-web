@@ -3,7 +3,7 @@ import { Locator, Page } from '@playwright/test';
 class ThreeDs2Challenge {
     readonly rootElement: Locator;
 
-    constructor(public readonly page: Page, rootElementSelector: string = '.adyen-checkout__threeds2__challenge') {
+    constructor(public readonly page: Page, rootElementSelector: string = '.bubp-checkout__threeds2__challenge') {
         this.rootElement = page.locator(rootElementSelector);
     }
 

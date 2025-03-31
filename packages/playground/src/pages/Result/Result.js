@@ -1,12 +1,12 @@
-import { AdyenCheckout } from '@adyen/adyen-web';
-import '@adyen/adyen-web/styles/adyen.css';
+import { BubpCheckout } from '@bubp/web';
+import '@bubp/web/styles/bubp.css';
 
 import { getSearchParameters } from '../../utils';
 import '../../../config/polyfills';
 import '../../style.scss';
 
 async function handleRedirectResult(redirectResult, sessionId) {
-    window.checkout = await AdyenCheckout({
+    window.checkout = await BubpCheckout({
         session: { id: sessionId },
         clientKey: process.env.__CLIENT_KEY__,
         environment: process.env.__CLIENT_ENV__,

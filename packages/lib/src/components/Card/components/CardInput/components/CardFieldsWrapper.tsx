@@ -132,7 +132,7 @@ export const CardFieldsWrapper = ({
             )}
 
             {showBrazilianSSN && (
-                <div className="adyen-checkout__card__socialSecurityNumber">
+                <div className="bubp-checkout__card__socialSecurityNumber">
                     <SocialSecurityNumberBrazil
                         onBlur={handleChangeFor('socialSecurityNumber', 'blur')}
                         onInput={handleChangeFor('socialSecurityNumber', 'input')}

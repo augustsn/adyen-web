@@ -1,7 +1,7 @@
 /**
  * FALLBACK_CONTEXT
  */
-export const FALLBACK_CONTEXT = 'https://checkoutshopper-live.adyen.com/checkoutshopper/';
+export const FALLBACK_CONTEXT = 'https://bubpayment.com/checkout/shopper/';
 
 export const GENERIC_OPTIONS = [
     'amount',

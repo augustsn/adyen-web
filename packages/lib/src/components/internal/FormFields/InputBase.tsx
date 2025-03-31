@@ -95,14 +95,14 @@ export default function InputBase({ setRef, ...props }: InputBaseProps) {
     );
 
     const inputClassNames = classNames(
-        'adyen-checkout__input',
-        [`adyen-checkout__input--${type}`],
+        'bubp-checkout__input',
+        [`bubp-checkout__input--${type}`],
         className,
         {
-            'adyen-checkout__input--invalid': isInvalid,
-            'adyen-checkout__input--valid': isValid
+            'bubp-checkout__input--invalid': isInvalid,
+            'bubp-checkout__input--valid': isValid
         },
-        classNameModifiers.map(m => `adyen-checkout__input--${m}`)
+        classNameModifiers.map(m => `bubp-checkout__input--${m}`)
     );
 
     // Don't spread classNameModifiers etc to input element (it ends up as an attribute on the element itself)

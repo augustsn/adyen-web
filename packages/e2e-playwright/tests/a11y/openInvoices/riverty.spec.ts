@@ -40,7 +40,7 @@ test.describe('Test Riverty Component', () => {
         await riverty.pay();
         // Wait for all sr messages to show otherwise srErrorMessages.forEach fails to match one by one
         await page.waitForFunction(
-            expectedLength => [...document.querySelectorAll('.adyen-checkout-sr-panel__msg')].map(el => el.textContent).length === expectedLength,
+            expectedLength => [...document.querySelectorAll('.bubp-checkout-sr-panel__msg')].map(el => el.textContent).length === expectedLength,
             expectedSRPanelTexts.length
         );
         // Inspect SRPanel errors: all expected errors, in the expected order
@@ -66,7 +66,7 @@ test.describe('Test Riverty Component', () => {
         await riverty.riverty
             .getByRole('group', { name: 'Billing address' })
             .getByLabel('Postal code')
-            // .locator('.adyen-checkout__field--postalCode .adyen-checkout__input--postalCode')
+            // .locator('.bubp-checkout__field--postalCode .bubp-checkout__input--postalCode')
             .type('3', { delay: USER_TYPE_DELAY });
 
         await riverty.pay(); // first click need to trigger blur event on postCode field
@@ -74,7 +74,7 @@ test.describe('Test Riverty Component', () => {
 
         // Wait for all sr messages to show otherwise srErrorMessages.forEach fails to match one by one
         await page.waitForFunction(
-            expectedLength => [...document.querySelectorAll('.adyen-checkout-sr-panel__msg')].map(el => el.textContent).length === expectedLength,
+            expectedLength => [...document.querySelectorAll('.bubp-checkout-sr-panel__msg')].map(el => el.textContent).length === expectedLength,
             expectedSRPanelTexts.length
         );
 

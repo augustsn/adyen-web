@@ -1,19 +1,19 @@
 import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import {
-    AdyenCheckout,
-    AdyenCheckoutError,
+    BubpCheckout,
+    BubpCheckoutError,
     PaymentCompletedData,
     UIElement,
     PaymentFailedData,
     AdditionalDetailsData,
     AdditionalDetailsActions
-} from '@adyen/adyen-web';
+} from '@bubp/web';
 import { environment } from '../../environments/environment';
 import { AdvancedFlowApiService } from '../../services/AdvancedFlowApi.service';
 
 @Component({
-    selector: 'adyen-sessions',
+    selector: 'bubp-sessions',
     standalone: true,
     templateUrl: './redirect.component.html'
 })
@@ -43,7 +43,7 @@ export class RedirectPage implements OnInit {
 
         const isSessionsFlow = !!sessionId;
 
-        const checkout = await AdyenCheckout({
+        const checkout = await BubpCheckout({
             analytics: {
                 enabled: false
             },
@@ -85,7 +85,7 @@ export class RedirectPage implements OnInit {
             onPaymentFailed: (data?: PaymentFailedData, component?: UIElement) => {
                 this.response = 'Payment failed';
             },
-            onError: (error: AdyenCheckoutError) => {
+            onError: (error: BubpCheckoutError) => {
                 this.response = 'Something went wrong';
                 console.error(error);
             }

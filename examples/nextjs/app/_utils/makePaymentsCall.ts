@@ -1,6 +1,6 @@
 import paymentsConfig from "./paymentsConfig";
 import { DEFAULT_SHOPPER_REFERENCE } from "@/app/_utils/constants";
-import type { PaymentData } from "@adyen/adyen-web";
+import type { PaymentData } from "@bubp/web";
 
 async function makePaymentsCall(
     data: PaymentData,

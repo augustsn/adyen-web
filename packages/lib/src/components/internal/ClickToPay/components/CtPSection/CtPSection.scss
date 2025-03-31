@@ -1,6 +1,6 @@
 @import 'styles/variable-generator';
 
-.adyen-checkout-ctp__section {
+.bubp-checkout-ctp__section {
     position: relative;
     background-color: white;
     box-shadow:
@@ -20,12 +20,12 @@
         all: unset;
     }
 
-    .adyen-checkout__fieldset {
+    .bubp-checkout__fieldset {
         margin-bottom: token(spacer-090);
     }
 }
 
-.adyen-checkout-ctp__section-header {
+.bubp-checkout-ctp__section-header {
     display: flex;
     align-items: center;
 
@@ -47,7 +47,7 @@
     }
 }
 
-.adyen-checkout-ctp__section-text {
+.bubp-checkout-ctp__section-text {
     font-size: token(text-body-font-size);
     font-weight: token(text-body-font-weight);
     line-height: token(text-caption-line-height);
@@ -55,7 +55,7 @@
     margin: 0 0 token(spacer-070);
 }
 
-.adyen-checkout-ctp__separator {
+.bubp-checkout-ctp__separator {
     color: token(color-label-primary);
     font-size: token(text-body-font-size);
     font-weight: token(text-body-font-weight);

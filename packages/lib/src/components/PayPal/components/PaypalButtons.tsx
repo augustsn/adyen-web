@@ -63,15 +63,15 @@ export default function PaypalButtons({
     const isProcessingPaymentWithoutReviewPage = props.commit === true;
 
     return (
-        <div className={classnames('adyen-checkout__paypal__buttons', { 'adyen-checkout__paypal-processing': isProcessingPayment })}>
-            <div className="adyen-checkout__paypal__button adyen-checkout__paypal__button--paypal" ref={paypalButtonRef} />
-            <div className="adyen-checkout__paypal__button adyen-checkout__paypal__button--credit" ref={creditButtonRef} />
-            <div className="adyen-checkout__paypal__button adyen-checkout__paypal__button--pay-later" ref={payLaterButtonRef} />
-            <div className="adyen-checkout__paypal__button adyen-checkout__paypal__button--venmo" ref={venmoButtonRef} />
+        <div className={classnames('bubp-checkout__paypal__buttons', { 'bubp-checkout__paypal-processing': isProcessingPayment })}>
+            <div className="bubp-checkout__paypal__button bubp-checkout__paypal__button--paypal" ref={paypalButtonRef} />
+            <div className="bubp-checkout__paypal__button bubp-checkout__paypal__button--credit" ref={creditButtonRef} />
+            <div className="bubp-checkout__paypal__button bubp-checkout__paypal__button--pay-later" ref={payLaterButtonRef} />
+            <div className="bubp-checkout__paypal__button bubp-checkout__paypal__button--venmo" ref={venmoButtonRef} />
 
             {isProcessingPayment && (
-                <div className="adyen-checkout__paypal">
-                    <div className="adyen-checkout__paypal__status adyen-checkout__paypal__status--processing">
+                <div className="bubp-checkout__paypal">
+                    <div className="bubp-checkout__paypal__status bubp-checkout__paypal__status--processing">
                         <Spinner size="medium" inline />
                         {isProcessingPaymentWithoutReviewPage && i18n.get('paypal.processingPayment')}
                     </div>

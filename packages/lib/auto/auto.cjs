@@ -5,12 +5,12 @@
  */
 
 const library = require('../dist/cjs/index.cjs');
-const { AdyenCheckout, components } = library;
+const { BubpCheckout, components } = library;
 
 const { Dropin, ...Components } = components;
 const Classes = Object.keys(Components).map(key => Components[key]);
 
-AdyenCheckout.register(...Classes);
-AdyenCheckout.setBundleType('auto');
+BubpCheckout.register(...Classes);
+BubpCheckout.setBundleType('auto');
 
 module.exports = library;

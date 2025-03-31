@@ -92,7 +92,7 @@ export const PayToAwaitScreen: PayToStory = {
     parameters: {
         // msw: {
         //     handlers: [
-        //         http.post('https://checkoutshopper-test.adyen.com/checkoutshopper/services/PaymentInitiation/v1/status', () => {
+        //         http.post('https://bubpayment.com/checkout/shopper/services/PaymentInitiation/v1/status', () => {
         //             return HttpResponse.json({
         //                 payload: '',
         //                 resultCode: 'pending',

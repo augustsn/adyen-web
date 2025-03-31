@@ -29,11 +29,11 @@ const AchSFInput = ({ id, dataInfo, className = '', label, focused, filled, erro
                 encryptedFieldType={encryptedIdStr}
                 data-info={dataInfo}
                 className={classNames({
-                    'adyen-checkout__input': true,
-                    'adyen-checkout__input--large': true,
-                    'adyen-checkout__input--error': errorMessage.length,
-                    'adyen-checkout__input--focus': focused,
-                    'adyen-checkout__input--valid': isValid
+                    'bubp-checkout__input': true,
+                    'bubp-checkout__input--large': true,
+                    'bubp-checkout__input--error': errorMessage.length,
+                    'bubp-checkout__input--focus': focused,
+                    'bubp-checkout__input--valid': isValid
                 })}
             />
         </Field>

@@ -21,10 +21,10 @@ describe('Voucher', () => {
                 <Voucher {...outputDetails} />
             </CoreProvider>
         );
-        expect(wrapper.find('.adyen-checkout__voucher-result__introduction').text()).toContain('Introduction Text');
-        expect(wrapper.find('.adyen-checkout__voucher-result__amount').text()).toBe('100');
-        expect(wrapper.find('.adyen-checkout-link--voucher-result-instructions').length).toBe(1);
-        expect(wrapper.find('.adyen-checkout__voucher-result__code > span').text()).toBe('123456');
+        expect(wrapper.find('.bubp-checkout__voucher-result__introduction').text()).toContain('Introduction Text');
+        expect(wrapper.find('.bubp-checkout__voucher-result__amount').text()).toBe('100');
+        expect(wrapper.find('.bubp-checkout-link--voucher-result-instructions').length).toBe(1);
+        expect(wrapper.find('.bubp-checkout__voucher-result__code > span').text()).toBe('123456');
 
         expect(outputDetails.onActionHandled).toBeCalledWith({
             componentType: 'type',
@@ -42,9 +42,9 @@ describe('Voucher', () => {
                 <Voucher {...outputDetails} voucherDetails={voucherDetails} />
             </CoreProvider>
         );
-        expect(wrapper.find('.adyen-checkout__voucher-result__amount').text()).toBe('100');
-        expect(wrapper.find('.adyen-checkout-link--voucher-result-instructions').length).toBe(1);
-        expect(wrapper.find('.adyen-checkout__voucher-result__code > span').text()).toBe('123456');
+        expect(wrapper.find('.bubp-checkout__voucher-result__amount').text()).toBe('100');
+        expect(wrapper.find('.bubp-checkout-link--voucher-result-instructions').length).toBe(1);
+        expect(wrapper.find('.bubp-checkout__voucher-result__code > span').text()).toBe('123456');
     });
 
     test('should not render issuer image if issuerImageUrl prop is not provided', () => {
@@ -53,6 +53,6 @@ describe('Voucher', () => {
                 <Voucher {...outputDetails} issuerImageUrl={null} />
             </CoreProvider>
         );
-        expect(wrapper.find('.adyen-checkout__voucher-result__image__issuer').exists()).toBeFalsy();
+        expect(wrapper.find('.bubp-checkout__voucher-result__image__issuer').exists()).toBeFalsy();
     });
 });

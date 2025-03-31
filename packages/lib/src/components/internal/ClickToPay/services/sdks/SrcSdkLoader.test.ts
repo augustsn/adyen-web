@@ -2,7 +2,7 @@ import SrcSdkLoader from './SrcSdkLoader';
 
 import VisaSdk from './VisaSdk';
 import MastercardSdk from './MastercardSdk';
-import AdyenCheckoutError from '../../../../../core/Errors/AdyenCheckoutError';
+import BubpCheckoutError from '../../../../../core/Errors/BubpCheckoutError';
 
 jest.mock('./VisaSdk');
 jest.mock('./MastercardSdk');
@@ -29,7 +29,7 @@ describe('load()', () => {
         expect.assertions(2);
 
         await loader.load('test').catch(error => {
-            expect(error).toBeInstanceOf(AdyenCheckoutError);
+            expect(error).toBeInstanceOf(BubpCheckoutError);
             expect(error.message).toContain('ClickToPay -> SrcSdkLoader # Unable to load network schemes');
         });
     });
@@ -51,7 +51,7 @@ describe('load()', () => {
         expect.assertions(2);
 
         await loader.load('test').catch(error => {
-            expect(error).toBeInstanceOf(AdyenCheckoutError);
+            expect(error).toBeInstanceOf(BubpCheckoutError);
             expect(error.message).toContain('ClickToPay -> SrcSdkLoader: There are no schemes set to be loaded');
         });
     });

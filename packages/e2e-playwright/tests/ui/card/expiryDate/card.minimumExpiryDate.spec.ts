@@ -5,7 +5,7 @@ const CARD_TOO_OLD = LANG['cc.dat.912'];
 const CARD_TOO_FAR = LANG['cc.dat.913'];
 const CARD_EXPIRES_BEFORE = LANG['cc.dat.914'];
 
-// todo: original test file for reference: https://github.com/Adyen/adyen-web/blob/main/packages/e2e/tests/cards/expiryDate/minimumExpiryDate.test.js
+// todo: original test file for reference: https://github.com/augustsn/bubp-web/blob/main/packages/e2e/tests/cards/expiryDate/minimumExpiryDate.test.js
 // use config:
 // window.cardConfig = {
 //   type: 'scheme',

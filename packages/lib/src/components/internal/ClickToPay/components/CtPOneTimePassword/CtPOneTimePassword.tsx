@@ -82,7 +82,7 @@ const CtPOneTimePassword = ({ onDisplayCardComponent }: CtPOneTimePasswordProps)
 
             <CtPSection.Text>
                 {subtitleParts[0]} {otpNetwork} {subtitleParts[1]}
-                <span className="adyen-checkout-ctp__otp-subtitle--highlighted">{otpMaskedContact}</span>
+                <span className="bubp-checkout-ctp__otp-subtitle--highlighted">{otpMaskedContact}</span>
                 {subtitleParts[2]}
             </CtPSection.Text>
 

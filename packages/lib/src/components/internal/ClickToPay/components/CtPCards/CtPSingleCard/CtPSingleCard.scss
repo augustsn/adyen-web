@@ -1,6 +1,6 @@
 @import 'styles/variable-generator';
 
-.adyen-checkout-ctp__card-list-single-card {
+.bubp-checkout-ctp__card-list-single-card {
     border-radius: token(spacer-030);
     background-color: token(color-background-secondary);
     height: token(spacer-110);
@@ -17,14 +17,14 @@
     }
 }
 
-.adyen-checkout-ctp__expired-label {
+.bubp-checkout-ctp__expired-label {
     color: token(color-label-tertiary);
     font-weight: token(text-body-stronger-font-weight);
     line-height: 17px;
     margin-left: auto;
 }
 
-.adyen-checkout-ctp__card-image {
+.bubp-checkout-ctp__card-image {
     border-radius: 3px;
     margin-right: token(spacer-040);
     height: 24px;

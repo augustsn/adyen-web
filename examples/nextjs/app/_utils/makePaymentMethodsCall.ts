@@ -14,7 +14,7 @@ async function makePaymentMethodsCall({ countryCode, shopperLocale, amount }) {
             },
             shopperReference: DEFAULT_SHOPPER_REFERENCE,
             telephoneNumber: "0612345678",
-            shopperEmail: "test@adyen.com",
+            shopperEmail: "test-bubp@example.com",
             dateOfBirth: "1970-07-10",
         };
 

@@ -84,7 +84,7 @@ export function getDesignCode(design: string): string {
 
 /**
  * Returns the amount in the format Amazon expects.
- * @param amount - The amount object in the Adyen format
+ * @param amount - The amount object in the BUB Payment format
  * @returns the charge amount object in the Amazon format
  */
 export function getChargeAmount(amount: PaymentAmount): ChargeAmount {

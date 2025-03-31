@@ -14,7 +14,7 @@ describe('preparePaymentRequest', () => {
         });
 
         expect(console.warn).toHaveBeenCalledWith(
-            'Apple Pay - Make sure to set the countryCode in the AdyenCheckout configuration or in the Checkout Session creation'
+            'Apple Pay - Make sure to set the countryCode in the BubpCheckout configuration or in the Checkout Session creation'
         );
     });
 

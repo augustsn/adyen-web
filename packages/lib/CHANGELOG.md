@@ -1,4 +1,4 @@
-# @adyen/adyen-web
+# @bubp/web
 
 ## 6.11.0
 

@@ -26,7 +26,7 @@ const CtPInfo = () => {
             <button
                 ref={buttonRef}
                 onClick={handleOnIconClick}
-                className="adyen-web__ctp-info-button"
+                className="bubp-web__ctp-info-button"
                 aria-label={i18n.get('ctp.aria.infoModalButton')}
                 type="button"
             >

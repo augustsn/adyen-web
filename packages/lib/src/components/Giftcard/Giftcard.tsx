@@ -3,7 +3,7 @@ import UIElement from '../internal/UIElement/UIElement';
 import GiftcardComponent from './components/GiftcardComponent';
 import { CoreProvider } from '../../core/Context/CoreProvider';
 import PayButton from '../internal/PayButton';
-import AdyenCheckoutError from '../../core/Errors/AdyenCheckoutError';
+import BubpCheckoutError from '../../core/Errors/BubpCheckoutError';
 import { PaymentAmount } from '../../types/global-types';
 import { GiftCardElementData, GiftCardConfiguration, balanceCheckResponseType } from './types';
 import { TxVariants } from '../tx-variants';
@@ -100,10 +100,10 @@ export class GiftcardElement extends UIElement<GiftCardConfiguration> {
             .catch(error => {
                 this.setStatus(error?.message || 'error');
                 if (this.props.onError) {
-                    if (error instanceof AdyenCheckoutError) {
+                    if (error instanceof BubpCheckoutError) {
                         this.handleError(error);
                     } else {
-                        this.handleError(new AdyenCheckoutError('ERROR', error));
+                        this.handleError(new BubpCheckoutError('ERROR', error));
                     }
                 }
             });
@@ -122,7 +122,7 @@ export class GiftcardElement extends UIElement<GiftCardConfiguration> {
         }
         // 2. there's no callback, we throw error
         if (!this.props.onRequiringConfirmation) {
-            throw new AdyenCheckoutError('IMPLEMENTATION_ERROR', 'onRequiringConfirmation must be provided');
+            throw new BubpCheckoutError('IMPLEMENTATION_ERROR', 'onRequiringConfirmation must be provided');
         }
         // 3. success case if in case of custom pay button
         return (

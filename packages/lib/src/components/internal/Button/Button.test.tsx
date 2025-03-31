@@ -19,7 +19,7 @@ describe('Button', () => {
     });
 
     test('Renders a link if href is present', () => {
-        const wrapper = getWrapper({ label: 'label', href: 'http://adyen.com' });
+        const wrapper = getWrapper({ label: 'label', href: 'http://bubpayment.com' });
         expect(wrapper.text()).toContain('label');
         expect(wrapper.getDOMNode().nodeName).toBe('A');
     });
@@ -48,27 +48,27 @@ describe('Button', () => {
 
     test('Uses a custom label when a status is defined', () => {
         const wrapper = getWrapper({ label: 'label', status: 'loading' });
-        expect(wrapper.find('.adyen-checkout__spinner').length > 0).toBe(true);
+        expect(wrapper.find('.bubp-checkout__spinner').length > 0).toBe(true);
     });
 
     test('Renders primary button as default', () => {
         const wrapper = getWrapper({});
-        expect(wrapper.find('.adyen-checkout__button').length).toBe(1);
-        expect(wrapper.find('.adyen-checkout__button--primary').length).toBe(0);
+        expect(wrapper.find('.bubp-checkout__button').length).toBe(1);
+        expect(wrapper.find('.bubp-checkout__button--primary').length).toBe(0);
     });
 
     test('Renders secondary button', () => {
         const wrapper = getWrapper({ variant: 'secondary ' });
-        expect(wrapper.find('.adyen-checkout__button--secondary').length).toBe(1);
+        expect(wrapper.find('.bubp-checkout__button--secondary').length).toBe(1);
     });
 
     test('Renders action button', () => {
         const wrapper = getWrapper({ variant: 'action ' });
-        expect(wrapper.find('.adyen-checkout__button--action').length).toBe(1);
+        expect(wrapper.find('.bubp-checkout__button--action').length).toBe(1);
     });
 
     test('Renders ghost button', () => {
         const wrapper = getWrapper({ variant: 'ghost ' });
-        expect(wrapper.find('.adyen-checkout__button--ghost').length).toBe(1);
+        expect(wrapper.find('.bubp-checkout__button--ghost').length).toBe(1);
     });
 });

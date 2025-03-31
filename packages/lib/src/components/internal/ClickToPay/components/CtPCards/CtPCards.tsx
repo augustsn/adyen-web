@@ -16,7 +16,7 @@ import isMobile from '../../../../../utils/isMobile';
 import Language from '../../../../../language';
 import { PaymentAmount } from '../../../../../types/global-types';
 import './CtPCards.scss';
-import AdyenCheckoutError from '../../../../../core/Errors/AdyenCheckoutError';
+import BubpCheckoutError from '../../../../../core/Errors/BubpCheckoutError';
 import { PREFIX } from '../../../Icon/constants';
 
 type CtPCardsProps = {
@@ -71,8 +71,8 @@ const CtPCards = ({ onDisplayCardComponent }: CtPCardsProps) => {
             }
             setIsShopperCheckingOutWithCtp(false);
 
-            if (error instanceof AdyenCheckoutError) onError(error);
-            else onError(new AdyenCheckoutError('ERROR', 'Error during ClickToPay checkout', { cause: error }));
+            if (error instanceof BubpCheckoutError) onError(error);
+            else onError(new BubpCheckoutError('ERROR', 'Error during ClickToPay checkout', { cause: error }));
         }
     }, [checkout, checkoutCard]);
 
@@ -107,7 +107,7 @@ const CtPCards = ({ onDisplayCardComponent }: CtPCardsProps) => {
                 <Fragment>
                     <CtPSection.Title>{i18n.get('ctp.cards.title')}</CtPSection.Title>
                     <CtPSection.Text>{i18n.get('ctp.cards.subtitle')}</CtPSection.Text>
-                    {cards.length === 0 && <div className="adyen-checkout-ctp__empty-cards">{i18n.get('ctp.emptyProfile.message')}</div>}
+                    {cards.length === 0 && <div className="bubp-checkout-ctp__empty-cards">{i18n.get('ctp.emptyProfile.message')}</div>}
                     {cards.length === 1 && <CtPSingleCard card={cards[0]} errorMessage={getErrorLabel(errorCode, i18n)} />}
                     {cards.length > 1 && (
                         <CtPCardsList

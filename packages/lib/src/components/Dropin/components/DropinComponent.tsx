@@ -8,7 +8,7 @@ import { UIElementStatus } from '../../internal/UIElement/types';
 import { sanitizeOrder } from '../../internal/UIElement/utils';
 import { PaymentAmount } from '../../../types/global-types';
 import { ANALYTICS_RENDERED_STR } from '../../../core/Analytics/constants';
-import AdyenCheckoutError from '../../../core/Errors/AdyenCheckoutError';
+import BubpCheckoutError from '../../../core/Errors/BubpCheckoutError';
 import UIElement from '../../internal/UIElement';
 
 export class DropinComponent extends Component<DropinComponentProps, DropinComponentState> {
@@ -127,7 +127,7 @@ export class DropinComponent extends Component<DropinComponentProps, DropinCompo
                 })
                     .then(({ amount }) => this.props.elementRef.handleAdvanceFlowPaymentMethodsUpdate(null, amount))
                     .catch(error => {
-                        throw new AdyenCheckoutError('NETWORK_ERROR', error);
+                        throw new BubpCheckoutError('NETWORK_ERROR', error);
                     });
             };
         }
@@ -163,7 +163,7 @@ export class DropinComponent extends Component<DropinComponentProps, DropinCompo
 
             default:
                 return (
-                    <div className={`adyen-checkout__dropin adyen-checkout__dropin--${status.type}`}>
+                    <div className={`bubp-checkout__dropin bubp-checkout__dropin--${status.type}`}>
                         {isRedirecting && status.props.component && status.props.component.render()}
                         {isLoading && status.props && status.props.component && status.props.component.render()}
                         {!!hasPaymentMethodsToBeDisplayed && (

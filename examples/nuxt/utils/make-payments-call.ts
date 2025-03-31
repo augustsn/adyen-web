@@ -1,4 +1,4 @@
-import type { PaymentData } from '@adyen/adyen-web';
+import type { PaymentData } from '@bubp/web';
 
 export default async function makePaymentsCall(
     data: PaymentData,

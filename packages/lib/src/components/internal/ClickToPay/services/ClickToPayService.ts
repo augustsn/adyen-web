@@ -15,7 +15,7 @@ import SrciError from './sdks/SrciError';
 import { SchemeNames } from './sdks/utils';
 import ShopperCard from '../models/ShopperCard';
 import uuidv4 from '../../../../utils/uuid';
-import AdyenCheckoutError from '../../../../core/Errors/AdyenCheckoutError';
+import BubpCheckoutError from '../../../../core/Errors/BubpCheckoutError';
 import { isFulfilled, isRejected } from '../../../../utils/promise-util';
 import TimeoutError from '../errors/TimeoutError';
 import { executeWithTimeout } from './execute-with-timeout';
@@ -185,7 +185,7 @@ class ClickToPayService implements IClickToPayService {
         });
 
         if (checkoutResponse.dcfActionCode !== 'COMPLETE') {
-            throw new AdyenCheckoutError(
+            throw new BubpCheckoutError(
                 'ERROR',
                 `Checkout through Scheme DCF did not complete. DCF Action code received: ${checkoutResponse.dcfActionCode}`
             );
@@ -200,7 +200,7 @@ class ClickToPayService implements IClickToPayService {
      */
     public async logout(): Promise<void> {
         if (!this.sdks) {
-            throw new AdyenCheckoutError('ERROR', 'ClickToPayService is not initialized');
+            throw new BubpCheckoutError('ERROR', 'ClickToPayService is not initialized');
         }
 
         try {

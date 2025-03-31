@@ -131,8 +131,8 @@ function AchInput(props: ACHInputProps) {
     return (
         <div
             className={classNames({
-                'adyen-checkout__ach': true,
-                'adyen-checkout__ach--loading': status === 'loading'
+                'bubp-checkout__ach': true,
+                'bubp-checkout__ach--loading': status === 'loading'
             })}
         >
             <FormInstruction />
@@ -144,10 +144,10 @@ function AchInput(props: ACHInputProps) {
                 onChange={handleSecuredFieldsChange}
                 onFocus={handleFocus}
                 render={({ setRootNode, setFocusOn }, sfpState) => (
-                    <div ref={setRootNode} className="adyen-checkout__ach-input sf-input__wrapper">
+                    <div ref={setRootNode} className="bubp-checkout__ach-input sf-input__wrapper">
                         <LoadingWrapper status={sfpState.status}>
-                            <div className={classNames(['adyen-checkout__fieldset', 'adyen-checkout__fieldset--ach'])}>
-                                {<div className="adyen-checkout__fieldset__title">{i18n.get('ach.bankAccount')}</div>}
+                            <div className={classNames(['bubp-checkout__fieldset', 'bubp-checkout__fieldset--ach'])}>
+                                {<div className="bubp-checkout__fieldset__title">{i18n.get('ach.bankAccount')}</div>}
 
                                 <Field classNameModifiers={['bankAccountType', 'no-borders']} name={'bankAccountType'} useLabelElement={false}>
                                     <RadioGroup
@@ -166,7 +166,7 @@ function AchInput(props: ACHInputProps) {
                                 {props.hasHolderName && (
                                     <Field
                                         label={i18n.get('ach.accountHolderNameField.title')}
-                                        className={'adyen-checkout__pm__holderName'}
+                                        className={'bubp-checkout__pm__holderName'}
                                         errorMessage={!!errors.holderName && i18n.get('ach.accountHolderNameField.invalid')}
                                         showContextualElement={props.showContextualElement}
                                         contextualText={i18n.get('ach.accountHolderNameField.contextualText')}
@@ -174,7 +174,7 @@ function AchInput(props: ACHInputProps) {
                                         name={'holderName'}
                                     >
                                         <InputText
-                                            className="adyen-checkout__pm__holderName__input adyen-checkout__input"
+                                            className="bubp-checkout__pm__holderName__input bubp-checkout__input"
                                             placeholder={props?.placeholders?.holderName}
                                             value={data.holderName}
                                             required={props.holderNameRequired}

@@ -55,8 +55,8 @@ function BacsInput(props: BacsInputProps) {
     return (
         <div
             className={classNames({
-                'adyen-checkout__bacs': true,
-                'adyen-checkout__bacs--confirm': status === CONFIRM_STATE || status === 'loading'
+                'bubp-checkout__bacs': true,
+                'bubp-checkout__bacs--confirm': status === CONFIRM_STATE || status === 'loading'
             })}
         >
             <FormInstruction />
@@ -64,13 +64,13 @@ function BacsInput(props: BacsInputProps) {
             {status == CONFIRM_STATE && (
                 <div
                     className={classNames({
-                        'adyen-checkout__bacs--edit': true,
-                        'adyen-checkout__bacs--edit-dropin': props.isDropin
+                        'bubp-checkout__bacs--edit': true,
+                        'bubp-checkout__bacs--edit-dropin': props.isDropin
                     })}
                 >
                     <InputText
                         name={'bacsEdit'}
-                        className={'adyen-checkout__bacs--edit-button'}
+                        className={'bubp-checkout__bacs--edit-button'}
                         value={i18n.get('edit')}
                         aria-label={i18n.get('edit')}
                         readonly={true}
@@ -81,8 +81,8 @@ function BacsInput(props: BacsInputProps) {
 
             <Field
                 className={classNames({
-                    'adyen-checkout__bacs--holder-name': true,
-                    'adyen-checkout__field--inactive': status === CONFIRM_STATE || status === 'loading'
+                    'bubp-checkout__bacs--holder-name': true,
+                    'bubp-checkout__field--inactive': status === CONFIRM_STATE || status === 'loading'
                 })}
                 label={i18n.get('bacs.accountHolderName')}
                 errorMessage={errors.holderName ? i18n.get('bacs.accountHolderName.invalid') : false}
@@ -92,7 +92,7 @@ function BacsInput(props: BacsInputProps) {
             >
                 <InputText
                     name={'bacs.accountHolderName'}
-                    className={'adyen-checkout__bacs-input--holder-name'}
+                    className={'bubp-checkout__bacs-input--holder-name'}
                     placeholder={props.placeholders.holderName}
                     value={data.holderName}
                     aria-invalid={!valid.holderName}
@@ -106,13 +106,13 @@ function BacsInput(props: BacsInputProps) {
                 />
             </Field>
 
-            <div className="adyen-checkout__bacs__num-id adyen-checkout__field-wrapper">
+            <div className="bubp-checkout__bacs__num-id bubp-checkout__field-wrapper">
                 <Field
                     errorMessage={!!errors.bankAccountNumber && i18n.get('bacs.accountNumber.invalid')}
                     label={i18n.get('bacs.accountNumber')}
                     className={classNames({
-                        'adyen-checkout__bacs--bank-account-number': true,
-                        'adyen-checkout__field--inactive': status === CONFIRM_STATE || status === 'loading'
+                        'bubp-checkout__bacs--bank-account-number': true,
+                        'bubp-checkout__field--inactive': status === CONFIRM_STATE || status === 'loading'
                     })}
                     classNameModifiers={['col-70']}
                     isValid={valid.bankAccountNumber}
@@ -121,7 +121,7 @@ function BacsInput(props: BacsInputProps) {
                 >
                     <InputText
                         value={data.bankAccountNumber}
-                        className={'adyen-checkout__bacs-input--bank-account-number'}
+                        className={'bubp-checkout__bacs-input--bank-account-number'}
                         placeholder={props.placeholders.bankAccountNumber}
                         aria-invalid={!valid.bankAccountNumber}
                         aria-label={i18n.get('bacs.accountNumber')}
@@ -138,8 +138,8 @@ function BacsInput(props: BacsInputProps) {
                     errorMessage={!!errors.bankLocationId && i18n.get('bacs.bankLocationId.invalid')}
                     label={i18n.get('bacs.bankLocationId')}
                     className={classNames({
-                        'adyen-checkout__bacs--bank-location-id': true,
-                        'adyen-checkout__field--inactive': status === CONFIRM_STATE || status === 'loading'
+                        'bubp-checkout__bacs--bank-location-id': true,
+                        'bubp-checkout__field--inactive': status === CONFIRM_STATE || status === 'loading'
                     })}
                     classNameModifiers={['col-30']}
                     isValid={valid.bankLocationId}
@@ -148,7 +148,7 @@ function BacsInput(props: BacsInputProps) {
                 >
                     <InputText
                         value={data.bankLocationId}
-                        className={'adyen-checkout__bacs-input--bank-location-id'}
+                        className={'bubp-checkout__bacs-input--bank-location-id'}
                         placeholder={props.placeholders.bankLocationId}
                         aria-invalid={!valid.bankLocationId}
                         aria-label={i18n.get('bacs.bankLocationId')}
@@ -166,8 +166,8 @@ function BacsInput(props: BacsInputProps) {
                 errorMessage={getErrorMessage(i18n, errors.shopperEmail, i18n.get('shopperEmail'))}
                 label={i18n.get('shopperEmail')}
                 className={classNames({
-                    'adyen-checkout__bacs--shopper-email': true,
-                    'adyen-checkout__field--inactive': status === CONFIRM_STATE || status === 'loading'
+                    'bubp-checkout__bacs--shopper-email': true,
+                    'bubp-checkout__field--inactive': status === CONFIRM_STATE || status === 'loading'
                 })}
                 isValid={valid.shopperEmail}
                 name={'emailAddress'}
@@ -176,7 +176,7 @@ function BacsInput(props: BacsInputProps) {
                 <InputEmail
                     value={data.shopperEmail}
                     name={'shopperEmail'}
-                    className={'adyen-checkout__bacs-input--shopper-email'}
+                    className={'bubp-checkout__bacs-input--shopper-email'}
                     classNameModifiers={['large']}
                     placeholder={props.placeholders.shopperEmail}
                     spellcheck={false}

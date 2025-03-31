@@ -22,8 +22,8 @@ function CtPSaveCookiesCheckbox() {
 
     return (
         <div
-            className={classnames('adyen-checkout-ctp__otp-checkbox-container', {
-                'adyen-checkout-ctp__otp-checkbox-container--checked': checked
+            className={classnames('bubp-checkout-ctp__otp-checkbox-container', {
+                'bubp-checkout-ctp__otp-checkbox-container--checked': checked
             })}
         >
             <Field
@@ -38,20 +38,20 @@ function CtPSaveCookiesCheckbox() {
                     onInput={handleOnChange}
                     label={i18n.get('ctp.otp.saveCookiesCheckbox.label')}
                     checked={checked}
-                    aria-describedby={'adyen-ctp-cookies-info'}
+                    aria-describedby={'bubp-ctp-cookies-info'}
                 />
             </Field>
 
-            <p className="adyen-checkout-ctp__otp-checkbox-info">
+            <p className="bubp-checkout-ctp__otp-checkbox-info">
                 {isTextTruncated ? (
                     <Fragment>
-                        <span id="adyen-ctp-cookies-info">{i18n.get('ctp.otp.saveCookiesCheckbox.shorterInfo')} </span>
-                        <button className="adyen-checkout-ctp__otp-readmore-button" onClick={() => setIsTextTruncated(false)}>
+                        <span id="bubp-ctp-cookies-info">{i18n.get('ctp.otp.saveCookiesCheckbox.shorterInfo')} </span>
+                        <button className="bubp-checkout-ctp__otp-readmore-button" onClick={() => setIsTextTruncated(false)}>
                             {i18n.get('readMore')}..
                         </button>
                     </Fragment>
                 ) : (
-                    <span id="adyen-ctp-cookies-info">{i18n.get('ctp.otp.saveCookiesCheckbox.information')}</span>
+                    <span id="bubp-ctp-cookies-info">{i18n.get('ctp.otp.saveCookiesCheckbox.information')}</span>
                 )}
             </p>
         </div>

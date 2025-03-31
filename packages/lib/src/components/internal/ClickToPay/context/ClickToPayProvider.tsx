@@ -5,7 +5,7 @@ import { useCallback, useEffect, useRef, useState } from 'preact/hooks';
 import { ClickToPayCheckoutPayload, IClickToPayService, IdentityLookupParams } from '../services/types';
 import ShopperCard from '../models/ShopperCard';
 import { ClickToPayProps } from '../types';
-import AdyenCheckoutError from '../../../../core/Errors/AdyenCheckoutError';
+import BubpCheckoutError from '../../../../core/Errors/BubpCheckoutError';
 import { PaymentAmount } from '../../../../types/global-types';
 import { UIElementStatus } from '../../UIElement/types';
 
@@ -22,7 +22,7 @@ export type ClickToPayProviderProps = {
     setClickToPayRef(ref): void;
     onSubmit(payload: ClickToPayCheckoutPayload): void;
     onSetStatus(status: UIElementStatus): void;
-    onError(error: AdyenCheckoutError): void;
+    onError(error: BubpCheckoutError): void;
 };
 
 const ClickToPayProvider = ({

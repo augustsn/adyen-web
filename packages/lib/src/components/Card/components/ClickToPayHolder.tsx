@@ -58,7 +58,7 @@ const ClickToPayHolder = ({ children }: ClickToPayWrapperProps) => {
         <Fragment>
             <ClickToPayComponent onDisplayCardComponent={handleOnShowCardButtonClick} />
 
-            <ContentSeparator classNames={['adyen-checkout-ctp__separator']} label={i18n.get('ctp.separatorText')} />
+            <ContentSeparator classNames={['bubp-checkout-ctp__separator']} label={i18n.get('ctp.separatorText')} />
 
             {isCardInputVisible ? (
                 children(!isCtpPrimaryPaymentMethod)

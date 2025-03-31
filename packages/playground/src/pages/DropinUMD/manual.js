@@ -1,4 +1,4 @@
-import '@adyen/adyen-web/styles/adyen.css';
+import '@bubp/web/styles/bubp.css';
 import { getPaymentMethods, makePayment, checkBalance, createOrder, cancelOrder, makeDetailsCall } from '../../services';
 import { amount, shopperLocale, countryCode, returnUrl } from '../../config/commonConfig';
 import { getSearchParameters } from '../../utils';
@@ -7,9 +7,9 @@ import { handleOnPaymentCompleted, handleOnPaymentFailed } from '../../handlers'
 export async function initManual() {
     const paymentMethodsResponse = await getPaymentMethods({ amount, shopperLocale });
 
-    const { AdyenCheckout, Dropin } = window.AdyenWeb;
+    const { BubpCheckout, Dropin } = window.BubpWeb;
 
-    window.checkout = await AdyenCheckout({
+    window.checkout = await BubpCheckout({
         amount,
         countryCode,
         clientKey: process.env.__CLIENT_KEY__,

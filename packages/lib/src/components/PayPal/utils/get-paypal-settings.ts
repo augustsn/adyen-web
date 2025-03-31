@@ -1,5 +1,5 @@
 import { getSupportedLocale } from './get-paypal-locale';
-import { ADYEN_CLIENTID_LIVE, ADYEN_CLIENTID_TEST, INTEGRATION_DATE } from '../config';
+import { BUBP_CLIENTID_LIVE, BUBP_CLIENTID_TEST, INTEGRATION_DATE } from '../config';
 import type { PaypalSettings, PayPalSupportedLocale } from './types';
 import type { PayPalComponentProps } from '../components/types';
 
@@ -20,7 +20,7 @@ export const getPaypalSettings = ({
     const shopperLocale: PayPalSupportedLocale = getSupportedLocale(locale);
     const currency: string = amount ? amount.currency : null;
     const isTestEnvironment: boolean = environment.toLowerCase() === 'test';
-    const clientId: string = isTestEnvironment ? ADYEN_CLIENTID_TEST : ADYEN_CLIENTID_LIVE;
+    const clientId: string = isTestEnvironment ? BUBP_CLIENTID_TEST : BUBP_CLIENTID_LIVE;
     const { merchantId, intent } = configuration;
     const components = `buttons,funding-eligibility${enableMessages ? ',messages' : ''}`;
 

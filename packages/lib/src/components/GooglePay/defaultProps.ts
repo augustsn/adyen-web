@@ -14,7 +14,7 @@ const defaultProps: GooglePayConfiguration = {
 
     // PaymentDataRequest
     configuration: {
-        // Adyen's merchant account
+        // BUB Payment's merchant account
         gatewayMerchantId: '', // E.g TestMerchant
 
         // https://developers.google.com/pay/api/web/reference/object#MerchantInfo

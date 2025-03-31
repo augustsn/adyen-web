@@ -2,7 +2,7 @@
 
 $color-alert: token(color-background-critical-strong, false);
 
-.adyen-checkout__payment-method__disable-confirmation {
+.bubp-checkout__payment-method__disable-confirmation {
     $component-root: &;
 
     display: grid;
@@ -43,11 +43,11 @@ $color-alert: token(color-background-critical-strong, false);
     }
 }
 
-.adyen-checkout__payment-method__disable-confirmation__buttons {
+.bubp-checkout__payment-method__disable-confirmation__buttons {
     display: flex;
 }
 
-.adyen-checkout__payment-method__disable-confirmation__button {
+.bubp-checkout__payment-method__disable-confirmation__button {
     font-size: token(text-body-font-size);
     background: token(color-background-critical-strong);
     border: token(border-width-s) solid transparent;
@@ -73,12 +73,12 @@ $color-alert: token(color-background-critical-strong, false);
     }
 }
 
-.adyen-checkout__payment-method__disable-confirmation__button--remove,
-.adyen-checkout__payment-method__disable-confirmation__button--remove:disabled {
+.bubp-checkout__payment-method__disable-confirmation__button--remove,
+.bubp-checkout__payment-method__disable-confirmation__button--remove:disabled {
     border-color: token(color-label-on-color);
 }
 
-.adyen-checkout__payment-method__disable-confirmation__button--cancel,
-.adyen-checkout__payment-method__disable-confirmation__button--cancel:disabled {
+.bubp-checkout__payment-method__disable-confirmation__button--cancel,
+.bubp-checkout__payment-method__disable-confirmation__button--cancel:disabled {
     border-color: transparent;
 }

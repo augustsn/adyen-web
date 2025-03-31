@@ -4,7 +4,7 @@ import Await from './Await';
 import { fireEvent, render, screen, waitFor } from '@testing-library/preact';
 import { CoreProvider } from '../../../core/Context/CoreProvider';
 import { AwaitComponentProps } from './types';
-import AdyenCheckoutError from '../../../core/Errors/AdyenCheckoutError';
+import BubpCheckoutError from '../../../core/Errors/BubpCheckoutError';
 import SRPanelProvider from '../../../core/Errors/SRPanelProvider';
 import { SRPanel } from '../../../core/Errors/SRPanel';
 
@@ -127,7 +127,7 @@ describe('Await', () => {
             (checkPaymentStatus as jest.Mock).mockResolvedValue(checkPaymentStatusValue);
             renderAwait(defaultProps);
             await waitFor(() =>
-                expect(defaultProps.onError).toHaveBeenCalledWith(new AdyenCheckoutError('ERROR', 'error result with no payload in response'))
+                expect(defaultProps.onError).toHaveBeenCalledWith(new BubpCheckoutError('ERROR', 'error result with no payload in response'))
             );
         });
     });

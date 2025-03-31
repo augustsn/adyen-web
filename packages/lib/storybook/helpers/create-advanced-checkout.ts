@@ -1,8 +1,8 @@
-import { AdyenCheckout } from '../../src/core/AdyenCheckout';
+import { BubpCheckout } from '../../src/core/BubpCheckout';
 import { cancelOrder, checkBalance, createOrder, getPaymentMethods, makeDetailsCall, makePayment } from './checkout-api-calls';
 import { handleError, handleFinalState } from './checkout-handlers';
 import getCurrency from '../utils/get-currency';
-import { AdyenCheckoutProps } from '../stories/types';
+import { BubpCheckoutProps } from '../stories/types';
 import Checkout from '../../src/core/core';
 import { PaymentMethodsResponse } from '../../src/types';
 
@@ -14,7 +14,7 @@ async function createAdvancedFlowCheckout({
     paymentMethodsOverride,
     paymentsOptions,
     ...restCheckoutProps
-}: AdyenCheckoutProps): Promise<Checkout> {
+}: BubpCheckoutProps): Promise<Checkout> {
     const paymentAmount = {
         currency: getCurrency(countryCode),
         value: Number(amount)
@@ -39,7 +39,7 @@ async function createAdvancedFlowCheckout({
               ]
           };
 
-    const checkout = await AdyenCheckout({
+    const checkout = await BubpCheckout({
         clientKey: process.env.CLIENT_KEY,
         // @ts-ignore CLIENT_ENV has valid value
         environment: process.env.CLIENT_ENV,

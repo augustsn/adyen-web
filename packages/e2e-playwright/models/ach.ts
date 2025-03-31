@@ -9,12 +9,12 @@ class Ach extends Base {
         public readonly rootElementSelector: Locator | string
     ) {
         super(page);
-        const selector = rootElementSelector ?? '.adyen-checkout__ach';
+        const selector = rootElementSelector ?? '.bubp-checkout__ach';
         this.rootElement = typeof selector === 'string' ? this.page.locator(selector) : selector;
     }
 
     get paymentResult() {
-        return this.page.locator('.adyen-checkout__status');
+        return this.page.locator('.bubp-checkout__status');
     }
 
     async payWithStoredCard(lastFour: string): Promise<void> {

@@ -1,7 +1,7 @@
 @use 'styles/index';
 @import 'styles/variable-generator';
 
-.adyen-checkout__checkbox {
+.bubp-checkout__checkbox {
     display: flex;
     width: 100%;
 
@@ -24,13 +24,13 @@
     }
 }
 
-.adyen-checkout__checkbox__input {
+.bubp-checkout__checkbox__input {
     position: absolute;
     opacity: 0;
     pointer-events: none;
 
     &:checked {
-        + .adyen-checkout__checkbox__label {
+        + .bubp-checkout__checkbox__label {
             &::before {
                 opacity: 1;
             }
@@ -41,24 +41,24 @@
             }
         }
 
-        &:hover + .adyen-checkout__checkbox__label::after {
+        &:hover + .bubp-checkout__checkbox__label::after {
             box-shadow: 0 0 0 token(spacer-010) token(color-outline-tertiary);
             border-color: token(color-label-primary);
         }
     }
 
-    &:focus + .adyen-checkout__checkbox__label::after {
+    &:focus + .bubp-checkout__checkbox__label::after {
         border: token(border-width-s) solid token(color-label-primary);
         box-shadow: 0 0 0 token(spacer-010) token(color-outline-tertiary);
     }
 
-    &:hover:not(:focus) + .adyen-checkout__checkbox__label::after {
+    &:hover:not(:focus) + .bubp-checkout__checkbox__label::after {
         border-color: token(color-outline-tertiary);
         box-shadow: 0 0 0 token(spacer-010) token(color-outline-primary-hover);
     }
 
     /* Check */
-    + .adyen-checkout__checkbox__label::before {
+    + .bubp-checkout__checkbox__label::before {
         border-left: 1px solid transparent;
         border-top: 1px solid transparent;
         border-bottom: token(spacer-010) solid token(color-label-on-color);
@@ -83,7 +83,7 @@
     }
 
     /* Box */
-    + .adyen-checkout__checkbox__label::after {
+    + .bubp-checkout__checkbox__label::after {
         content: '';
         position: absolute;
         top: 0;
@@ -103,7 +103,7 @@
     }
 }
 
-.adyen-checkout__field--consentCheckbox {
+.bubp-checkout__field--consentCheckbox {
     background: token(color-background-primary);
     border: token(border-width-s) solid token(color-outline-primary);
     border-radius: token(border-radius-m);
@@ -115,18 +115,18 @@
         padding: token(spacer-060) token(spacer-070);
     }
 
-    .adyen-checkout__input-wrapper {
+    .bubp-checkout__input-wrapper {
         flex: 1;
         justify-content: space-between;
 
-        @include index.adyen-checkout-input-wrapper-reset;
+        @include index.bubp-checkout-input-wrapper-reset;
     }
 
-    &.adyen-checkout__field--error {
+    &.bubp-checkout__field--error {
         border-color: token(color-outline-critical);
     }
 
-    .adyen-checkout-input__inline-validation {
+    .bubp-checkout-input__inline-validation {
         margin-right: 0;
 
         [dir='rtl'] & {

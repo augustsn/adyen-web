@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'preact/hooks';
-import { AdyenCheckout } from '../../../src/core/AdyenCheckout';
+import { BubpCheckout } from '../../../src/core/BubpCheckout';
 import Card from '../../../src/components/Card/Card';
 import { PaymentMethodStoryProps } from '../types';
 import { ComponentContainer } from '../ComponentContainer';
@@ -26,7 +26,7 @@ export const DonationCardIntegrationExample = ({ countryCode, amount, redirectRe
     }, [countryCode, amount, redirectResult]);
 
     const createCheckout = async () => {
-        checkout.current = await AdyenCheckout({
+        checkout.current = await BubpCheckout({
             clientKey: process.env.CLIENT_KEY,
             // @ts-ignore CLIENT_ENV has valid value
             environment: process.env.CLIENT_ENV,
@@ -90,7 +90,7 @@ export const DonationCardIntegrationExample = ({ countryCode, amount, redirectRe
             return;
         }
 
-        checkout.current = await AdyenCheckout({
+        checkout.current = await BubpCheckout({
             clientKey: process.env.CLIENT_KEY,
             // @ts-ignore CLIENT_ENV has valid value
             environment: process.env.CLIENT_ENV,

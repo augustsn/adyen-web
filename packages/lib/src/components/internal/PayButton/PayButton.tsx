@@ -8,7 +8,7 @@ import SecondaryButtonLabel from './components/SecondaryButtonLabel';
 
 export interface PayButtonProps extends ButtonProps {
     /**
-     * Class name modifiers will be used as: `adyen-checkout__image--${modifier}`
+     * Class name modifiers will be used as: `bubp-checkout__image--${modifier}`
      */
     classNameModifiers?: string[];
     label?: string;

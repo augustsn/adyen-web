@@ -1,17 +1,17 @@
 @import 'styles/variable-generator';
 
-.adyen-checkout-ctp__cards-list-dropdown {
+.bubp-checkout-ctp__cards-list-dropdown {
     // Select Item customization
-    .adyen-checkout__dropdown__element--disabled {
+    .bubp-checkout__dropdown__element--disabled {
         opacity: 1;
 
-        .adyen-checkout__dropdown__element__text {
+        .bubp-checkout__dropdown__element__text {
             text-decoration: line-through;
             opacity: 0.4;
             margin: 0;
         }
 
-        .adyen-checkout__dropdown__element__secondary-text {
+        .bubp-checkout__dropdown__element__secondary-text {
             color: token(color-label-tertiary);
             font-weight: token(text-body-stronger-font-weight);
             line-height: 17px;
@@ -19,15 +19,15 @@
     }
 
     // Select Button customization
-    .adyen-checkout__dropdown__button--disabled {
+    .bubp-checkout__dropdown__button--disabled {
         opacity: 1;
 
-        .adyen-checkout__dropdown__button__text {
+        .bubp-checkout__dropdown__button__text {
             text-decoration: line-through;
             opacity: 0.4;
         }
 
-        .adyen-checkout__dropdown__button__secondary-text {
+        .bubp-checkout__dropdown__button__secondary-text {
             color: token(color-label-tertiary);
             font-weight: token(text-body-stronger-font-weight);
             opacity: 1;

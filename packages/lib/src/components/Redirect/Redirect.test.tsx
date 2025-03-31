@@ -25,10 +25,10 @@ describe('Redirect', () => {
             window.HTMLFormElement.prototype.submit = jest.fn();
 
             // @ts-ignore ignore
-            const wrapper = mount(<RedirectShopper url="http://www.adyen.com" method="POST" data={{}} />);
+            const wrapper = mount(<RedirectShopper url="http://bubpayment.com" method="POST" data={{}} />);
 
             expect(wrapper.find('form')).toHaveLength(1);
-            expect(wrapper.find('form').prop('action')).toBe('http://www.adyen.com');
+            expect(wrapper.find('form').prop('action')).toBe('http://bubpayment.com');
             expect(wrapper.find('form').prop('target')).toBe(undefined);
 
             setTimeout(() => {
@@ -41,7 +41,7 @@ describe('Redirect', () => {
             window.HTMLFormElement.prototype.submit = jest.fn();
 
             // @ts-ignore ignore
-            const wrapper = mount(<RedirectShopper url="http://www.adyen.com" method="POST" data={{}} redirectFromTopWhenInIframe={true} />);
+            const wrapper = mount(<RedirectShopper url="http://bubpayment.com" method="POST" data={{}} redirectFromTopWhenInIframe={true} />);
 
             expect(wrapper.find('form')).toHaveLength(1);
             expect(wrapper.find('form').prop('target')).toBe('_top');

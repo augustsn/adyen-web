@@ -17,7 +17,7 @@ export const createPayButton = (parent, component, attribute) => {
 
     payBtn.textContent = 'Pay';
     payBtn.name = 'pay';
-    payBtn.classList.add('adyen-checkout__button', 'js-components-button--one-click', `js-${attribute}`);
+    payBtn.classList.add('bubp-checkout__button', 'js-components-button--one-click', `js-${attribute}`);
 
     payBtn.addEventListener('click', e => {
         e.preventDefault();

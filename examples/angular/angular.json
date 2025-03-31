@@ -28,7 +28,7 @@
             ],
             "styles": [
               "src/styles.css",
-              "node_modules/@adyen/adyen-web/dist/es/adyen.css"
+              "node_modules/@bubp/web/dist/es/bubp.css"
             ],
             "scripts": [],
             "server": "src/main.server.ts",

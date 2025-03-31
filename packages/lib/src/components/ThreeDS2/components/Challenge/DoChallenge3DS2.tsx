@@ -73,8 +73,8 @@ class DoChallenge3DS2 extends Component<DoChallenge3DS2Props, DoChallenge3DS2Sta
         return (
             <div
                 className={classNames([
-                    'adyen-checkout__threeds2__challenge',
-                    `adyen-checkout__threeds2__challenge--${cReqData.challengeWindowSize}`
+                    'bubp-checkout__threeds2__challenge',
+                    `bubp-checkout__threeds2__challenge--${cReqData.challengeWindowSize}`
                 ])}
             >
                 {status !== 'iframeLoaded' && <Spinner />}

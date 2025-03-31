@@ -48,7 +48,7 @@ describe('IssuerList', () => {
             </CoreProvider>
         );
         expect(wrapper.find('IssuerList').props().highlightedIds).toHaveLength(2);
-        expect(wrapper.find('.adyen-checkout__issuer-button-group button')).toHaveLength(2);
+        expect(wrapper.find('.bubp-checkout__issuer-button-group button')).toHaveLength(2);
     });
 
     test('Clicking in a highlighted issuer trigger onChange callback', () => {
@@ -81,7 +81,7 @@ describe('IssuerList', () => {
         expect(onChangeCb.mock.calls[0][0]).toStrictEqual(callbackData);
         expect(onChangeCb.mock.calls[1][0]).toStrictEqual(callbackData);
 
-        wrapper.find('.adyen-checkout__issuer-button-group button').at(1).simulate('click');
+        wrapper.find('.bubp-checkout__issuer-button-group button').at(1).simulate('click');
 
         callbackData = { data: { issuer: '3' }, valid: { issuer: true }, errors: { issuer: null }, isValid: true };
 
@@ -110,7 +110,7 @@ describe('IssuerList', () => {
             </CoreProvider>
         );
 
-        const highlightedButtons = wrapper.find('.adyen-checkout__issuer-button-group button');
+        const highlightedButtons = wrapper.find('.bubp-checkout__issuer-button-group button');
 
         expect(highlightedButtons).toHaveLength(1);
         expect(highlightedButtons.at(0).text()).toBe('Issuer 3');
@@ -137,7 +137,7 @@ describe('IssuerList', () => {
             </CoreProvider>
         );
 
-        const highlightedIssuerButton = wrapper.find('.adyen-checkout__issuer-button-group button').at(0);
+        const highlightedIssuerButton = wrapper.find('.bubp-checkout__issuer-button-group button').at(0);
         const highlightedIssuerDropdownItem = wrapper.find('ul li').at(2);
 
         expect(highlightedIssuerButton.text()).toBe(highlightedIssuerDropdownItem.text());
@@ -178,7 +178,7 @@ describe('IssuerList: calls that generate analytics should produce objects with 
             </CoreProvider>
         );
 
-        wrapper.find('.adyen-checkout__issuer-button-group button').at(1).simulate('click');
+        wrapper.find('.bubp-checkout__issuer-button-group button').at(1).simulate('click');
 
         expect(onSubmitAnalytics).toHaveBeenCalledWith({
             type: ANALYTICS_SELECTED_STR,

@@ -5,7 +5,7 @@ import callSubmit3DS2Fingerprint from './callSubmit3DS2Fingerprint';
 import { existy } from '../../utils/commonUtils';
 import { TxVariants } from '../tx-variants';
 import { ThreeDS2DeviceFingerprintConfiguration } from './types';
-import AdyenCheckoutError, { API_ERROR } from '../../core/Errors/AdyenCheckoutError';
+import BubpCheckoutError, { API_ERROR } from '../../core/Errors/BubpCheckoutError';
 import { ANALYTICS_ERROR_TYPE, Analytics3DS2Errors, ANALYTICS_RENDERED_STR, Analytics3DS2Events } from '../../core/Analytics/constants';
 import { SendAnalyticsObject } from '../../core/Analytics/types';
 import { THREEDS2_ERROR, THREEDS2_FINGERPRINT, THREEDS2_FINGERPRINT_ERROR, THREEDS2_FULL } from './constants';
@@ -47,7 +47,7 @@ class ThreeDS2DeviceFingerprint extends UIElement<ThreeDS2DeviceFingerprintConfi
          * In the MDFlow the paymentData is always present (albeit an empty string, which is why we use 'existy' since we should be allowed to proceed with this)
          */
         if (!existy(this.props.paymentData)) {
-            this.props.onError(new AdyenCheckoutError(API_ERROR, `No paymentData received. 3DS2 Fingerprint cannot proceed`));
+            this.props.onError(new BubpCheckoutError(API_ERROR, `No paymentData received. 3DS2 Fingerprint cannot proceed`));
 
             // TODO - check logs to see if this *ever* happens
             this.submitAnalytics({

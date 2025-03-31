@@ -2,7 +2,7 @@ import { Base } from './base';
 import { Locator, Page } from '@playwright/test';
 
 class BacsDirectDebit extends Base {
-    private readonly rootElementSelector = '.adyen-checkout__bacs';
+    private readonly rootElementSelector = '.bubp-checkout__bacs';
     private readonly rootElement: Locator;
 
     constructor(page: Page) {
@@ -27,12 +27,12 @@ class BacsDirectDebit extends Base {
     }
 
     get consentCheckbox() {
-        return this.rootElement.locator('.adyen-checkout__field--consentCheckbox').filter({ hasText: /i agree that the above amount/i });
+        return this.rootElement.locator('.bubp-checkout__field--consentCheckbox').filter({ hasText: /i agree that the above amount/i });
     }
 
     get accountConsentCheckbox() {
         return this.rootElement
-            .locator('.adyen-checkout__field--consentCheckbox')
+            .locator('.bubp-checkout__field--consentCheckbox')
             .filter({ hasText: /i confirm the account is in my name and i am the only signatory/i });
     }
 
@@ -41,7 +41,7 @@ class BacsDirectDebit extends Base {
     }
 
     get downloadPdfButton() {
-        return this.page.locator('.adyen-checkout__voucher-result--directdebit_GB').getByRole('link', { name: /download pdf/i });
+        return this.page.locator('.bubp-checkout__voucher-result--directdebit_GB').getByRole('link', { name: /download pdf/i });
     }
 }
 

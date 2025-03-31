@@ -18,8 +18,8 @@ function ExpandButton({ buttonId, showRadioButton, isSelected, expandContentId, 
         // mainly from merchants running automated systems
         <button
             className={classNames(
-                'adyen-checkout__payment-method__header__title',
-                ...classNameModifiers.map(modifier => `adyen-checkout-expand-button--${modifier}`)
+                'bubp-checkout__payment-method__header__title',
+                ...classNameModifiers.map(modifier => `bubp-checkout-expand-button--${modifier}`)
             )}
             id={buttonId}
             role={'radio'}
@@ -31,8 +31,8 @@ function ExpandButton({ buttonId, showRadioButton, isSelected, expandContentId, 
             {showRadioButton && (
                 <span
                     className={classNames({
-                        'adyen-checkout__payment-method__radio': true,
-                        'adyen-checkout__payment-method__radio--selected': isSelected
+                        'bubp-checkout__payment-method__radio': true,
+                        'bubp-checkout__payment-method__radio--selected': isSelected
                     })}
                     aria-hidden="true"
                 />

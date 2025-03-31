@@ -15,7 +15,7 @@ import cardType from '../utils/cardType';
 import { SecuredFieldSetupObject } from '../../types';
 import SecuredField from '../../securedField/SecuredField';
 import { CardObject, CardBrandData, SFFeedbackObj, CardLoadData, CVCPolicyType, DatePolicyType } from '../../types';
-import AdyenCheckoutError from '../../../../../../core/Errors/AdyenCheckoutError';
+import BubpCheckoutError from '../../../../../../core/Errors/BubpCheckoutError';
 import type { SFKeyPressObj } from '../../types';
 
 /**
@@ -233,7 +233,7 @@ export function setupSecuredField(pItem: HTMLElement, cvcPolicy?: CVCPolicyType,
                 if (this.state.iframeCount > this.state.numIframes) {
                     this.destroySecuredFields();
                     // TODO send analytics about this error
-                    throw new AdyenCheckoutError(
+                    throw new BubpCheckoutError(
                         'ERROR',
                         `One or more securedFields has just loaded new content. This should never happen. securedFields have been removed.
                         iframe load count=${this.state.iframeCount}. Expected count:${this.state.numIframes}`

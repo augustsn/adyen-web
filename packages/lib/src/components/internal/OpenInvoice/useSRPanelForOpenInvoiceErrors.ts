@@ -113,7 +113,7 @@ const useSRPanelForOpenInvoiceErrors = ({ errors, data, props, isValidating }: U
                 // A call to focus the first field in error will always follow the call to validate the whole form
                 case ERROR_ACTION_FOCUS_FIELD:
                     // Focus first field in error, if required
-                    if (shouldMoveFocusSR) setFocusOnField('.adyen-checkout__open-invoice', srPanelResp.fieldToFocus);
+                    if (shouldMoveFocusSR) setFocusOnField('.bubp-checkout__open-invoice', srPanelResp.fieldToFocus);
                     // Remove 'showValidation' mode - allowing time for collation of all the fields in error whilst it is 'showValidation' mode (some errors come in a second render pass)
                     setTimeout(() => {
                         isValidating.current = false;

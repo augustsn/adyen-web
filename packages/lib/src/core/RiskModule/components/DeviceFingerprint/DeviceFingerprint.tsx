@@ -30,7 +30,7 @@ class DeviceFingerprint extends Component<DeviceFingerprintProps, DeviceFingerpr
     render({ loadingContext }, { dfpURL }) {
         if (this.state.status === 'retrievingFingerPrint') {
             return (
-                <div className="adyen-checkout-risk__device-fingerprint--wrapper" style={{ position: 'absolute', width: 0, height: 0 }}>
+                <div className="bubp-checkout-risk__device-fingerprint--wrapper" style={{ position: 'absolute', width: 0, height: 0 }}>
                     <GetDeviceFingerprint
                         loadingContext={loadingContext}
                         dfpURL={dfpURL}

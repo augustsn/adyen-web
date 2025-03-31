@@ -1,5 +1,5 @@
 import { DEFAULT_HTTP_TIMEOUT, FALLBACK_CONTEXT } from '../config';
-import AdyenCheckoutError from '../Errors/AdyenCheckoutError';
+import BubpCheckoutError from '../Errors/BubpCheckoutError';
 
 export interface HttpOptions {
     accept?: string;
@@ -23,14 +23,14 @@ interface FetchErrorOptions {
 
 type ErrorLevel = 'silent' | 'info' | 'warn' | 'error' | 'fatal';
 
-type AdyenApiErrorResponse = {
+type BubpApiErrorResponse = {
     errorCode: string;
     message: string;
     errorType: string;
     status: number;
 };
 
-function isAdyenApiErrorResponse(data: any): data is AdyenApiErrorResponse {
+function BubpApiErrorResponse(data: any): data is BubpApiErrorResponse {
     return data && data.errorCode && data.errorType && data.message && data.status;
 }
 
@@ -72,7 +72,7 @@ export function http<T>(options: HttpOptions, data?: any): Promise<T> {
                     return data;
                 }
 
-                if (isAdyenApiErrorResponse(data)) {
+                if (BubpApiErrorResponse(data)) {
                     handleFetchError({ message: data.message, level: errorLevel, cause: data, code: errorCode });
                     return;
                 }
@@ -87,11 +87,11 @@ export function http<T>(options: HttpOptions, data?: any): Promise<T> {
              */
             .catch((error: unknown) => {
                 /**
-                 * If error is instance of AdyenCheckoutError, which means that it was already
+                 * If error is instance of BubpCheckoutError, which means that it was already
                  * handled by the `handleFetchError` on the `then` block, then we just throw it.
                  * There is no need to create it again
                  */
-                if (error instanceof AdyenCheckoutError) {
+                if (error instanceof BubpCheckoutError) {
                     throw error;
                 }
 
@@ -114,7 +114,7 @@ function handleFetchError({ message, level, cause, code }: FetchErrorOptions): v
             break;
         }
         default:
-            throw new AdyenCheckoutError('NETWORK_ERROR', message, { cause, code });
+            throw new BubpCheckoutError('NETWORK_ERROR', message, { cause, code });
     }
 }
 

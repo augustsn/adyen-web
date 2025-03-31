@@ -64,14 +64,14 @@ class PaymentMethodItem extends Component<PaymentMethodItemProps> {
         const isCard = paymentMethod.props.type === 'card' || paymentMethod.props.type === 'scheme';
 
         const paymentMethodClassnames = classNames({
-            'adyen-checkout__payment-method': true,
-            [`adyen-checkout__payment-method--${paymentMethod.props.type}`]: true,
-            ...(isCard && { [`adyen-checkout__payment-method--${paymentMethod.props.fundingSource ?? 'credit'}`]: true }),
-            'adyen-checkout__payment-method--selected': isSelected,
-            'adyen-checkout__payment-method--loading': isLoading,
-            'adyen-checkout__payment-method--disabling': isDisablingPaymentMethod,
-            'adyen-checkout__payment-method--confirming': this.state.showDisableStoredPaymentMethodConfirmation,
-            'adyen-checkout__payment-method--standalone': standalone,
+            'bubp-checkout__payment-method': true,
+            [`bubp-checkout__payment-method--${paymentMethod.props.type}`]: true,
+            ...(isCard && { [`bubp-checkout__payment-method--${paymentMethod.props.fundingSource ?? 'credit'}`]: true }),
+            'bubp-checkout__payment-method--selected': isSelected,
+            'bubp-checkout__payment-method--loading': isLoading,
+            'bubp-checkout__payment-method--disabling': isDisablingPaymentMethod,
+            'bubp-checkout__payment-method--confirming': this.state.showDisableStoredPaymentMethodConfirmation,
+            'bubp-checkout__payment-method--standalone': standalone,
             [paymentMethod._id]: true,
             [this.props.className]: true
         });
@@ -86,7 +86,7 @@ class PaymentMethodItem extends Component<PaymentMethodItemProps> {
         return (
             // eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions
             <div key={paymentMethod._id} className={paymentMethodClassnames} onClick={this.handleOnListItemClick}>
-                <div className="adyen-checkout__payment-method__header">
+                <div className="bubp-checkout__payment-method__header">
                     <ExpandButton buttonId={buttonId} showRadioButton={showRadioButton} isSelected={isSelected} expandContentId={containerId}>
                         <PaymentMethodIcon
                             // Only add alt attribute to storedPaymentMethods (to avoid SR reading the PM name twice)
@@ -105,7 +105,7 @@ class PaymentMethodItem extends Component<PaymentMethodItemProps> {
                     {showRemovePaymentMethodButton && (
                         <button
                             type="button"
-                            className="adyen-checkout__button adyen-checkout__button--inline adyen-checkout__button--link"
+                            className="bubp-checkout__button bubp-checkout__button--inline bubp-checkout__button--link"
                             onClick={this.toggleDisableConfirmation}
                             aria-expanded={this.state.showDisableStoredPaymentMethodConfirmation}
                             aria-controls={disableConfirmationId}
@@ -125,8 +125,8 @@ class PaymentMethodItem extends Component<PaymentMethodItemProps> {
                     )}
                 </div>
 
-                <div className="adyen-checkout-pm-details-wrapper" aria-hidden={!isSelected}>
-                    <div className="adyen-checkout__payment-method__details" id={containerId}>
+                <div className="bubp-checkout-pm-details-wrapper" aria-hidden={!isSelected}>
+                    <div className="bubp-checkout__payment-method__details" id={containerId}>
                         {showRemovePaymentMethodButton && (
                             <DisableOneClickConfirmation
                                 id={disableConfirmationId}

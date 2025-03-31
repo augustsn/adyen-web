@@ -8,7 +8,7 @@ import processResponse from '../../../core/ProcessResponse';
 import './QRLoader.scss';
 import { QRLoaderProps, QRLoaderState } from './types';
 import copyToClipboard from '../../../utils/clipboard';
-import AdyenCheckoutError from '../../../core/Errors/AdyenCheckoutError';
+import BubpCheckoutError from '../../../core/Errors/BubpCheckoutError';
 import { useCoreContext } from '../../../core/Context/CoreProvider';
 import ContentSeparator from '../ContentSeparator';
 import { StatusObject } from '../Await/types';
@@ -94,7 +94,7 @@ class QRLoader extends Component<QRLoaderProps, QRLoaderState> {
     private onTimeUp = (): void => {
         this.setState({ expired: true });
         clearTimeout(this.timeoutId);
-        this.props.onError(new AdyenCheckoutError('ERROR', 'Payment Expired'));
+        this.props.onError(new BubpCheckoutError('ERROR', 'Payment Expired'));
     };
 
     private onComplete = (status: StatusObject): void => {
@@ -125,7 +125,7 @@ class QRLoader extends Component<QRLoaderProps, QRLoaderState> {
             this.props.onComplete(state, this);
         }
 
-        const error = new AdyenCheckoutError('ERROR', 'error result with no payload in response');
+        const error = new BubpCheckoutError('ERROR', 'error result with no payload in response');
         return this.props.onError(error);
     };
 
@@ -162,13 +162,13 @@ class QRLoader extends Component<QRLoaderProps, QRLoaderState> {
             const status = i18n.get(message);
             useA11yReporter(status);
             return (
-                <div className="adyen-checkout__qr-loader adyen-checkout__qr-loader--result">
+                <div className="bubp-checkout__qr-loader bubp-checkout__qr-loader--result">
                     <img
-                        className="adyen-checkout__qr-loader__icon adyen-checkout__qr-loader__icon--result"
+                        className="bubp-checkout__qr-loader__icon bubp-checkout__qr-loader__icon--result"
                         src={getImage({ imageFolder: 'components/' })(image)}
                         alt={status}
                     />
-                    <div className="adyen-checkout__qr-loader__subtitle">{status}</div>
+                    <div className="bubp-checkout__qr-loader__subtitle">{status}</div>
                 </div>
             );
         };
@@ -183,10 +183,10 @@ class QRLoader extends Component<QRLoaderProps, QRLoaderState> {
 
         if (loading) {
             return (
-                <div className="adyen-checkout__qr-loader">
+                <div className="bubp-checkout__qr-loader">
                     {brandLogo && (
-                        <div className="adyen-checkout__qr-loader__brand-logo-wrapper">
-                            <img alt={brandName} src={brandLogo} className="adyen-checkout__qr-loader__brand-logo" />
+                        <div className="bubp-checkout__qr-loader__brand-logo-wrapper">
+                            <img alt={brandName} src={brandLogo} className="bubp-checkout__qr-loader__brand-logo" />
                         </div>
                     )}
                     <Spinner />
@@ -197,24 +197,24 @@ class QRLoader extends Component<QRLoaderProps, QRLoaderState> {
         const timeToPayString = i18n.get(this.props.timeToPay).split('%@');
 
         const qrSubtitleRef = useAutoFocus();
-        const classnames = this.props.classNameModifiers.map(m => `adyen-checkout__qr-loader--${m}`);
+        const classnames = this.props.classNameModifiers.map(m => `bubp-checkout__qr-loader--${m}`);
 
         return (
-            <div className={`adyen-checkout__qr-loader adyen-checkout__qr-loader--${type} ${classnames.join(' ')}`}>
+            <div className={`bubp-checkout__qr-loader bubp-checkout__qr-loader--${type} ${classnames.join(' ')}`}>
                 {brandLogo && (
-                    <div className="adyen-checkout__qr-loader__brand-logo-wrapper">
-                        <img src={brandLogo} alt={brandName} className="adyen-checkout__qr-loader__brand-logo" />
+                    <div className="bubp-checkout__qr-loader__brand-logo-wrapper">
+                        <img src={brandLogo} alt={brandName} className="bubp-checkout__qr-loader__brand-logo" />
                     </div>
                 )}
 
                 {amount && amount.value && amount.currency && (
-                    <div className="adyen-checkout__qr-loader__payment_amount">{i18n.amount(amount.value, amount.currency)}</div>
+                    <div className="bubp-checkout__qr-loader__payment_amount">{i18n.amount(amount.value, amount.currency)}</div>
                 )}
 
                 {url && (
-                    <div className="adyen-checkout__qr-loader__app-link">
+                    <div className="bubp-checkout__qr-loader__app-link">
                         {this.props.redirectIntroduction && (
-                            <div className="adyen-checkout__qr-loader__subtitle">{i18n.get(this.props.redirectIntroduction)}</div>
+                            <div className="bubp-checkout__qr-loader__subtitle">{i18n.get(this.props.redirectIntroduction)}</div>
                         )}
                         <Button classNameModifiers={['qr-loader']} onClick={() => this.redirectToApp(url)} label={i18n.get(this.props.buttonLabel)} />
                         <ContentSeparator />
@@ -222,7 +222,7 @@ class QRLoader extends Component<QRLoaderProps, QRLoaderState> {
                 )}
 
                 {/* eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex */}
-                <div ref={qrSubtitleRef} tabIndex={0} className="adyen-checkout__qr-loader__subtitle">
+                <div ref={qrSubtitleRef} tabIndex={0} className="bubp-checkout__qr-loader__subtitle">
                     {typeof this.props.introduction === 'string' ? i18n.get(this.props.introduction) : this.props.introduction?.()}
                 </div>
 
@@ -237,24 +237,24 @@ class QRLoader extends Component<QRLoaderProps, QRLoaderState> {
                     }}
                 />
 
-                <div className="adyen-checkout__qr-loader__progress">
-                    <span className="adyen-checkout__qr-loader__percentage" style={{ width: `${this.state.percentage}%` }} />
+                <div className="bubp-checkout__qr-loader__progress">
+                    <span className="bubp-checkout__qr-loader__percentage" style={{ width: `${this.state.percentage}%` }} />
                 </div>
 
-                <div className="adyen-checkout__qr-loader__countdown">
+                <div className="bubp-checkout__qr-loader__countdown">
                     {timeToPayString[0]}&nbsp;
                     <Countdown minutesFromNow={countdownTime} onTick={this.onTick} onCompleted={this.onTimeUp} />
                     &nbsp;{timeToPayString[1]}
                 </div>
 
                 {this.props.instructions && (
-                    <div className="adyen-checkout__qr-loader__instructions">
+                    <div className="bubp-checkout__qr-loader__instructions">
                         {typeof this.props.instructions === 'string' ? i18n.get(this.props.instructions) : this.props.instructions?.()}
                     </div>
                 )}
 
                 {this.props.copyBtn && (
-                    <div className="adyen-checkout__qr-loader__actions">
+                    <div className="bubp-checkout__qr-loader__actions">
                         <Button
                             inline
                             variant="action"

@@ -1,6 +1,6 @@
 @import 'styles/variable-generator';
 
-.adyen-checkout__modal-wrapper {
+.bubp-checkout__modal-wrapper {
     align-items: center;
     display: flex;
     height: 100%;
@@ -34,13 +34,13 @@
             opacity: 1;
         }
 
-        .adyen-checkout__modal {
+        .bubp-checkout__modal {
             opacity: 1;
         }
     }
 }
 
-.adyen-checkout__modal {
+.bubp-checkout__modal {
     box-shadow: 0 token(spacer-040) token(spacer-090) rgb(0 17 44 / 15%);
     border-radius: token(border-radius-m);
     background-color: token(color-background-primary);
@@ -53,11 +53,11 @@
 }
 
 @media (max-width: 480px) {
-    .adyen-checkout__modal-wrapper {
+    .bubp-checkout__modal-wrapper {
         padding: 0;
     }
 
-    .adyen-checkout__modal {
+    .bubp-checkout__modal {
         border-radius: 0;
         height: 100%;
     }

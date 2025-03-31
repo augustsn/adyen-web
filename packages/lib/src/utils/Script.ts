@@ -1,4 +1,4 @@
-import AdyenCheckoutError from '../core/Errors/AdyenCheckoutError';
+import BubpCheckoutError from '../core/Errors/BubpCheckoutError';
 
 interface IScript {
     load(): Promise<any>;
@@ -49,7 +49,7 @@ class Script implements IScript {
             const handleOnError = (errorEvent: ErrorEvent) => {
                 this.remove();
                 reject(
-                    new AdyenCheckoutError('SCRIPT_ERROR', `Unable to load script ${this.src}. Message: ${errorEvent.message}`, {
+                    new BubpCheckoutError('SCRIPT_ERROR', `Unable to load script ${this.src}. Message: ${errorEvent.message}`, {
                         cause: errorEvent.error
                     })
                 );

@@ -13,11 +13,11 @@ export default function ChangePaymentDetailsButton(props: ChangePaymentDetailsBu
             changeAction: 'changeAddress'
         };
 
-        amazonRef.Pay.bindChangeAction('.adyen-checkout__amazonpay__button--changeAddress', changeActionOptions);
+        amazonRef.Pay.bindChangeAction('.bubp-checkout__amazonpay__button--changeAddress', changeActionOptions);
     }, []);
 
     return (
-        <button type="button" className="adyen-checkout__button adyen-checkout__button--ghost adyen-checkout__amazonpay__button--changeAddress">
+        <button type="button" className="bubp-checkout__button bubp-checkout__button--ghost bubp-checkout__amazonpay__button--changeAddress">
             {i18n.get('amazonpay.changePaymentDetails')}
         </button>
     );

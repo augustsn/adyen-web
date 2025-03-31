@@ -11,7 +11,7 @@ import { Resources } from './Context/Resources';
 import { SRPanel } from './Errors/SRPanel';
 import registry, { NewableComponent } from './core.registry';
 import { cleanupFinalResult, sanitizeResponse, verifyPaymentDidNotFail } from '../components/internal/UIElement/utils';
-import AdyenCheckoutError, { IMPLEMENTATION_ERROR } from './Errors/AdyenCheckoutError';
+import BubpCheckoutError, { IMPLEMENTATION_ERROR } from './Errors/BubpCheckoutError';
 import { ANALYTICS_ACTION_STR } from './Analytics/constants';
 import { THREEDS2_FULL } from '../components/ThreeDS2/constants';
 import { DEFAULT_LOCALE } from '../language/constants';
@@ -91,12 +91,13 @@ class Core implements ICore {
         this.session = this.options.session && new Session(this.options.session, this.options.clientKey, this.loadingContext);
 
         const clientKeyType = this.options.clientKey?.substring(0, 4);
-        if ((clientKeyType === 'test' || clientKeyType === 'live') && !this.loadingContext.includes(clientKeyType)) {
-            throw new AdyenCheckoutError(
-                'IMPLEMENTATION_ERROR',
-                `Error: you are using a ${clientKeyType} clientKey against the ${this.options._environmentUrls?.api || this.options.environment} environment`
-            );
-        }
+        // BUB Payment does not differentiate environments at domain level
+        // if ((clientKeyType === 'test' || clientKeyType === 'live') && !this.loadingContext.includes(clientKeyType)) {
+        //     throw new BubpCheckoutError(
+        //         'IMPLEMENTATION_ERROR',
+        //         `Error: you are using a ${clientKeyType} clientKey against the ${this.options._environmentUrls?.api || this.options.environment} environment`
+        //     );
+        // }
         if (clientKeyType === 'pub.') {
             console.debug(
                 `The value you are passing as your "clientKey" looks like an originKey (${this.options.clientKey?.substring(0, 12)}..). Although this is supported it is not the recommended way to integrate. To generate a clientKey, see the documentation (https://docs.adyen.com/development-resources/client-side-authentication/migrate-from-origin-key-to-client-key/) for more details.`
@@ -104,7 +105,7 @@ class Core implements ICore {
         }
 
         if (this.options.exposeLibraryMetadata) {
-            window['AdyenWebMetadata'] = Core.metadata;
+            window['BubpWebMetadata'] = Core.metadata;
         }
     }
 
@@ -147,8 +148,8 @@ class Core implements ICore {
         try {
             return await getTranslations(this.cdnTranslationsUrl, Core.metadata.version, this.options.locale);
         } catch (error: unknown) {
-            if (error instanceof AdyenCheckoutError) this.options.onError?.(error);
-            else this.options.onError?.(new AdyenCheckoutError('ERROR', 'Failed to fetch translation', { cause: error }));
+            if (error instanceof BubpCheckoutError) this.options.onError?.(error);
+            else this.options.onError?.(new BubpCheckoutError('ERROR', 'Failed to fetch translation', { cause: error }));
         }
     }
 
@@ -159,7 +160,7 @@ class Core implements ICore {
         }
 
         if (!this.options.countryCode) {
-            throw new AdyenCheckoutError(IMPLEMENTATION_ERROR, 'You must specify a countryCode when initializing checkout.');
+            throw new BubpCheckoutError(IMPLEMENTATION_ERROR, 'You must specify a countryCode when initializing checkout.');
         }
 
         if (!this.options.locale) {
@@ -195,7 +196,7 @@ class Core implements ICore {
 
         if (!promise) {
             this.options.onError?.(
-                new AdyenCheckoutError(
+                new BubpCheckoutError(
                     'IMPLEMENTATION_ERROR',
                     'It can not submit the details. The callback "onAdditionalDetails" or the Session is not setup correctly.'
                 )
@@ -292,7 +293,7 @@ class Core implements ICore {
 
     /**
      * @internal
-     * Create or update the config object passed when AdyenCheckout is initialised (environment, clientKey, etc...)
+     * Create or update the config object passed when BubpCheckout is initialised (environment, clientKey, etc...)
      */
     private setOptions = (options: CoreConfiguration): void => {
         this.options = {

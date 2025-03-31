@@ -18,7 +18,7 @@ function confirmSessionDurationIsMaxFifteenMinutes(checkoutAttemptIdSession: Che
 }
 
 /**
- * Send an event to Adyen with some basic telemetry info and receive a checkoutAttemptId in response
+ * Send an event to BUB Payment with some basic telemetry info and receive a checkoutAttemptId in response
  * @param config - object containing values needed to calculate the url for the request; and also some that need to be serialized and included in the body of request
  * @returns a function returning a promise containing the response of the call (an object containing a checkoutAttemptId property)
  */
